@@ -7,6 +7,7 @@ import Grafica.EntidadGrafica;
 public abstract class Entidad {
 	protected int vida;
 	protected int x, y;
+	protected int velocidad= 5;
 	
 	protected EntidadGrafica grafico;
 	
@@ -31,7 +32,5 @@ public abstract class Entidad {
 	
 	protected abstract void mover(int dir);
 	
-	public JLabel getGrafico(){
-		return this.grafico.getGrafico();
-	}
+	
 }

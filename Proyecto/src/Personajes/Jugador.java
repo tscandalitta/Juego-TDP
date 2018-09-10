@@ -11,10 +11,10 @@ public class Jugador extends Entidad {
 	protected void mover(int dir) {
 		switch(dir) {
 			case KeyEvent.VK_UP: 
-				x+=5;
+				x+=velocidad;
 				break;
 			case KeyEvent.VK_DOWN:
-				x-=5;
+				x-=velocidad;
 				break;
 		}
 	}
