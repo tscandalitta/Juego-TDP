@@ -1,42 +1,53 @@
 package Personajes;
 
+import java.awt.Point;
+import javax.swing.Icon;
 import javax.swing.JLabel;
-
-import Grafica.EntidadGrafica;
 
 public abstract class Entidad {
 	protected int vida;
-	protected int x, y;
+	protected int velocidad;
+	protected Point pos;
 	
-	protected EntidadGrafica grafico;
+	protected final int width= 32;
+	protected final int height= 48;
+	protected JLabel grafico;
+	protected Icon imagen[];
 	
-	protected Entidad(int vida, int x, int y) {
-		this.x= x;
-		this.y= y;
-		this.grafico = null;
-		this.vida=vida;
+	protected Entidad(int velocidad, int vida, int x, int y) {
+		this.velocidad= velocidad;
+		this.vida= vida;
+		this.pos= new Point(x, y);
+		this.imagen= new Icon[2];
 	}
-
-	protected void colisionar() {}
-
-	
 	
 	public int getVida() {
 		return vida;
 	}
 	
-	public int getX() {
-		return x;
+	public Point getPos() {
+		return pos;
 	}
 	
-	public int getY() {
-		return y;
+	protected void cambiarGrafico(int dir){
+		if(this.grafico != null){
+			this.grafico.setIcon(this.imagen[dir]);
+			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+		}
 	}
 	
-	protected abstract void mover(int dir);
+	
 	
 	public JLabel getGrafico(){
-	//	return this.grafico.getGrafico();
+		if(this.grafico == null){
+			this.grafico = new JLabel(imagen[0]);
+			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+		}
+		
+		return this.grafico;
 	}
+
+	protected abstract void mover(int dir);
+	
 
 }

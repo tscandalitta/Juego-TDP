@@ -1,16 +1,26 @@
 package Personajes;
 
-import java.awt.event.KeyEvent;
-
 
 public class Jugador extends Entidad {
-	private Disparador arma;
-	private boolean premioActivado;
 	
-	public Jugador(int x,int y) {
-		super(100,x,y);
-		premioActivado=false;
+	public Jugador(int velocidad, int vida, int x,int y) {
+		super(velocidad,vida,x,y);
 	}
+	
+	
+	
+	protected void mover(int dir) {
+		switch(dir) {
+			case 0 : //Arriba
+				pos.setLocation(pos.x, pos.y - velocidad);
+				break;
+			case 1 : //Abajo
+				pos.setLocation(pos.x, pos.y + velocidad);
+				break;
+		}
+		cambiarGrafico(dir);
+	}
+	/**
 	public void disminuirVida(int n) {
 		vida-=n;
 		if(vida<=0)
@@ -22,15 +32,5 @@ public class Jugador extends Entidad {
 	public boolean desactivarPremio() {
 		premioActivado=false;
 	}
-	
-	protected void mover(int dir) {
-		switch(dir) {
-			case KeyEvent.VK_UP: 
-				x+=velocidad;
-				break;
-			case KeyEvent.VK_DOWN:
-				x-=velocidad;
-				break;
-		}
-	}
+	*/
 }
