@@ -1,6 +1,5 @@
 package Personajes;
 
-public abstract class Entidad {
 import Grafica.EntidadGrafica;
 
 public abstract class Entidad {
