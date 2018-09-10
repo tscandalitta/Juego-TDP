@@ -7,7 +7,6 @@ import Grafica.EntidadGrafica;
 public abstract class Entidad {
 	protected int vida;
 	protected int x, y;
-	protected int velocidad= 5;
 	
 	protected EntidadGrafica grafico;
 	
