@@ -10,10 +10,11 @@ public abstract class Entidad {
 	
 	protected EntidadGrafica grafico;
 	
-	protected Entidad(int x, int y) {
+	protected Entidad(int vida, int x, int y) {
 		this.x= x;
 		this.y= y;
 		this.grafico = null;
+		this.vida=vida;
 	}
 	
 	public int getVida() {

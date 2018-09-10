@@ -5,7 +5,7 @@ import java.awt.event.KeyEvent;
 public class Jugador extends Entidad {
 
 	protected Jugador(int x, int y) {
-		super(x, y);
+		super(100,x, y);
 	}
 
 	protected void mover(int dir) {
