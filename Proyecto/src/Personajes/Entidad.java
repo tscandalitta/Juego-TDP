@@ -26,7 +26,5 @@ public abstract class Entidad {
 		return y;
 	}
 	
-	protected void mover(int dir){
-		
-	}
+	protected abstract void mover(int dir);
 }
