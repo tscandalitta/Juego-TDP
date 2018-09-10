@@ -1,5 +1,7 @@
 package Personajes;
 
+import javax.swing.JLabel;
+
 import Grafica.EntidadGrafica;
 
 public abstract class Entidad {
@@ -27,4 +29,8 @@ public abstract class Entidad {
 	}
 	
 	protected abstract void mover(int dir);
+	
+	public JLabel getGrafico(){
+		return this.grafico.getGrafico();
+	}
 }
