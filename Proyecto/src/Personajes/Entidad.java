@@ -17,6 +17,10 @@ public abstract class Entidad {
 		this.grafico = null;
 		this.vida=vida;
 	}
+
+	protected void colisionar() {}
+
+	
 	
 	public int getVida() {
 		return vida;
@@ -32,5 +36,8 @@ public abstract class Entidad {
 	
 	protected abstract void mover(int dir);
 	
-	
+	public JLabel getGrafico(){
+	//	return this.grafico.getGrafico();
+	}
+
 }
