@@ -8,7 +8,7 @@ public class Enemigo extends Entidad{
 	}
 
 	@Override
-	protected void mover(int dir) {
+	public void mover(int dir) {
 		// TODO Auto-generated method stub
 		
 	}

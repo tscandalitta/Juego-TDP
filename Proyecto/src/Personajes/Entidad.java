@@ -10,7 +10,7 @@ public abstract class Entidad {
 	protected Point pos;
 	
 	protected final int width= 32;
-	protected final int height= 32;
+	protected final int height= 48;
 	protected JLabel grafico;
 	protected Icon imagen;
 	

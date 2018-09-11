@@ -9,10 +9,8 @@ public class Jugador extends Entidad {
 	public Jugador(int velocidad, int vida, int x,int y) {
 		super(velocidad,vida,x,y);
 		
-		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer1.png"));
+		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 	}
-	
-	
 	
 	public void mover(int dir) {
 		switch(dir) {
