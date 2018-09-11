@@ -16,14 +16,14 @@ public class Jugador extends Entidad {
 	
 	public void mover(int dir) {
 		switch(dir) {
-			case KeyEvent.VK_UP : //Arriba
+			case 0 : //Arriba
 				pos.setLocation(pos.x, pos.y - velocidad);
 				break;
-			case KeyEvent.VK_DOWN : //Abajo
+			case 1 : //Abajo
 				pos.setLocation(pos.x, pos.y + velocidad);
 				break;
 		}
-	//	cambiarGrafico(dir);
+		cambiarGrafico(dir);
 	}
 	/**
 	public void disminuirVida(int n) {

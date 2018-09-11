@@ -28,6 +28,13 @@ public abstract class Entidad {
 		return pos;
 	}
 	
+	protected void cambiarGrafico(int dir){
+		if(this.grafico != null){
+		//	this.grafico.setIcon(this.image[dir]);
+			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+		}
+	}
+	
 	public JLabel getGrafico(){
 		if(this.grafico == null){
 			this.grafico = new JLabel(imagen);

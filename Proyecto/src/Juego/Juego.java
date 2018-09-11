@@ -1,7 +1,6 @@
 package Juego;
 
 import java.awt.event.KeyEvent;
-
 import GUI.GUI;
 import Personajes.Jugador;
 
