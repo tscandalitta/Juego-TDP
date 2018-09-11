@@ -10,15 +10,14 @@ public abstract class Entidad {
 	protected Point pos;
 	
 	protected final int width= 32;
-	protected final int height= 48;
+	protected final int height= 32;
 	protected JLabel grafico;
-	protected Icon imagen[];
+	protected Icon imagen;
 	
 	protected Entidad(int velocidad, int vida, int x, int y) {
 		this.velocidad= velocidad;
 		this.vida= vida;
 		this.pos= new Point(x, y);
-		this.imagen= new Icon[2];
 	}
 	
 	public int getVida() {
@@ -29,25 +28,16 @@ public abstract class Entidad {
 		return pos;
 	}
 	
-	protected void cambiarGrafico(int dir){
-		if(this.grafico != null){
-			this.grafico.setIcon(this.imagen[dir]);
-			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
-		}
-	}
-	
-	
-	
 	public JLabel getGrafico(){
 		if(this.grafico == null){
-			this.grafico = new JLabel(imagen[0]);
+			this.grafico = new JLabel(imagen);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
 		}
 		
 		return this.grafico;
 	}
 
-	protected abstract void mover(int dir);
+	public abstract void mover(int dir);
 	
 
 }
