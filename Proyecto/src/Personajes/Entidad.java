@@ -4,11 +4,13 @@ import java.awt.Point;
 import javax.swing.Icon;
 import javax.swing.JLabel;
 
+import Colisionadores.Colisionador;
+
 public abstract class Entidad {
 	protected int vida;
 	protected int velocidad;
 	protected Point pos;
-	
+	protected Colisionador col;
 	protected final int width= 32;
 	protected final int height= 48;
 	protected JLabel grafico;
@@ -43,8 +45,21 @@ public abstract class Entidad {
 		
 		return this.grafico;
 	}
-
-	public abstract void mover(int dir);
 	
-
+	public void setCol(Colisionador col) {
+		this.col=col;
+	}
+	public void colisionar(Entidad e) {
+		e.serColisionado(col);
+	}
+	
+	public abstract void serColisionado(Colisionador col);
+	
+	public abstract void golpearJugador(Entidad e);
+	public abstract void golpearEnemigo(Entidad e);
+	public abstract void mover(int dir);
+		
+	protected void disminuirVida(int vida) {
+		this.vida-=vida;
+	}
 }

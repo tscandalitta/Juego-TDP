@@ -35,7 +35,7 @@ public class GUI extends JFrame {
 	public GUI() {
 		addKeyListener(new KeyAdapter() {
 			@Override
-			public void keyReleased(KeyEvent arg0) {
+			public void keyPressed(KeyEvent arg0) {
 				mover(arg0);
 			}
 		});
