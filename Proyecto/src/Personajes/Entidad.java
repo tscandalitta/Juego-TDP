@@ -11,8 +11,8 @@ public abstract class Entidad {
 	protected int velocidad;
 	protected Point pos;
 	protected Colisionador col;
-	protected final int width= 32;
-	protected final int height= 48;
+	protected final int width=42;
+	protected final int height=70;
 	protected JLabel grafico;
 	protected Icon imagen;
 	

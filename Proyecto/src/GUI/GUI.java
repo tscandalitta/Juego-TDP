@@ -42,10 +42,9 @@ public class GUI extends JFrame {
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(400, 200, 800, 600);
-		contentPane = new JPanel();
+		setBounds(400, 200, 1280, 720);
+		contentPane = new JPanelConFondo();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setBackground(Color.black);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		

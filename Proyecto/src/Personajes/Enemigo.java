@@ -1,10 +1,12 @@
 package Personajes;
 
+import javax.swing.ImageIcon;
+
 public class Enemigo extends Entidad{
 
-	protected Enemigo(int velocidad, int vida, int x, int y) {
+	public Enemigo(int velocidad, int vida, int x, int y) {
 		super(velocidad, vida, x, y);
-		// TODO Auto-generated constructor stub
+		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
 	}
 
 	@Override

@@ -1,6 +1,5 @@
 package Juego;
 
-import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -9,14 +8,17 @@ import Personajes.*;
 
 public class Juego {
 	private Jugador jugador;
-	private ArrayList<Entidad> enemigos;
-	private ArrayList<Entidad> coleccionObstaculos;
-	private ArrayList<Entidad> coleccionPremios;
+	private ArrayList<Entidad> entidades;
 	
 	
 	public Juego(GUI gui) {
+		entidades= new ArrayList<Entidad>();
 		jugador = new Jugador(20, 100, 20, 100);
 		gui.add(jugador.getGrafico());
+		for(int i=1; i<7; i++) {
+			entidades.add(new Enemigo(20, 100, 1000, 90*i));
+			gui.add(entidades.get(entidades.size()-1).getGrafico());
+		}
 	}
 	
 	public void mover(int dir){		
