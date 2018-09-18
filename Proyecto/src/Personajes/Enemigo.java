@@ -9,10 +9,16 @@ public class Enemigo extends Entidad{
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
 	}
 
-	@Override
 	public void mover(int dir) {
-		// TODO Auto-generated method stub
-		
+		switch(dir) {
+			case 0 : //Arriba
+				pos.setLocation(pos.x, pos.y - velocidad);
+				break;
+			case 1 : //Abajo
+				pos.setLocation(pos.x, pos.y + velocidad);
+				break;
+		}
+		cambiarGrafico(dir);
 	}
 
 }

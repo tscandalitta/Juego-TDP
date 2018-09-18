@@ -2,6 +2,7 @@ package Juego;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Random;
 
 import GUI.GUI;
 import Personajes.*;
@@ -13,11 +14,19 @@ public class Juego {
 	
 	public Juego(GUI gui) {
 		entidades= new ArrayList<Entidad>();
-		jugador = new Jugador(20, 100, 20, 100);
+		jugador = new Jugador(10, 100, 20, 100);
 		gui.add(jugador.getGrafico());
 		for(int i=1; i<7; i++) {
-			entidades.add(new Enemigo(20, 100, 1000, 90*i));
+			entidades.add(new Enemigo(10, 100, 1000, 90*i));
 			gui.add(entidades.get(entidades.size()-1).getGrafico());
+		}
+	}
+	
+	public void mover() {
+		for(int i=0; i< entidades.size(); i++) {
+			Random r= new Random();
+			int dir= r.nextInt(1);
+			entidades.get(i).mover(dir);
 		}
 	}
 	
@@ -32,7 +41,7 @@ public class Juego {
 				direccion = 1;
 				break;
 		}
-		if(direccion!=-1)  //Si se apreta una tecla que no sea flecha, no realiza ninguna accion
+		if(direccion!=-1)   //Si se apreta una tecla que no sea flecha, no realiza ninguna accion
 			jugador.mover(direccion);
 	}
 	

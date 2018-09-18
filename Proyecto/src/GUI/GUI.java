@@ -11,12 +11,14 @@ import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
 import Personajes.Jugador;
+import gui.ContadorTiempo;
 
 public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
 	private Juego juego;
+	private HiloTiempo tiempo;
 	/**
 	 * Launch the application.
 	 */
@@ -49,7 +51,8 @@ public class GUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		juego= new Juego(this);
-		
+		tiempo = new HiloTiempo(juego);
+		tiempo.start();
 	}
 	
 	protected void mover(KeyEvent key){
