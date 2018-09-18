@@ -1,0 +1,6 @@
+Realizar diagrama de interaccion entre entidades.
+Caso disparo enemigo-jugador,enemigo-enemigo.
+Pensar en los colisionadores.
+Ver patron Visitor.
+Cambiar Las distintas listas por una lista de entidades.
+Como interactua el mapa con la entidad,como se relacionan???
