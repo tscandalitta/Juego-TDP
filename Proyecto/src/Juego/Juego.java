@@ -12,6 +12,7 @@ public class Juego {
 	private ArrayList<Entidad> entidades;
 	
 	
+	
 	public Juego(GUI gui) {
 		entidades= new ArrayList<Entidad>();
 		jugador = new Jugador(10, 100, 20, 100);
@@ -23,9 +24,9 @@ public class Juego {
 	}
 	
 	public void mover() {
+		Random r= new Random();
+		int dir= r.nextInt(2);
 		for(int i=0; i< entidades.size(); i++) {
-			Random r= new Random();
-			int dir= r.nextInt(1);
 			entidades.get(i).mover(dir);
 		}
 	}
@@ -45,6 +46,13 @@ public class Juego {
 			jugador.mover(direccion);
 	}
 	
+	public void eliminarEnemigo() {
+			entidades.remove(0);
+	}
+	
+	public ArrayList<Entidad> getEntidades(){
+		return entidades;
+	}
 	/**
 	 * retorna true si dos entidades colisionan
 	 */

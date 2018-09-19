@@ -1,6 +1,5 @@
 package GUI;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -10,8 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
-import Personajes.Jugador;
-import gui.ContadorTiempo;
 
 public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -38,7 +35,7 @@ public class GUI extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-				mover(arg0);
+				keyListener(arg0);
 			}
 		});
 		getContentPane().setLayout(null);
@@ -55,10 +52,19 @@ public class GUI extends JFrame {
 		tiempo.start();
 	}
 	
-	protected void mover(KeyEvent key){
-		System.out.println(key.getKeyCode());
-		juego.mover(key.getKeyCode());
+	protected void keyListener(KeyEvent key){
+		if(key.getKeyCode()==KeyEvent.VK_E) 
+			eliminarEnemigo();
+		else
+			juego.mover(key.getKeyCode());
 		
 		this.repaint();
+	}
+	
+	protected void eliminarEnemigo() {
+		if(!juego.getEntidades().isEmpty()) {
+			this.remove(juego.getEntidades().get(0).getGrafico());
+			juego.eliminarEnemigo();
+		}
 	}
 }
