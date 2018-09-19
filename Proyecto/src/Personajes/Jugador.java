@@ -4,6 +4,8 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.Colisionador;
+
 public class Jugador extends Entidad {
 	
 	public Jugador(int velocidad, int vida, int x,int y) {
@@ -36,4 +38,22 @@ public class Jugador extends Entidad {
 		premioActivado=false;
 	}
 	*/
+
+	@Override
+	public void serColisionado(Colisionador col) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearJugador(Entidad e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearEnemigo(Entidad e) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -2,6 +2,8 @@ package Personajes;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.Colisionador;
+
 public class Enemigo extends Entidad{
 
 	public Enemigo(int velocidad, int vida, int x, int y) {
@@ -19,6 +21,24 @@ public class Enemigo extends Entidad{
 				break;
 		}
 		cambiarGrafico(dir);
+	}
+
+	@Override
+	public void serColisionado(Colisionador col) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearJugador(Entidad e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearEnemigo(Entidad e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
