@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -17,7 +18,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
-	private JLabel puntaje;
+	private JLabel puntaje, vida, kills;
 	/**
 	 * Launch the application.
 	 */
@@ -46,9 +47,8 @@ public class GUI extends JFrame {
 		setBounds(400, 200, 1280, 720);
 		contentPane = new JPanelConFondo();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
 		contentPane.setLayout(null);
-		inicializarPuntajes();		
+		inicializarLabels();		
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
 		juego= new Juego(this);
@@ -56,15 +56,37 @@ public class GUI extends JFrame {
 		tiempo.start();
 	}
 	
-	private void inicializarPuntajes() {
-		puntaje=new JLabel();
-		puntaje.setText("SCORE: 0");
-		puntaje.setFont(new java.awt.Font("Tahoma", 1, 15));
-		puntaje.setBounds(550, 5, 200, 25);
+	private void inicializarLabels() {
+		inicializarVida();
+		inicializarPuntaje();
+		inicializarKills();
+		
 	}
 	
+	private void inicializarVida() {
+		vida=new JLabel("VIDA: 100");
+		vida.setForeground(Color.WHITE);
+		vida.setFont(new java.awt.Font("Tahoma", 1, 16));
+		vida.setBounds(100, 5, 100, 25);
+		contentPane.add(vida);
+	}
+	private void inicializarKills() {
+		kills=new JLabel("KILLS: 0");
+		kills.setForeground(Color.WHITE);
+		kills.setFont(new java.awt.Font("Tahoma", 1, 16));
+		kills.setBounds(425, 5, 100, 25);
+		contentPane.add(kills);
+	}
+	private void inicializarPuntaje() {
+		puntaje=new JLabel("PUNTAJE: 0");
+		puntaje.setForeground(Color.WHITE);
+		puntaje.setFont(new java.awt.Font("Tahoma", 1, 16));
+		puntaje.setBounds(250, 5, 200, 25);
+		contentPane.add(puntaje);
+	}
 	private void actualizarPuntajes() {
-		puntaje.setText("SCORE: "+juego.getPuntaje());
+		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
+		kills.setText("KILLS: "+juego.getKills());
 	}
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_E) 

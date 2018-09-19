@@ -11,6 +11,7 @@ public class Juego {
 	private Jugador jugador;
 	private ArrayList<Entidad> entidades;
 	private int puntaje=0;
+	private int kills=0;
 	
 	
 	public Juego(GUI gui) {
@@ -48,7 +49,8 @@ public class Juego {
 	
 	public void eliminarEnemigo() {
 			entidades.remove(0);
-			aumentarPuntaje(10);
+			aumentarPuntaje(100);
+			kills++;
 	}
 	
 	public ArrayList<Entidad> getEntidades(){
@@ -60,6 +62,9 @@ public class Juego {
 	}
 	public int getPuntaje() {
 		return puntaje;
+	}
+	public int getKills() {
+		return kills;
 	}
 	/**
 	 * retorna true si dos entidades colisionan
