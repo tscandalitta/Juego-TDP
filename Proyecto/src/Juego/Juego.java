@@ -10,7 +10,7 @@ import Personajes.*;
 public class Juego {
 	private Jugador jugador;
 	private ArrayList<Entidad> entidades;
-	
+	private int puntaje=0;
 	
 	
 	public Juego(GUI gui) {
@@ -48,10 +48,18 @@ public class Juego {
 	
 	public void eliminarEnemigo() {
 			entidades.remove(0);
+			aumentarPuntaje(10);
 	}
 	
 	public ArrayList<Entidad> getEntidades(){
 		return entidades;
+	}
+	
+	public void aumentarPuntaje(int p) {
+		puntaje+=p;
+	}
+	public int getPuntaje() {
+		return puntaje;
 	}
 	/**
 	 * retorna true si dos entidades colisionan

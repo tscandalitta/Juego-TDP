@@ -5,6 +5,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -16,6 +17,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
+	private JLabel puntaje;
 	/**
 	 * Launch the application.
 	 */
@@ -44,14 +46,25 @@ public class GUI extends JFrame {
 		setBounds(400, 200, 1280, 720);
 		contentPane = new JPanelConFondo();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
+		contentPane.setLayout(null);
+		inicializarPuntajes();		
+		contentPane.add(puntaje);
+		setContentPane(contentPane);
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
 	}
 	
+	private void inicializarPuntajes() {
+		puntaje=new JLabel();
+		puntaje.setText("Score: 0");
+		puntaje.setBounds(550, 5, 200, 10);
+	}
+	
+	private void actualizarPuntajes() {
+		puntaje.setText("Score: "+juego.getPuntaje());
+	}
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_E) 
 			eliminarEnemigo();
@@ -65,6 +78,7 @@ public class GUI extends JFrame {
 		if(!juego.getEntidades().isEmpty()) {
 			this.remove(juego.getEntidades().get(0).getGrafico());
 			juego.eliminarEnemigo();
+			actualizarPuntajes();
 		}
 	}
 }
