@@ -58,12 +58,13 @@ public class GUI extends JFrame {
 	
 	private void inicializarPuntajes() {
 		puntaje=new JLabel();
-		puntaje.setText("Score: 0");
-		puntaje.setBounds(550, 5, 200, 10);
+		puntaje.setText("SCORE: 0");
+		puntaje.setFont(new java.awt.Font("Tahoma", 1, 15));
+		puntaje.setBounds(550, 5, 200, 25);
 	}
 	
 	private void actualizarPuntajes() {
-		puntaje.setText("Score: "+juego.getPuntaje());
+		puntaje.setText("SCORE: "+juego.getPuntaje());
 	}
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_E) 
