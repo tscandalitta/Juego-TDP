@@ -2,22 +2,23 @@ package GUI;
 
 import Juego.Juego;
 
-public class HiloTiempo extends Thread{
+public class HiloTiempo2 extends Thread{
 	private Juego juego;
 	
-	public HiloTiempo(Juego j) {
+	public HiloTiempo2(Juego j) {
 		juego=j;
 	}
 	
 	public void run() {
 		while(true){
 			try {
-				Thread.sleep(100);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			juego.mover();
-			juego.eliminarEntidades();
+			if(!juego.getEntidades().isEmpty()) {
+				juego.getEntidades().getFirst().setVida(0);
+			}
 		}
 	}
 }

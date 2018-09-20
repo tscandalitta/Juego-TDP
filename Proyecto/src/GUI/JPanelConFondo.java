@@ -9,11 +9,10 @@ import javax.swing.JPanel;
 public class JPanelConFondo extends JPanel {
  
     private Image imagen= new ImageIcon(this.getClass().getResource("/Sprites/fondo.jpg")).getImage();
+    
     public void paint(Graphics g) {
         g.drawImage(imagen, 0, 0, getWidth(), getHeight(),this);
         setOpaque(false);
         super.paint(g);
     }
- 
-    //...
 }

@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
+import Personajes.Entidad;
 
 public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -18,6 +19,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
+	private HiloTiempo2 tiempo2;
 	private JLabel puntaje, vida, kills;
 	/**
 	 * Launch the application.
@@ -54,15 +56,15 @@ public class GUI extends JFrame {
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
+		tiempo2 = new HiloTiempo2(juego);
+		tiempo2.start();
 	}
 	
 	private void inicializarLabels() {
 		inicializarVida();
 		inicializarPuntaje();
 		inicializarKills();
-		
 	}
-	
 	private void inicializarVida() {
 		vida=new JLabel("VIDA: 100");
 		vida.setForeground(Color.WHITE);
@@ -84,10 +86,11 @@ public class GUI extends JFrame {
 		puntaje.setBounds(250, 5, 200, 25);
 		contentPane.add(puntaje);
 	}
-	private void actualizarPuntajes() {
+	public void actualizarPuntajes() {
 		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
 		kills.setText("KILLS: "+juego.getKills());
 	}
+	
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_E) 
 			eliminarEnemigo();
@@ -97,11 +100,14 @@ public class GUI extends JFrame {
 		this.repaint();
 	}
 	
+	//TEMPORAL -- PRUEBA
+	//TEMPORAL -- PRUEBA
+		
 	protected void eliminarEnemigo() {
 		if(!juego.getEntidades().isEmpty()) {
-			this.remove(juego.getEntidades().get(0).getGrafico());
-			juego.eliminarEnemigo();
-			actualizarPuntajes();
+			juego.getEntidades().getFirst().setVida(0);
+			this.repaint();
 		}
+		
 	}
 }

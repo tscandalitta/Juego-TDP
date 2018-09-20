@@ -14,12 +14,13 @@ public abstract class Entidad {
 	protected final int width=40;
 	protected final int height=70;
 	protected JLabel grafico;
-	protected Icon imagen;
+	protected Icon imagen[];
 	
 	protected Entidad(int velocidad, int vida, int x, int y) {
 		this.velocidad= velocidad;
 		this.vida= vida;
 		this.pos= new Point(x, y);
+		this.imagen= new Icon[4];
 	}
 	
 	public int getVida() {
@@ -32,14 +33,14 @@ public abstract class Entidad {
 	
 	protected void cambiarGrafico(int dir){
 		if(this.grafico != null){
-		//	this.grafico.setIcon(this.image[dir]);
+			this.grafico.setIcon(this.imagen[dir]);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
 		}
 	}
 	
 	public JLabel getGrafico(){
 		if(this.grafico == null){
-			this.grafico = new JLabel(imagen);
+			this.grafico = new JLabel(imagen[0]);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
 		}
 		
@@ -61,5 +62,13 @@ public abstract class Entidad {
 		
 	protected void disminuirVida(int vida) {
 		this.vida-=vida;
+	}
+	
+	
+	//TEMPORAL -- PRUEBA
+	//TEMPORAL -- PRUEBA
+	//TEMPORAL -- PRUEBA
+	public void setVida(int vida) {
+		this.vida=vida;
 	}
 }
