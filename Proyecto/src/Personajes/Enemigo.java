@@ -2,6 +2,7 @@ package Personajes;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.ColEnemigo;
 import Colisionadores.Colisionador;
 
 public class Enemigo extends Entidad{
@@ -14,6 +15,7 @@ public class Enemigo extends Entidad{
 		this.imagen[0] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
 		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
 		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
+		col= new ColEnemigo(this);
 	}
 
 	public void mover(int dir) {
@@ -38,6 +40,7 @@ public class Enemigo extends Entidad{
 
 
 	public void golpearEnemigo(Entidad e) {
+		e.disminuirVida(damage);
 	}
 
 

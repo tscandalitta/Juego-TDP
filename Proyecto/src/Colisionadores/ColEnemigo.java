@@ -13,7 +13,8 @@ public class ColEnemigo implements Colisionador{
 		enemigo.golpearJugador(j);
 	}
 
-	public void afectarEnemigo(Enemigo e) {		
+	public void afectarEnemigo(Enemigo e) {
+		enemigo.golpearEnemigo(e);
 	}
 
 	public void afectarPowerUp(PowerUp p) {	

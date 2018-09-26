@@ -26,9 +26,14 @@ public abstract class Entidad {
 	public int getVida() {
 		return vida;
 	}
-	
 	public Point getPos() {
 		return pos;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
 	}
 	
 	protected void cambiarGrafico(int dir){

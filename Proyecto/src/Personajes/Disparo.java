@@ -31,6 +31,7 @@ public class Disparo extends Entidad {
 
 
 	public void serColisionado(Colisionador col) {
+		col.afectarDisparo(this);
 	}
 
 	public void golpearJugador(Entidad e) {
