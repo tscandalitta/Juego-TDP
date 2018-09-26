@@ -1,9 +1,9 @@
 package Personajes;
 
 import javax.swing.ImageIcon;
-
 import Colisionadores.ColEnemigo;
 import Colisionadores.Colisionador;
+import Inteligencias.InteligenciaEnemigo;
 
 public class Enemigo extends Entidad{
 	protected int damage;
@@ -16,17 +16,11 @@ public class Enemigo extends Entidad{
 		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
 		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
 		col= new ColEnemigo(this);
+		inteligencia= new InteligenciaEnemigo(this);
 	}
 
 	public void mover(int dir) {
-		switch(dir) {
-			case 0 : //Arriba
-				pos.setLocation(pos.x, pos.y - velocidad);
-				break;
-			case 1 : //Abajo
-				pos.setLocation(pos.x, pos.y + velocidad);
-				break;
-		}
+		inteligencia.mover(dir);
 		cambiarGrafico(dir);
 	}
 

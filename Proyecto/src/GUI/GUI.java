@@ -89,7 +89,6 @@ public class GUI extends JFrame {
 		vida.setText("VIDA: "+juego.getVidaJugador());
 	}
 	
-	
 	//TEMPORAL -- PRUEBA
 	//TEMPORAL -- PRUEBA
 	protected void keyListener(KeyEvent key){
@@ -97,16 +96,6 @@ public class GUI extends JFrame {
 			juego.pruebaColisionDisparo();
 		else
 			juego.mover(key.getKeyCode());
-		
 		this.repaint();
-	}
-	
-	//PRUEBA
-	protected void eliminarEnemigo() {
-		if(!juego.getEntidades().isEmpty()) {
-			juego.getEntidades().getFirst().setVida(0);
-			this.repaint();
-		}
-		
 	}
 }

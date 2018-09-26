@@ -5,12 +5,14 @@ import javax.swing.Icon;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
+import Inteligencias.Inteligencia;
 
 public abstract class Entidad {
 	protected int vida;
 	protected int velocidad;
 	protected Point pos;
 	protected Colisionador col;
+	protected Inteligencia inteligencia;
 	protected int width;
 	protected int height;
 	protected JLabel grafico;
@@ -48,7 +50,6 @@ public abstract class Entidad {
 			this.grafico = new JLabel(imagen[0]);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
 		}
-		
 		return this.grafico;
 	}
 	
@@ -69,11 +70,4 @@ public abstract class Entidad {
 			vida=0;
 	}
 	
-	
-	//TEMPORAL -- PRUEBA
-	//TEMPORAL -- PRUEBA
-	//TEMPORAL -- PRUEBA
-	public void setVida(int vida) {
-		this.vida=vida;
-	}
 }
