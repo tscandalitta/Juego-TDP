@@ -63,8 +63,10 @@ public abstract class Entidad {
 		
 	public abstract void mover(int dir);
 		
-	protected void disminuirVida(int vida) {
-		this.vida-=vida;
+	protected void disminuirVida(int damage) {
+		vida-=damage;
+		if(vida<0)
+			vida=0;
 	}
 	
 	

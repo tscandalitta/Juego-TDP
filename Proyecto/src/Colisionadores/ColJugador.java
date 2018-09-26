@@ -2,29 +2,27 @@ package Colisionadores;
 
 import Personajes.*;
 
-public class ColDisparoJugador implements Colisionador{
-	protected Disparo disparo;
+public class ColJugador implements Colisionador{
+	protected Jugador jugador;
 	
-	public ColDisparoJugador(Disparo d) {
-		disparo=d;
+	public ColJugador(Jugador j) {
+		jugador=j;
 	}
 
 	public void afectarJugador(Jugador j) {
-		disparo.golpearJugador(j);
 	}
 
 	public void afectarEnemigo(Enemigo e) {
-		disparo.golpearEnemigo(e);
+		e.golpearJugador(jugador);
 	}
 
 	public void afectarPowerUp(PowerUp p) {
 	}
 
 	public void afectarObstaculo(Obstaculo o) {
-		disparo.golpearObstaculo(o);
 	}
-
+	
 	public void afectarDisparo(Disparo d) {
+		d.golpearJugador(jugador);
 	}
-
 }

@@ -24,5 +24,6 @@ public class ColEnemigo implements Colisionador{
 	}
 	
 	public void afectarDisparo(Disparo d) {	
+		d.golpearEnemigo(enemigo);   //FRIENDLY FIRE
 	}
 }

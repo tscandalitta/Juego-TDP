@@ -49,6 +49,7 @@ public class Jugador extends Entidad {
 	public void serColisionado(Colisionador col) {
 		col.afectarJugador(this);
 	}
-
+	public void golpearPowerUp(Entidad e) {
+	}
 	
 }

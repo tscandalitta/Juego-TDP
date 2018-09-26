@@ -24,12 +24,13 @@ public class Juego {
 		entidadesAEliminar= new LinkedList<Entidad>();
 		this.gui=gui;
 		jugador = new Jugador(10, 100, 20, 100);
-		//colJugador???
 		gui.add(jugador.getGrafico());
 		for(int i=1; i<7; i++) {
 			entidades.add(new Enemigo(5, 100, 1000, 90*i));
 			gui.add(entidades.getLast().getGrafico());
 		}
+		entidades.add(new DisparoJugador(5,30,200,200));
+		gui.add(entidades.getLast().getGrafico());     //PRUEBA TECLA E
 	}
 	
 	public void mover() {
@@ -71,14 +72,14 @@ public class Juego {
 		for(Entidad e: entidades) {
 			if(e.getVida()==0) {
 				entidadesAEliminar.add(e);
-				gui.remove(e.getGrafico());
 			}
 		}
 		eliminarAux();
 	}
+	
 	private void eliminarAux() {
 		for(Entidad e: entidadesAEliminar) {
-		//	gui.remove(e.getGrafico());
+			gui.remove(e.getGrafico());
 			entidades.remove(e);
 			entidadesAEliminar.remove(e);
 			aumentarPuntaje(100);
@@ -122,10 +123,17 @@ public class Juego {
 		if(r1.intersects(r2)) {
 			System.out.println("Colisionan e1 y e2"); //BORRAR BORRAR
 			e1.colisionar(e2);
+			gui.actualizarPuntajes();
 		}
 	}
 	
+	public void pruebaColisionDisparo() {
+		entidades.getLast().colisionar(entidades.getFirst());
+	}
 	
+	public int getVidaJugador() {
+		return jugador.getVida();
+	}
 	/**
 	 * retorna true si el juego termino
 	 */

@@ -33,18 +33,16 @@ public class Enemigo extends Entidad{
 	public void serColisionado(Colisionador col) {
 		col.afectarEnemigo(this);
 	}
-
+	
 	public void golpearJugador(Entidad e) {
 		e.disminuirVida(damage);
 	}
-
-
 	public void golpearEnemigo(Entidad e) {
 		e.disminuirVida(damage);
 	}
-
-
 	public void golpearObstaculo(Entidad e) {
+	}
+	public void golpearPowerUp(Entidad e) {
 	}
 
 }

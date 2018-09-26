@@ -19,7 +19,6 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
-	private HiloTiempo2 tiempo2;
 	private JLabel puntaje, vida, kills;
 	/**
 	 * Launch the application.
@@ -56,8 +55,6 @@ public class GUI extends JFrame {
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
-		tiempo2 = new HiloTiempo2(juego);
-	//	tiempo2.start();
 	}
 	
 	private void inicializarLabels() {
@@ -89,6 +86,7 @@ public class GUI extends JFrame {
 	public void actualizarPuntajes() {
 		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
 		kills.setText("KILLS: "+juego.getKills());
+		vida.setText("VIDA: "+juego.getVidaJugador());
 	}
 	
 	
@@ -96,13 +94,14 @@ public class GUI extends JFrame {
 	//TEMPORAL -- PRUEBA
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_E) 
-			eliminarEnemigo();
+			juego.pruebaColisionDisparo();
 		else
 			juego.mover(key.getKeyCode());
 		
 		this.repaint();
 	}
 	
+	//PRUEBA
 	protected void eliminarEnemigo() {
 		if(!juego.getEntidades().isEmpty()) {
 			juego.getEntidades().getFirst().setVida(0);
