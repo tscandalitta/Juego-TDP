@@ -1,14 +1,11 @@
 package Personajes;
 
-import java.awt.event.KeyEvent;
-
 import javax.swing.ImageIcon;
-
 import Colisionadores.Colisionador;
 
 public class Jugador extends Entidad {
 	
-	public Jugador(int velocidad, int vida, int x,int y) {
+	public Jugador(int velocidad, int vida, int x, int y) {
 		super(velocidad,vida,x,y);
 		this.imagen[0] = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
@@ -54,6 +51,12 @@ public class Jugador extends Entidad {
 
 	@Override
 	public void golpearEnemigo(Entidad e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearObstaculo(Entidad e) {
 		// TODO Auto-generated method stub
 		
 	}

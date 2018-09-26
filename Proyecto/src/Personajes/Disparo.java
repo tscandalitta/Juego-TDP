@@ -23,34 +23,25 @@ public class Disparo extends Entidad {
 			pos.setLocation(pos.x - velocidad, pos.y);
 			break;
 		case 1 : //Izquierda
-			
 			pos.setLocation(pos.x + velocidad, pos.y);
-			
 			break;
-		
-	}
-	super.cambiarGrafico(1);
-		
+		}
+		super.cambiarGrafico(dir);
 	}
 
 
-	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
-		
 	}
 
-
-	@Override
 	public void golpearJugador(Entidad e) {
-		// TODO Auto-generated method stub
-		
+		e.disminuirVida(damage);		
 	}
 
-
-	@Override
 	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
+		e.disminuirVida(damage);		
+	}
+
+	public void golpearObstaculo(Entidad e) {
+		e.disminuirVida(damage);
 	}
 }
