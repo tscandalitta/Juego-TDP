@@ -55,11 +55,7 @@ public abstract class Entidad {
 	}
 	
 	public abstract void serColisionado(Colisionador col);
-	
-	public abstract void golpearJugador(Entidad e);
-	public abstract void golpearEnemigo(Entidad e);
-	public abstract void golpearObstaculo(Entidad e);
-	
+		
 	public abstract void mover(int dir);
 		
 	protected void disminuirVida(int vida) {

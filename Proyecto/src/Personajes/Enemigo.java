@@ -26,27 +26,20 @@ public class Enemigo extends Entidad{
 		cambiarGrafico(dir);
 	}
 
-	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
-		
+		col.afectarEnemigo(this);
 	}
 
-	@Override
 	public void golpearJugador(Entidad e) {
 		e.disminuirVida(damage);
 	}
 
-	@Override
+
 	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
+
 	public void golpearObstaculo(Entidad e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

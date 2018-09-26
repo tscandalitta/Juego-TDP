@@ -8,33 +8,12 @@ public class PowerUp extends Entidad{
 		super(vida,velocidad,x,y);
 	}
 
-	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
+		col.afectarPowerUp(this);
 		
 	}
 
-	@Override
-	public void golpearJugador(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void mover(int dir) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
-	public void golpearObstaculo(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -37,27 +37,9 @@ public class Jugador extends Entidad {
 	}
 	*/
 
-	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
-		
+		col.afectarJugador(this);
 	}
 
-	@Override
-	public void golpearJugador(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearObstaculo(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
