@@ -57,7 +57,7 @@ public class GUI extends JFrame {
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
 		tiempo2 = new HiloTiempo2(juego);
-		tiempo2.start();
+	//	tiempo2.start();
 	}
 	
 	private void inicializarLabels() {
@@ -91,6 +91,9 @@ public class GUI extends JFrame {
 		kills.setText("KILLS: "+juego.getKills());
 	}
 	
+	
+	//TEMPORAL -- PRUEBA
+	//TEMPORAL -- PRUEBA
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_E) 
 			eliminarEnemigo();
@@ -100,9 +103,6 @@ public class GUI extends JFrame {
 		this.repaint();
 	}
 	
-	//TEMPORAL -- PRUEBA
-	//TEMPORAL -- PRUEBA
-		
 	protected void eliminarEnemigo() {
 		if(!juego.getEntidades().isEmpty()) {
 			juego.getEntidades().getFirst().setVida(0);

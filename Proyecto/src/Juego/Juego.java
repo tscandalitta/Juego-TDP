@@ -30,12 +30,10 @@ public class Juego {
 	}
 	
 	public void mover() {
-		Random r= new Random();
-		int dir= r.nextInt(2);
-		System.out.println(dir);
-		for(Entidad e: entidades) {
+		Random r=new Random();
+		int dir=r.nextInt(2);
+		for(Entidad e: entidades) 
 			e.mover(dir);
-		}
 	}
 	
 	public void mover(int dir){		
