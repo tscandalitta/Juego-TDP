@@ -1,9 +1,9 @@
 package Juego;
 
 import java.awt.Rectangle;
-import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import GUI.GUI;
+import GUI.HiloTiempo;
 import Personajes.*;
 
 public class Juego {
@@ -14,6 +14,7 @@ public class Juego {
 	private GUI gui;
 	private int puntaje=0;
 	private int kills=0;
+	private HiloTiempo tiempo;
 	
 	
 	public Juego(GUI gui) {
@@ -21,18 +22,22 @@ public class Juego {
 		entidadesAEliminar= new LinkedList<Entidad>();
 		disparosPendientes= new LinkedList<Entidad>();
 		this.gui=gui;
-		jugador = new Jugador(10, 100, 20, 100);
+		jugador = new Jugador(20, 100, this);
 		gui.add(jugador.getGrafico());
 		for(int i=1; i<9; i++) {
-			entidades.add(new Enemigo(5, 100, 1000, 90*i));
+			entidades.add(new Enemigo(1000, 90*i,"/Sprites/enemigo2.png"));
 			gui.add(entidades.getLast().getGrafico());
-			entidades.add(new Enemigo(5, 100, 1150, 90*i+33));
+			entidades.add(new Enemigo(1150, 90*i+33,"/Sprites/enemigo1.gif"));
 			gui.add(entidades.getLast().getGrafico());
 		}   
 	}
 	
+	public void setHilo(HiloTiempo tiempo) {
+		this.tiempo=tiempo;
+	}
+	
 	public void crearDisparo() {
-		disparosPendientes.add(new DisparoJugador(5,30,jugador.getPos().x +50 ,jugador.getPos().y + 35));
+		disparosPendientes.add(new DisparoJugador(jugador.getPos().x +50 ,jugador.getPos().y + 35));
 	}
 	
 	public void agregarDisparos() {
@@ -49,31 +54,11 @@ public class Juego {
 		}
 	}
 	
-	public void mover(int dir){		
-		int direccion=-1;
-		
-		switch (dir){
-			case KeyEvent.VK_UP : //Arriba
-				direccion = 0;
-				break;
-			case KeyEvent.VK_DOWN : //Abajo
-				direccion = 1;
-				break;		
-			case KeyEvent.VK_LEFT : //izq
-				direccion = 2;
-				break;
-			case KeyEvent.VK_RIGHT : //abajo
-				direccion = 3;
-				break;
-		}
-		if(direccion!=-1)
-			jugador.mover(direccion);
-	}
-	
 	public void eliminarEntidades() {
 		if(jugador.getVida()==0) {
 			gui.remove(jugador.getGrafico());
-			System.exit(0);  //TEMPORAL
+			//System.exit(0);  //TEMPORAL
+			tiempo.finalizar();
 		}
 		for(Entidad e: entidades) {     
 			if(e.getVida()==0) {
@@ -110,6 +95,10 @@ public class Juego {
 	}
 	public int getKills() {
 		return kills;
+	}
+	
+	public Jugador getJugador() {
+		return jugador;
 	}
 	
 	public void colisionar() {

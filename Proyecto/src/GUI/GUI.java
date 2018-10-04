@@ -39,9 +39,16 @@ public class GUI extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-				keyListener(arg0);
+			//	keyListener(arg0);
+				juego.getJugador().getInteligencia().keyPressed(arg0);
 			}
+			//esto lo agrege
+			 @Override
+        	public void keyReleased(KeyEvent arg0) {
+            	juego.getJugador().getInteligencia().keyReleased(arg0);
+			 }
 		});
+		
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,6 +62,7 @@ public class GUI extends JFrame {
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
+		juego.setHilo(tiempo);
 	}
 	
 	private void inicializarLabels() {
@@ -88,12 +96,16 @@ public class GUI extends JFrame {
 		kills.setText("KILLS: "+juego.getKills());
 		vida.setText("VIDA: "+juego.getVidaJugador());
 	}
-	
+	/**
 	protected void keyListener(KeyEvent key){
 		if(key.getKeyCode()==KeyEvent.VK_SPACE) 
+			
 			juego.crearDisparo();
 		else
 			juego.mover(key.getKeyCode());
 		this.repaint();
 	}
+	*/
+	
+
 }

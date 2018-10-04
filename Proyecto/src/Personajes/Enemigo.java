@@ -8,14 +8,15 @@ import Inteligencias.InteligenciaEnemigo;
 public class Enemigo extends Entidad{
 	protected int damage;
 	protected InteligenciaEnemigo inteligencia;
-	public Enemigo(int velocidad, int vida, int x, int y) {
-		super(velocidad, vida, x, y);
+	public Enemigo(int x, int y, String icono) {
+		super(x,y);
+		vida=100;
 		damage=10;
 		width=40;
 		height=66;
-		this.imagen[0] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.gif"));
-		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.gif"));
-		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.gif"));
+		this.imagen[0] = new ImageIcon(this.getClass().getResource(icono));
+		this.imagen[1] = new ImageIcon(this.getClass().getResource(icono));
+		this.imagen[2] = new ImageIcon(this.getClass().getResource(icono));
 		col= new ColEnemigo(this);
 		inteligencia= new InteligenciaEnemigo(this);
 	}

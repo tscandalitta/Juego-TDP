@@ -9,7 +9,6 @@ import Inteligencias.Inteligencia;
 
 public abstract class Entidad {
 	protected int vida;
-	protected int velocidad;
 	protected Point pos;
 	protected Colisionador col;
 	protected int width;
@@ -17,9 +16,7 @@ public abstract class Entidad {
 	protected JLabel grafico;
 	protected Icon imagen[];
 	
-	protected Entidad(int velocidad, int vida, int x, int y) {
-		this.velocidad= velocidad;
-		this.vida= vida;
+	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
 		this.imagen= new Icon[4];
 	}
@@ -37,7 +34,7 @@ public abstract class Entidad {
 		return height;
 	}
 	
-	protected void cambiarGrafico(int dir){
+	public void cambiarGrafico(int dir){
 		if(this.grafico != null){
 			this.grafico.setIcon(this.imagen[dir]);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);

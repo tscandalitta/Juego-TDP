@@ -4,22 +4,27 @@ import Juego.Juego;
 
 public class HiloTiempo extends Thread{
 	private Juego juego;
-	
+	private volatile boolean hayJuego;
 	public HiloTiempo(Juego j) {
 		juego=j;
+		hayJuego=true;
 	}
 	
 	public void run() {
-		while(true){
+		while(hayJuego){
 			try {
 				Thread.sleep(25);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			juego.getJugador().mover();
 			juego.agregarDisparos();
 			juego.mover();
 			juego.colisionar();
 			juego.eliminarEntidades();
 		}
+	}
+	public void finalizar() {
+		hayJuego=false;
 	}
 }

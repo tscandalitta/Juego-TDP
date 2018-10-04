@@ -6,9 +6,9 @@ import Inteligencias.InteligenciaDisparo;
 public abstract class Disparo extends Entidad {
 	protected int damage;
 	protected InteligenciaDisparo inteligencia;
-	protected Disparo(int velocidad, int damage, int x, int y) {
-		super(velocidad,damage-1,x,y);
-		this.damage=damage;
+	protected Disparo(int x, int y) {
+		super(x,y);
+		vida=1;
 	}
 
 	public void mover() {

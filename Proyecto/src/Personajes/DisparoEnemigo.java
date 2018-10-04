@@ -4,9 +4,10 @@ import Colisionadores.ColDisparoEnemigo;
 
 public class DisparoEnemigo extends Disparo{
 	
-	public DisparoEnemigo(int velocidad, int damage, int x, int y) {
-		super(velocidad, damage, x, y);
+	public DisparoEnemigo(int x, int y) {
+		super(x, y);
 		col= new ColDisparoEnemigo(this);
+		damage=10;
 	}
 
 	public void golpearJugador(Entidad e) {
