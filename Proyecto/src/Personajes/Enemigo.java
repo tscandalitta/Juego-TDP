@@ -7,20 +7,21 @@ import Inteligencias.InteligenciaEnemigo;
 
 public class Enemigo extends Entidad{
 	protected int damage;
+	protected InteligenciaEnemigo inteligencia;
 	public Enemigo(int velocidad, int vida, int x, int y) {
 		super(velocidad, vida, x, y);
 		damage=10;
 		width=40;
 		height=66;
-		this.imagen[0] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
-		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
-		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.png"));
+		this.imagen[0] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.gif"));
+		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.gif"));
+		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/Kang.gif"));
 		col= new ColEnemigo(this);
 		inteligencia= new InteligenciaEnemigo(this);
 	}
 
-	public void mover(int dir) {
-		inteligencia.mover(dir);
+	public void mover() {
+		int dir=inteligencia.mover();
 		cambiarGrafico(dir);
 	}
 
@@ -32,7 +33,7 @@ public class Enemigo extends Entidad{
 		e.disminuirVida(damage);
 	}
 	public void golpearEnemigo(Entidad e) {
-		e.disminuirVida(damage);
+	//	e.disminuirVida(damage);
 	}
 	public void golpearObstaculo(Entidad e) {
 	}

@@ -25,6 +25,7 @@ public class ColDisparoJugador implements Colisionador{
 	}
 
 	public void afectarDisparo(Disparo d) {
+		disparo.golpearDisparo(d);
 	}
 
 }

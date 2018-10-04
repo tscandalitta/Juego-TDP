@@ -17,10 +17,12 @@ public class ColEnemigo implements Colisionador{
 		enemigo.golpearEnemigo(e);
 	}
 
-	public void afectarPowerUp(PowerUp p) {	
+	public void afectarPowerUp(PowerUp p) {
+		enemigo.golpearPowerUp(p);
 	}
 	
 	public void afectarObstaculo(Obstaculo o) {	
+		enemigo.golpearObstaculo(o);
 	}
 	
 	public void afectarDisparo(Disparo d) {	

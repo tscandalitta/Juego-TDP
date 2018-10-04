@@ -10,10 +10,12 @@ public class PowerUp extends Entidad{
 
 	public void serColisionado(Colisionador col) {
 		col.afectarPowerUp(this);
-		
 	}
 
-	public void mover(int dir) {
+	public void mover() {
 	}
-
+	public void golpearPowerUp(Entidad e) {
+		vida=0;
+	}
+	
 }

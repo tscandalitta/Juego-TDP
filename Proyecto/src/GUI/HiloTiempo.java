@@ -12,10 +12,11 @@ public class HiloTiempo extends Thread{
 	public void run() {
 		while(true){
 			try {
-				Thread.sleep(100);
+				Thread.sleep(25);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			juego.agregarDisparos();
 			juego.mover();
 			juego.colisionar();
 			juego.eliminarEntidades();

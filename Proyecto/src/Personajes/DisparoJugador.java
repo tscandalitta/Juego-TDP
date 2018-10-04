@@ -6,7 +6,6 @@ import Colisionadores.ColDisparoJugador;
 import Inteligencias.InteligenciaDisparoJugador;
 
 public class DisparoJugador extends Disparo{
-
 	public DisparoJugador(int velocidad, int damage, int x, int y) {
 		super(velocidad, damage, x, y);
 		width=20;
@@ -19,7 +18,6 @@ public class DisparoJugador extends Disparo{
 	}
 	
 	public void golpearJugador(Entidad e) {
-		e.disminuirVida(damage);
 		this.vida=0;
 	}
 	public void golpearEnemigo(Entidad e) {
@@ -33,5 +31,6 @@ public class DisparoJugador extends Disparo{
 	public void golpearPowerUp(Entidad e) {
 	}
 	public void golpearDisparo(Entidad e) {
+		vida=0;
 	}
 }

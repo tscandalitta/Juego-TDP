@@ -7,7 +7,7 @@ import Colisionadores.Colisionador;
 import Inteligencias.InteligenciaJugador;
 
 public class Jugador extends Entidad {
-	
+	protected InteligenciaJugador inteligencia;
 	public Jugador(int velocidad, int vida, int x, int y) {
 		super(velocidad,vida,x,y);
 		width=40;
@@ -31,6 +31,9 @@ public class Jugador extends Entidad {
 	public void golpearPowerUp(Entidad e) {
 	}
 	public void golpearEnemigo(Entidad e) {
+	}
+
+	public void mover() {
 	}
 	
 }

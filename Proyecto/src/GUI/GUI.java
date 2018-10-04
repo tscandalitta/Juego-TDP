@@ -89,11 +89,9 @@ public class GUI extends JFrame {
 		vida.setText("VIDA: "+juego.getVidaJugador());
 	}
 	
-	//TEMPORAL -- PRUEBA
-	//TEMPORAL -- PRUEBA
 	protected void keyListener(KeyEvent key){
-		if(key.getKeyCode()==KeyEvent.VK_E) 
-			juego.pruebaColisionDisparo();
+		if(key.getKeyCode()==KeyEvent.VK_SPACE) 
+			juego.crearDisparo();
 		else
 			juego.mover(key.getKeyCode());
 		this.repaint();

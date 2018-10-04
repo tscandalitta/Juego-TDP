@@ -2,11 +2,7 @@ package Juego;
 
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Random;
-
-import Colisionadores.Colisionador;
 import GUI.GUI;
 import Personajes.*;
 
@@ -14,6 +10,7 @@ public class Juego {
 	private Jugador jugador;
 	private LinkedList<Entidad> entidades;
 	private LinkedList<Entidad> entidadesAEliminar;
+	private LinkedList<Entidad> disparosPendientes;
 	private GUI gui;
 	private int puntaje=0;
 	private int kills=0;
@@ -22,23 +19,33 @@ public class Juego {
 	public Juego(GUI gui) {
 		entidades= new LinkedList<Entidad>();
 		entidadesAEliminar= new LinkedList<Entidad>();
+		disparosPendientes= new LinkedList<Entidad>();
 		this.gui=gui;
 		jugador = new Jugador(10, 100, 20, 100);
 		gui.add(jugador.getGrafico());
-		for(int i=1; i<7; i++) {
+		for(int i=1; i<9; i++) {
 			entidades.add(new Enemigo(5, 100, 1000, 90*i));
 			gui.add(entidades.getLast().getGrafico());
-		}
-		entidades.add(new DisparoJugador(5,30,200,200));
-		gui.add(entidades.getLast().getGrafico());     //PRUEBA TECLA E
+			entidades.add(new Enemigo(5, 100, 1150, 90*i+33));
+			gui.add(entidades.getLast().getGrafico());
+		}   
 	}
 	
+	public void crearDisparo() {
+		disparosPendientes.add(new DisparoJugador(5,30,jugador.getPos().x +50 ,jugador.getPos().y + 35));
+	}
+	
+	public void agregarDisparos() {
+		for(Entidad e: disparosPendientes) {
+			entidades.add(e);
+			gui.add(e.getGrafico());   
+			disparosPendientes.remove(e);
+		}
+	}
 	public void mover() {
 		
 		for(Entidad e: entidades) {
-			Random r=new Random();
-			int dir=r.nextInt(2);
-			e.mover(dir);
+			e.mover();
 		}
 	}
 	
@@ -51,16 +58,15 @@ public class Juego {
 				break;
 			case KeyEvent.VK_DOWN : //Abajo
 				direccion = 1;
-				break;
-	//TEMPORAL TEMPORAL			
-			case KeyEvent.VK_LEFT : //Arriba
+				break;		
+			case KeyEvent.VK_LEFT : //izq
 				direccion = 2;
 				break;
-			case KeyEvent.VK_RIGHT : //Abajo
+			case KeyEvent.VK_RIGHT : //abajo
 				direccion = 3;
 				break;
 		}
-		if(direccion!=-1)   //Si se apreta una tecla que no sea flecha, no realiza ninguna accion
+		if(direccion!=-1)
 			jugador.mover(direccion);
 	}
 	
@@ -69,7 +75,7 @@ public class Juego {
 			gui.remove(jugador.getGrafico());
 			System.exit(0);  //TEMPORAL
 		}
-		for(Entidad e: entidades) {
+		for(Entidad e: entidades) {     
 			if(e.getVida()==0) {
 				entidadesAEliminar.add(e);
 			}
@@ -81,10 +87,10 @@ public class Juego {
 		for(Entidad e: entidadesAEliminar) {
 			gui.remove(e.getGrafico());
 			entidades.remove(e);
-			entidadesAEliminar.remove(e);
 			aumentarPuntaje(100);
 			kills++;
 		}
+		entidadesAEliminar.clear();
 		gui.actualizarPuntajes();
 	}
 	
@@ -121,21 +127,12 @@ public class Juego {
 		Rectangle r1= new Rectangle((int)e1.getPos().getX(),(int)e1.getPos().getY(),e1.getWidth(),e1.getHeight());
 		Rectangle r2= new Rectangle((int)e2.getPos().getX(),(int)e2.getPos().getY(),e2.getWidth(),e2.getHeight());
 		if(r1.intersects(r2)) {
-			System.out.println("Colisionan e1 y e2"); //BORRAR BORRAR
 			e1.colisionar(e2);
 			gui.actualizarPuntajes();
 		}
 	}
 	
-	public void pruebaColisionDisparo() {
-		entidades.getLast().colisionar(entidades.getFirst());
-	}
-	
 	public int getVidaJugador() {
 		return jugador.getVida();
 	}
-	/**
-	 * retorna true si el juego termino
-	 */
-	//public boolean consultarEstadoJuego() {}
 }

@@ -11,6 +11,6 @@ public class Obstaculo extends Entidad{
 		col.afectarObstaculo(this);
 	}
 
-	public void mover(int dir) {
+	public void mover() {
 	}
 }

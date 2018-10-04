@@ -2,22 +2,16 @@ package Inteligencias;
 
 import Personajes.DisparoJugador;
 
-public class InteligenciaDisparoJugador extends Inteligencia {
+public class InteligenciaDisparoJugador extends InteligenciaDisparo {
 	
 	public InteligenciaDisparoJugador(DisparoJugador d) {
-		entidad=d;
-		pos=d.getPos();
-		velocidad=10;
+		super(d);
 	}
 	
-	public void mover(int dir) {
-		switch(dir) {
-		case 0 : //Arriba
-			pos.setLocation(pos.x + velocidad, pos.y);
-			break;
-		case 1 : //Abajo
-			pos.setLocation(pos.x + velocidad, pos.y);
-			break;
-		}
+	public int mover() {
+		pos.setLocation(pos.x + velocidad, pos.y);
+		if(pos.x>1280)
+			disparo.golpearDisparo(disparo);
+		return 0;
 	}
 }

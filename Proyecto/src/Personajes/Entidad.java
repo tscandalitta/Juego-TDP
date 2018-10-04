@@ -12,7 +12,6 @@ public abstract class Entidad {
 	protected int velocidad;
 	protected Point pos;
 	protected Colisionador col;
-	protected Inteligencia inteligencia;
 	protected int width;
 	protected int height;
 	protected JLabel grafico;
@@ -62,7 +61,7 @@ public abstract class Entidad {
 	
 	public abstract void serColisionado(Colisionador col);
 		
-	public abstract void mover(int dir);
+	public abstract void mover();
 		
 	protected void disminuirVida(int damage) {
 		vida-=damage;
