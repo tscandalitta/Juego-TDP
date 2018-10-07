@@ -11,9 +11,8 @@ public class InteligenciaJugador extends Inteligencia {
 	protected int dx,dy;
 	protected int velocidad;
 	
-	public InteligenciaJugador(Jugador j, Juego ju) {
+	public InteligenciaJugador(Jugador j) {
 		jugador=j;
-		juego=ju;
 		pos=j.getPos();
 		velocidad=7;
 	}
@@ -76,6 +75,10 @@ public class InteligenciaJugador extends Inteligencia {
 				break;
         }
 
+    }
+    
+    public void setJuego(Juego j) {
+    	juego=j;
     }
 	 
 }

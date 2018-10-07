@@ -4,6 +4,7 @@ import java.awt.Rectangle;
 import java.util.LinkedList;
 import GUI.GUI;
 import GUI.HiloTiempo;
+import Mapas.Mapa;
 import Personajes.*;
 
 public class Juego {
@@ -17,19 +18,15 @@ public class Juego {
 	private HiloTiempo tiempo;
 	
 	
-	public Juego(GUI gui) {
-		entidades= new LinkedList<Entidad>();
+	public Juego(GUI gui, Mapa mapa) {
+		jugador=mapa.crearJugador();
+		jugador.setJuego(this);
+		entidades=mapa.crearEntidades();
 		entidadesAEliminar= new LinkedList<Entidad>();
 		disparosPendientes= new LinkedList<Entidad>();
 		this.gui=gui;
-		jugador = new Jugador(20, 100, this);
-		gui.add(jugador.getGrafico());
-		for(int i=1; i<9; i++) {
-			entidades.add(new Enemigo(1000, 90*i,"/Sprites/enemigo2.png"));
-			gui.add(entidades.getLast().getGrafico());
-			entidades.add(new Enemigo(1150, 90*i+33,"/Sprites/enemigo1.gif"));
-			gui.add(entidades.getLast().getGrafico());
-		}   
+		
+		iniciarGraficos();
 	}
 	
 	public void setHilo(HiloTiempo tiempo) {
@@ -113,15 +110,22 @@ public class Juego {
 	}
 	
 	private void verificarColision(Entidad e1, Entidad e2) {
-		Rectangle r1= new Rectangle((int)e1.getPos().getX(),(int)e1.getPos().getY(),e1.getWidth(),e1.getHeight());
-		Rectangle r2= new Rectangle((int)e2.getPos().getX(),(int)e2.getPos().getY(),e2.getWidth(),e2.getHeight());
+		Rectangle r1= new Rectangle((int)e1.getPos().getX()+2,(int)e1.getPos().getY()+2,e1.getWidth()-2,e1.getHeight()-2);
+		Rectangle r2= new Rectangle((int)e2.getPos().getX()+2,(int)e2.getPos().getY()+2,e2.getWidth()-2,e2.getHeight()-2);
 		if(r1.intersects(r2)) {
 			e1.colisionar(e2);
+			System.out.println("e1 y e2 colisionan");
 			gui.actualizarPuntajes();
 		}
 	}
 	
 	public int getVidaJugador() {
 		return jugador.getVida();
+	}
+	
+	private void iniciarGraficos() {
+		gui.add(jugador.getGrafico());
+		for(Entidad e: entidades)
+			gui.add(e.getGrafico());
 	}
 }

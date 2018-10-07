@@ -8,11 +8,9 @@ import Inteligencias.InteligenciaJugador;
 import Juego.Juego;
 
 public class Jugador extends Entidad {
-	protected Juego juego;
 	protected InteligenciaJugador inteligencia;
-	public Jugador(int x, int y, Juego j) {
+	public Jugador(int x, int y) {
 		super(x,y);
-		juego=j;
 		vida=100;
 		width=40;
 		height=70;
@@ -21,7 +19,7 @@ public class Jugador extends Entidad {
 		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		this.imagen[3] = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		col=new ColJugador(this);
-		inteligencia= new InteligenciaJugador(this,juego);
+		inteligencia= new InteligenciaJugador(this);
 	}
 	/**
 	public void mover(int dir) {
@@ -34,6 +32,11 @@ public class Jugador extends Entidad {
 	}
 	public void golpearPowerUp(Entidad e) {
 	}
+	
+	public void golpearObstaculo(Obstaculo o) {
+		
+	}
+	
 	public void golpearEnemigo(Entidad e) {
 	}
 
@@ -45,4 +48,7 @@ public class Jugador extends Entidad {
 		return inteligencia;
 	}
 	
+	public void setJuego(Juego j) {
+		inteligencia.setJuego(j);
+	}
 }

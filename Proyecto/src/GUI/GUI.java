@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
+import Mapas.Mapa;
+import Mapas.Mapa1;
+import Mapas.Mapa2;
 import Personajes.Entidad;
 
 public class GUI extends JFrame {
@@ -20,6 +23,7 @@ public class GUI extends JFrame {
 	private Juego juego;
 	private HiloTiempo tiempo;
 	private JLabel puntaje, vida, kills;
+	private Mapa mapa;
 	/**
 	 * Launch the application.
 	 */
@@ -59,7 +63,9 @@ public class GUI extends JFrame {
 		inicializarLabels();		
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
-		juego= new Juego(this);
+		
+		mapa= new Mapa1();
+		juego= new Juego(this, mapa);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
 		juego.setHilo(tiempo);

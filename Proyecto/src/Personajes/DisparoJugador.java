@@ -4,17 +4,16 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColDisparoJugador;
 import Inteligencias.InteligenciaDisparoJugador;
-import Juego.Juego;
 
 public class DisparoJugador extends Disparo{
 	public DisparoJugador(int x, int y) {
 		super(x, y);
 		width=28;
-		height=15;
+		height=28;
 		damage=30;
-		this.imagen[0]= new ImageIcon(this.getClass().getResource("/Sprites/disparo2.png"));
-		this.imagen[1]= new ImageIcon(this.getClass().getResource("/Sprites/disparo2.png"));
-		this.imagen[2]= new ImageIcon(this.getClass().getResource("/Sprites/disparo2.png"));
+		this.imagen[0]= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
+		this.imagen[1]= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
+		this.imagen[2]= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
 		col= new ColDisparoJugador(this);
 		inteligencia=new InteligenciaDisparoJugador(this);
 	}
