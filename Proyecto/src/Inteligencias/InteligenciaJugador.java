@@ -17,7 +17,7 @@ public class InteligenciaJugador extends Inteligencia {
 		velocidad=7;
 	}
 	
-	public int mover() {
+	public void mover() {
 		pos.setLocation(pos.x+dx, pos.y+dy);
         if (pos.x < 1) {
             pos.x = 1;
@@ -29,8 +29,6 @@ public class InteligenciaJugador extends Inteligencia {
         if (pos.y > 600) {
             pos.y = 600;
         }
-        jugador.cambiarGrafico(0);
-		return 0;
 	}
 	
 	

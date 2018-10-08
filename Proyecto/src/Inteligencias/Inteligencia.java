@@ -7,5 +7,5 @@ public abstract class Inteligencia {
 	protected int velocidad;
 	protected Point pos;
 	
-	public abstract int mover();
+	public abstract void mover();
 }

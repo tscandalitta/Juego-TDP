@@ -20,7 +20,7 @@ public class Mapa1 extends Mapa {
 			entidades.add(new Enemigo(1000, 90*i,"/Sprites/enemigo2.png"));
 			entidades.add(new Enemigo(1150, 90*i+33,"/Sprites/enemigo1.gif"));
 		}
-		entidades.add(new Obstaculo(500,720/2,600));
+		entidades.add(new Obstaculo(800,720/2,600));
 		return entidades;
 	}
 	public Jugador crearJugador() {

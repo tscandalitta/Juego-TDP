@@ -2,6 +2,7 @@ package Personajes;
 
 import java.awt.Point;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
@@ -11,14 +12,14 @@ public abstract class Entidad {
 	protected int vida;
 	protected Point pos;
 	protected Colisionador col;
-	protected int width;
-	protected int height;
+	protected int width, height;
+	protected int puntosDeMuerte;
 	protected JLabel grafico;
-	protected Icon imagen[];
+	protected Icon imagen;
 	
 	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
-		this.imagen= new Icon[4];
+		imagen= new ImageIcon();
 	}
 	
 	public int getVida() {
@@ -33,17 +34,20 @@ public abstract class Entidad {
 	public int getHeight() {
 		return height;
 	}
+	public int getPuntos() {
+		return puntosDeMuerte;
+	}
 	
-	public void cambiarGrafico(int dir){
+	protected void actualizarGrafico(){
 		if(this.grafico != null){
-			this.grafico.setIcon(this.imagen[dir]);
+			this.grafico.setIcon(this.imagen);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
 		}
 	}
 	
 	public JLabel getGrafico(){
 		if(this.grafico == null){
-			this.grafico = new JLabel(imagen[0]);
+			this.grafico = new JLabel(imagen);
 			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
 		}
 		return this.grafico;
@@ -65,5 +69,11 @@ public abstract class Entidad {
 		if(vida<0)
 			vida=0;
 	}
+	
+	public abstract void golpearJugador(Entidad j);
+	public abstract void golpearEnemigo(Entidad e);
+	public abstract void golpearPowerUp(Entidad p);
+	public abstract void golpearObstaculo(Entidad o);
+	public abstract void golpearDisparo(Entidad d);
 	
 }

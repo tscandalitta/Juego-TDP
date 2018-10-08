@@ -11,7 +11,7 @@ public class InteligenciaEnemigo extends Inteligencia {
 		pos=e.getPos();
 		velocidad=5;
 	}
-	public int mover() {
+	public void mover() {
 		pos.setLocation(pos.x -dx*velocidad/2, pos.y - dy*velocidad);
 		if(pos.y<-65)
 			pos.y=660;
@@ -19,7 +19,5 @@ public class InteligenciaEnemigo extends Inteligencia {
 			dx=-1;
 		if(pos.x>1100)
 			dx=1;
-		
-		return 0; //grafico
 	}
 }

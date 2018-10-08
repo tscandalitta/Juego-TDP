@@ -14,16 +14,15 @@ public class Enemigo extends Entidad{
 		damage=10;
 		width=40;
 		height=66;
-		this.imagen[0] = new ImageIcon(this.getClass().getResource(icono));
-		this.imagen[1] = new ImageIcon(this.getClass().getResource(icono));
-		this.imagen[2] = new ImageIcon(this.getClass().getResource(icono));
+		puntosDeMuerte=100;
+		this.imagen = new ImageIcon(this.getClass().getResource(icono));
 		col= new ColEnemigo(this);
 		inteligencia= new InteligenciaEnemigo(this);
 	}
 
 	public void mover() {
-		int dir=inteligencia.mover();
-		cambiarGrafico(dir);
+		inteligencia.mover();
+		actualizarGrafico();
 	}
 
 	public void serColisionado(Colisionador col) {
@@ -32,11 +31,12 @@ public class Enemigo extends Entidad{
 	
 	public void golpearJugador(Entidad e) {
 		e.disminuirVida(damage);
+		this.vida=0;
 	}
 	public void golpearEnemigo(Entidad e) {
 	//	e.disminuirVida(damage);
 	}
-	public void golpearDisparo(Disparo d) {
+	public void golpearDisparo(Entidad d) {
 		d.golpearEnemigo(this);
 	}
 	public void golpearObstaculo(Entidad e) {
@@ -44,5 +44,4 @@ public class Enemigo extends Entidad{
 	}
 	public void golpearPowerUp(Entidad e) {
 	}
-
 }

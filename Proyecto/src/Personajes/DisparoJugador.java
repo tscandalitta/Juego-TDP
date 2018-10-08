@@ -10,10 +10,8 @@ public class DisparoJugador extends Disparo{
 		super(x, y);
 		width=28;
 		height=28;
-		damage=30;
-		this.imagen[0]= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
-		this.imagen[1]= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
-		this.imagen[2]= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
+		damage=50;
+		this.imagen= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
 		col= new ColDisparoJugador(this);
 		inteligencia=new InteligenciaDisparoJugador(this);
 	}
@@ -30,8 +28,10 @@ public class DisparoJugador extends Disparo{
 		this.vida=0;
 	}
 	public void golpearPowerUp(Entidad e) {
+		this.vida=0;
 	}
 	public void golpearDisparo(Entidad e) {
 		vida=0;
 	}
+
 }

@@ -43,11 +43,9 @@ public class GUI extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-			//	keyListener(arg0);
 				juego.getJugador().getInteligencia().keyPressed(arg0);
 			}
-			//esto lo agrege
-			 @Override
+			@Override
         	public void keyReleased(KeyEvent arg0) {
             	juego.getJugador().getInteligencia().keyReleased(arg0);
 			 }
@@ -71,6 +69,11 @@ public class GUI extends JFrame {
 		juego.setHilo(tiempo);
 	}
 	
+	public void actualizarPuntajes() {
+		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
+		kills.setText("KILLS: "+juego.getKills());
+		vida.setText("VIDA: "+juego.getJugador().getVida());
+	}
 	private void inicializarLabels() {
 		inicializarVida();
 		inicializarPuntaje();
@@ -97,21 +100,4 @@ public class GUI extends JFrame {
 		puntaje.setBounds(250, 5, 200, 25);
 		contentPane.add(puntaje);
 	}
-	public void actualizarPuntajes() {
-		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
-		kills.setText("KILLS: "+juego.getKills());
-		vida.setText("VIDA: "+juego.getVidaJugador());
-	}
-	/**
-	protected void keyListener(KeyEvent key){
-		if(key.getKeyCode()==KeyEvent.VK_SPACE) 
-			
-			juego.crearDisparo();
-		else
-			juego.mover(key.getKeyCode());
-		this.repaint();
-	}
-	*/
-	
-
 }

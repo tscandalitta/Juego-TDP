@@ -25,7 +25,6 @@ public class Juego {
 		entidadesAEliminar= new LinkedList<Entidad>();
 		disparosPendientes= new LinkedList<Entidad>();
 		this.gui=gui;
-		
 		iniciarGraficos();
 	}
 	
@@ -44,8 +43,8 @@ public class Juego {
 			disparosPendientes.remove(e);
 		}
 	}
+	
 	public void mover() {
-		
 		for(Entidad e: entidades) {
 			e.mover();
 		}
@@ -54,7 +53,6 @@ public class Juego {
 	public void eliminarEntidades() {
 		if(jugador.getVida()==0) {
 			gui.remove(jugador.getGrafico());
-			//System.exit(0);  //TEMPORAL
 			tiempo.finalizar();
 		}
 		for(Entidad e: entidades) {     
@@ -64,38 +62,20 @@ public class Juego {
 		}
 		eliminarAux();
 	}
-	
 	private void eliminarAux() {
 		for(Entidad e: entidadesAEliminar) {
 			gui.remove(e.getGrafico());
+			gui.repaint();
 			entidades.remove(e);
-			aumentarPuntaje(100);
-			kills++;
+			if(e.getPuntos()!=0) {
+				aumentarPuntaje(e.getPuntos());
+				kills++;
+			}
+				
+				
 		}
 		entidadesAEliminar.clear();
 		gui.actualizarPuntajes();
-	}
-	
-	public LinkedList<Entidad> getEntidades(){
-		return entidades;
-	}
-	
-	public LinkedList<Entidad> getEntidadesAEliminar(){
-		return entidadesAEliminar;
-	}
-	
-	public void aumentarPuntaje(int p) {
-		puntaje+=p;
-	}
-	public int getPuntaje() {
-		return puntaje;
-	}
-	public int getKills() {
-		return kills;
-	}
-	
-	public Jugador getJugador() {
-		return jugador;
 	}
 	
 	public void colisionar() {
@@ -108,19 +88,32 @@ public class Juego {
 			}
 		}
 	}
-	
 	private void verificarColision(Entidad e1, Entidad e2) {
-		Rectangle r1= new Rectangle((int)e1.getPos().getX()+2,(int)e1.getPos().getY()+2,e1.getWidth()-2,e1.getHeight()-2);
-		Rectangle r2= new Rectangle((int)e2.getPos().getX()+2,(int)e2.getPos().getY()+2,e2.getWidth()-2,e2.getHeight()-2);
+		Rectangle r1= new Rectangle(e1.getPos().x+2, e1.getPos().y+2, e1.getWidth()-2, e1.getHeight()-2);
+		Rectangle r2= new Rectangle(e2.getPos().x+2, e2.getPos().y+2, e2.getWidth()-2, e2.getHeight()-2);
 		if(r1.intersects(r2)) {
 			e1.colisionar(e2);
-			System.out.println("e1 y e2 colisionan");
 			gui.actualizarPuntajes();
 		}
 	}
 	
-	public int getVidaJugador() {
-		return jugador.getVida();
+	public void aumentarPuntaje(int p) {
+		puntaje+=p;
+	}
+	public int getPuntaje() {
+		return puntaje;
+	}
+	public int getKills() {
+		return kills;
+	}
+	public Jugador getJugador() {
+		return jugador;
+	}
+	public LinkedList<Entidad> getEntidades(){
+		return entidades;
+	}
+	public LinkedList<Entidad> getEntidadesAEliminar(){
+		return entidadesAEliminar;
 	}
 	
 	private void iniciarGraficos() {

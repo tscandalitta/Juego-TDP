@@ -8,10 +8,17 @@ import Personajes.Jugador;
 
 public class Mapa3 extends Mapa {
 
+
 	@Override
-	public void crearEntidades(Jugador j, LinkedList<Entidad> entidades, Juego juego) {
+	public LinkedList<Entidad> crearEntidades() {
 		// TODO Auto-generated method stub
-		
+		return null;
+	}
+
+	@Override
+	public Jugador crearJugador() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

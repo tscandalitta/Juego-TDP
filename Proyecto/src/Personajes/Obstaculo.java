@@ -11,10 +11,8 @@ public class Obstaculo extends Entidad{
 		this.vida=vida;
 		width=48;
 		height=195;
-		this.imagen[0] = new ImageIcon(this.getClass().getResource("/Sprites/obstaculo.png"));
-		this.imagen[1] = new ImageIcon(this.getClass().getResource("/Sprites/obstaculo.png"));
-		this.imagen[2] = new ImageIcon(this.getClass().getResource("/Sprites/obstaculo.png"));
-		this.imagen[3] = new ImageIcon(this.getClass().getResource("/Sprites/obstaculo.png"));
+		puntosDeMuerte=0;
+		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/obstaculo.png"));
 		col= new ColObstaculo(this);
 	}
 
@@ -30,7 +28,32 @@ public class Obstaculo extends Entidad{
 	public void golpearEnemigo(Enemigo e) {
 		e.golpearObstaculo(this);
 	}
-	public void golpearDisparo(Disparo d) {
+	public void golpearDisparo(Entidad d) {
 		d.golpearObstaculo(this);
 	}
+
+	@Override
+	public void golpearJugador(Entidad j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearEnemigo(Entidad e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearPowerUp(Entidad p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearObstaculo(Entidad o) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

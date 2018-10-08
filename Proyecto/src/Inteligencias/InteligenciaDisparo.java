@@ -10,6 +10,6 @@ public abstract class InteligenciaDisparo extends Inteligencia {
 		pos=d.getPos();
 		velocidad=15;
 	}
-	public abstract int mover();
+	//public abstract void mover();
 
 }

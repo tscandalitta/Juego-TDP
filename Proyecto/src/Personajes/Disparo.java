@@ -9,21 +9,16 @@ public abstract class Disparo extends Entidad {
 	protected Disparo(int x, int y) {
 		super(x,y);
 		vida=1;
+		puntosDeMuerte=0;
 	}
 
 	public void mover() {
-		int dir=inteligencia.mover();
-		cambiarGrafico(dir);
+		inteligencia.mover();
+		actualizarGrafico();
 	}
 
 
 	public void serColisionado(Colisionador col) {
 		col.afectarDisparo(this);
 	}
-
-	public abstract void golpearJugador(Entidad e);
-	public abstract void golpearEnemigo(Entidad e);
-	public abstract void golpearObstaculo(Entidad e);
-	public abstract void golpearPowerUp(Entidad e);
-	public abstract void golpearDisparo(Entidad e);
 }

@@ -8,10 +8,9 @@ public class InteligenciaDisparoEnemigo extends InteligenciaDisparo {
 		super(d);
 	}
 	
-	public int mover() {
+	public void mover() {
 		pos.setLocation(pos.x - velocidad, pos.y);
 		if(pos.x<0)
 			disparo.golpearDisparo(disparo);
-		return 0;
 	}
 }
