@@ -12,12 +12,6 @@ public abstract class Disparo extends Entidad {
 		puntosDeMuerte=0;
 	}
 
-	public void mover() {
-		inteligencia.mover();
-		actualizarGrafico();
-	}
-
-
 	public void serColisionado(Colisionador col) {
 		col.afectarDisparo(this);
 	}

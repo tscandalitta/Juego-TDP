@@ -17,8 +17,8 @@ public class Mapa2 extends Mapa {
 	public LinkedList<Entidad> crearEntidades() {
 		entidades= new LinkedList<Entidad>();
 		for(int i=1; i<cantEnemigos; i++) {
-			entidades.add(new Enemigo(1000, 50*i,"/Sprites/enemigo2.png"));
-			entidades.add(new Enemigo(1150, 50*i+33,"/Sprites/enemigo1.gif"));
+			entidades.add(new Enemigo(1000, 50*i));
+			entidades.add(new Enemigo(1150, 50*i+33));
 		}
 		for(int i=1; i<=cantObstaculos; i++)
 			entidades.add(new Obstaculo(500,720/(2*i),300));

@@ -6,10 +6,11 @@ public class InteligenciaEnemigo extends Inteligencia {
 	protected Enemigo enemigo;
 	protected int dx=1;
 	protected int dy=1;
+	
 	public InteligenciaEnemigo(Enemigo e) {
 		enemigo=e;
 		pos=e.getPos();
-		velocidad=5;
+		velocidad=4;
 	}
 	public void mover() {
 		pos.setLocation(pos.x -dx*velocidad/2, pos.y - dy*velocidad);

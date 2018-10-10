@@ -10,6 +10,13 @@ public class DisparoEnemigo extends Disparo{
 		damage=10;
 	}
 
+	public void mover() {
+		inteligencia.mover();
+		actualizarGrafico();
+		if(pos.x<0)
+			this.vida=0;
+	}
+	
 	public void golpearJugador(Entidad e) {
 		e.disminuirVida(damage);
 		this.vida=0;

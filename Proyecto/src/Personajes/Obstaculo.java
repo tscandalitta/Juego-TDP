@@ -4,16 +4,19 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColObstaculo;
 import Colisionadores.Colisionador;
+import Inteligencias.InteligenciaObstaculo;
 
 public class Obstaculo extends Entidad{
+	protected InteligenciaObstaculo inteligencia;
 	public Obstaculo(int x, int y, int vida) {
 		super(x,y);
 		this.vida=vida;
-		width=48;
-		height=195;
+		width=40;
+		height=115;
 		puntosDeMuerte=0;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/obstaculo.png"));
 		col= new ColObstaculo(this);
+		inteligencia=new InteligenciaObstaculo(this);
 	}
 
 	public void serColisionado(Colisionador col) {
@@ -21,6 +24,8 @@ public class Obstaculo extends Entidad{
 	}
 
 	public void mover() {
+		inteligencia.mover();
+		actualizarGrafico();
 	}
 	public void golpearJugador(Jugador j) {
 		j.golpearObstaculo(this);
@@ -32,28 +37,10 @@ public class Obstaculo extends Entidad{
 		d.golpearObstaculo(this);
 	}
 
-	@Override
-	public void golpearJugador(Entidad j) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void golpearPowerUp(Entidad p) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
 	public void golpearObstaculo(Entidad o) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

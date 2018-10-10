@@ -16,6 +16,13 @@ public class DisparoJugador extends Disparo{
 		inteligencia=new InteligenciaDisparoJugador(this);
 	}
 	
+	public void mover() {
+		inteligencia.mover();
+		actualizarGrafico();
+		if(pos.x>1280)
+			this.vida=0;
+	}
+	
 	public void golpearJugador(Entidad e) {
 		this.vida=0;
 	}

@@ -10,7 +10,7 @@ public class InteligenciaDisparoJugador extends InteligenciaDisparo {
 	
 	public void mover() {
 		pos.setLocation(pos.x + velocidad, pos.y);
-		if(pos.x>1280)
-			disparo.golpearDisparo(disparo);
+	//	if(pos.x>1280)
+	//		disparo.golpearDisparo(disparo);
 	}
 }
