@@ -27,10 +27,10 @@ public class Obstaculo extends Entidad{
 		inteligencia.mover();
 		actualizarGrafico();
 	}
-	public void golpearJugador(Jugador j) {
+	public void golpearJugador(Entidad j) {
 		j.golpearObstaculo(this);
 	}
-	public void golpearEnemigo(Enemigo e) {
+	public void golpearEnemigo(Entidad e) {
 		e.golpearObstaculo(this);
 	}
 	public void golpearDisparo(Entidad d) {
