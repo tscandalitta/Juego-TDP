@@ -6,6 +6,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
  
+@SuppressWarnings("serial")
 public class JPanelConFondo extends JPanel {
  
     private Image imagen= new ImageIcon(this.getClass().getResource("/Sprites/fondo.jpg")).getImage();

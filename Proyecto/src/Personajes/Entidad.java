@@ -6,7 +6,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
-import Inteligencias.Inteligencia;
 
 public abstract class Entidad {
 	protected int vida;

@@ -11,10 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
-import Mapas.Mapa;
-import Mapas.Mapa1;
-import Mapas.Mapa2;
-import Personajes.Entidad;
 
 public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;

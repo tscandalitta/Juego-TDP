@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import Juego.Juego;
 import Personajes.Enemigo;
 import Personajes.Entidad;
-import Personajes.Jugador;
 import Personajes.Kamikaze;
 import Personajes.Obstaculo;
 
@@ -29,10 +28,6 @@ public class Mapa1 extends Mapa {
 			entidades.add(new Obstaculo(600+100*i,(i*720/(cantObstaculos+1)),300));
 		}
 		return entidades;
-	}
-	
-	public Jugador crearJugador() {
-		return new Jugador(20,300);
 	}
 
 	public void mapaSiguiente(Juego juego) {

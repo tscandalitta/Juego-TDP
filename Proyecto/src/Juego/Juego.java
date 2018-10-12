@@ -21,14 +21,14 @@ public class Juego {
 	
 	
 	public Juego(GUI gui) {
+		jugador=new Jugador(50,300);
+		jugador.setJuego(this);
 		this.mapa=new Mapa1();
 		this.gui=gui;
 		iniciarEntidades();
 	}
 	
 	public void iniciarEntidades() {
-		jugador=this.mapa.crearJugador();
-		jugador.setJuego(this);
 		entidades=this.mapa.crearEntidades();
 		entidadesAEliminar= new LinkedList<Entidad>();
 		disparosPendientes= new LinkedList<Entidad>();
@@ -38,10 +38,14 @@ public class Juego {
 		this.tiempo=tiempo;
 	}
 	
-	public void crearDisparo() {
+	public void crearDisparoJugador() {
 		disparosPendientes.add(new DisparoJugador(jugador.getPos().x +50 ,jugador.getPos().y + 35));
 	}
-	
+	/**
+	public void crearDisparoEnemigo() {
+		disparosPendientes.add(new DisparoEnemigo);
+	}
+	*/
 	public void agregarDisparos() {
 		for(Entidad e: disparosPendientes) {
 			entidades.add(e);

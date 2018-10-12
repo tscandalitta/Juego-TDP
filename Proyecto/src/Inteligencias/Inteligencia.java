@@ -1,7 +1,6 @@
 package Inteligencias;
 
 import java.awt.Point;
-import Personajes.Entidad;
 
 public abstract class Inteligencia {
 	protected int velocidad;

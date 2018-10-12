@@ -14,7 +14,7 @@ public class Kamikaze extends Enemigo {
 		vida=100;
 		damage=40;
 		width=40;
-		height=66;
+		height=44;
 		puntosDeMuerte=150;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/enemigo2.png"));
 		col= new ColEnemigo(this);

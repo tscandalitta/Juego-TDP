@@ -8,27 +8,22 @@ import Personajes.Jugador;
 public class InteligenciaJugador extends Inteligencia {
 	protected Jugador jugador;
 	protected Juego juego;
-	protected int dx,dy;
+	protected int dy;
 	protected int velocidad;
 	
 	public InteligenciaJugador(Jugador j) {
 		jugador=j;
 		pos=j.getPos();
-		velocidad=7;
+		velocidad=10;
 	}
 	
 	public void mover() {
-		pos.setLocation(pos.x+dx, pos.y+dy);
-        if (pos.x < 1) {
-            pos.x = 1;
-        }
-
-        if (pos.y < 1) {
+		pos.setLocation(pos.x, pos.y+dy);
+        if (pos.y < 1) 
             pos.y = 1;
-        }
-        if (pos.y > 600) {
+        
+        if (pos.y > 600) 
             pos.y = 600;
-        }
 	}
 	
 	
@@ -37,19 +32,13 @@ public class InteligenciaJugador extends Inteligencia {
         switch (key){
         
 	        case KeyEvent.VK_SPACE :
-	        	juego.crearDisparo();
+	        	juego.crearDisparoJugador();
 	        	break;
 			case KeyEvent.VK_UP : 
 				dy = -velocidad;
 				break;
 			case KeyEvent.VK_DOWN : 
 				dy = velocidad;
-				break;		
-			case KeyEvent.VK_LEFT : 
-				dx = -velocidad;
-				break;
-			case KeyEvent.VK_RIGHT : 
-				dx = velocidad;
 				break;
         }
     }
@@ -64,13 +53,7 @@ public class InteligenciaJugador extends Inteligencia {
 				break;
 			case KeyEvent.VK_DOWN : 
 				dy = 0;
-				break;		
-			case KeyEvent.VK_LEFT : 
-				dx = 0;
-				break;
-			case KeyEvent.VK_RIGHT : 
-				dx = 0;
-				break;
+				break;	
         }
 
     }
