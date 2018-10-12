@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import GUI.GUI;
 import GUI.HiloTiempo;
 import Mapas.Mapa;
+import Mapas.Mapa1;
 import Personajes.*;
 
 public class Juego {
@@ -16,18 +17,23 @@ public class Juego {
 	private int puntaje=0;
 	private int kills=0;
 	private HiloTiempo tiempo;
+	private Mapa mapa;
 	
 	
-	public Juego(GUI gui, Mapa mapa) {
-		jugador=mapa.crearJugador();
-		jugador.setJuego(this);
-		entidades=mapa.crearEntidades();
-		entidadesAEliminar= new LinkedList<Entidad>();
-		disparosPendientes= new LinkedList<Entidad>();
+	public Juego(GUI gui) {
+		this.mapa=new Mapa1();
 		this.gui=gui;
-		iniciarGraficos();
+		iniciarEntidades();
 	}
 	
+	public void iniciarEntidades() {
+		jugador=this.mapa.crearJugador();
+		jugador.setJuego(this);
+		entidades=this.mapa.crearEntidades();
+		entidadesAEliminar= new LinkedList<Entidad>();
+		disparosPendientes= new LinkedList<Entidad>();
+		iniciarGraficos();
+	}
 	public void setHilo(HiloTiempo tiempo) {
 		this.tiempo=tiempo;
 	}
@@ -53,6 +59,7 @@ public class Juego {
 	public void eliminarEntidades() {
 		if(jugador.getVida()==0) {
 			gui.remove(jugador.getGrafico());
+			gui.actualizarPuntajes();
 			tiempo.finalizar();
 		}
 		for(Entidad e: entidades) {     
@@ -76,6 +83,17 @@ public class Juego {
 		}
 		entidadesAEliminar.clear();
 		gui.actualizarPuntajes();
+	}
+	
+	public void verificarMapa() {
+		if(entidades.size()==0) {
+			mapa.mapaSiguiente(this);
+			iniciarEntidades();
+		}
+	}
+	
+	public void setMapa(Mapa m) {
+		mapa=m;
 	}
 	
 	public void colisionar() {
