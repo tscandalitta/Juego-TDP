@@ -29,7 +29,7 @@ public class Mapa3 extends Mapa {
 			entidades.add(new Enemigo(1100, i*720/(cantEnemigos/2+1)));
 		}
 		for(int i=1; i<cantObstaculos; i++) {
-			entidades.add(new ObstaculoBarricada(650+100*i,(i*600/(cantObstaculos)),500));
+			entidades.add(new ObstaculoBarricada(750,(i*600/(cantObstaculos)),500));
 		}
 		entidades.add(new ObstaculoDestruible(550,300,500));
 		return entidades;

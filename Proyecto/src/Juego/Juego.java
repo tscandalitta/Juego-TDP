@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import GUI.GUI;
 import GUI.HiloTiempo;
 import Mapas.*;
+import Memento.Memento;
 import Personajes.*;
 
 public class Juego {
@@ -17,11 +18,12 @@ public class Juego {
 	private int kills=0;
 	private HiloTiempo tiempo;
 	private Mapa mapa;
-	
+	private Memento estadoInicialJugador;
 	
 	public Juego(GUI gui) {
 		jugador=new Jugador(50,300);
 		jugador.setJuego(this);
+		estadoInicialJugador= jugador.crearMemento();
 		this.mapa=new Mapa2();
 		this.gui=gui;
 		iniciarEntidades();
@@ -62,9 +64,13 @@ public class Juego {
 	
 	public void eliminarEntidades() {
 		if(jugador.getVida()==0) {
-			gui.remove(jugador.getGrafico());
-			gui.actualizarPuntajes();
-			tiempo.finalizar();
+			if(jugador.getOportunidades()!=0)
+				jugador.reestablecer(estadoInicialJugador);
+			else {
+				gui.remove(jugador.getGrafico());
+				gui.actualizarPuntajes();
+				tiempo.finalizar();
+			}
 		}
 		for(Entidad e: entidades) {     
 			if(e.getVida()==0) {

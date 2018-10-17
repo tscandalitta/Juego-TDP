@@ -9,9 +9,9 @@ public class DisparoJugador extends Disparo{
 	public DisparoJugador(int x, int y) {
 		super(x, y);
 		width=28;
-		height=28;
-		damage=50;
-		this.imagen= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif"));
+		height=28; 
+		damage=50; 
+		this.imagen= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif")); 
 		col= new ColDisparoJugador(this);
 		inteligencia=new InteligenciaDisparoJugador(this);
 	}
