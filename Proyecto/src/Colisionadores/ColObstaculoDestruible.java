@@ -15,39 +15,27 @@ public class ColObstaculoDestruible implements Colisionador {
 	}
 
 	public void afectarJugador(Jugador j) {
-		obstaculo.golpearJugador(j);
-		
 	}
 
+	
 	public void afectarEnemigo(Enemigo e) {
-		obstaculo.golpearEnemigo(e);
-		
+		e.golpearObstaculoDestruible(obstaculo);
 	}
 
+	
 	public void afectarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
+		p.golpearObstaculoDestruible(obstaculo);
 	}
 
-	public void afectarObstaculo(Obstaculo o) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void afectarDisparo(Disparo d) {
-		obstaculo.golpearDisparo(d);
-		
-	}
-
-	@Override
 	public void afectarObstaculoBarricada(Obstaculo o) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
+	
 	public void afectarObstaculoDestruible(Obstaculo o) {
-		// TODO Auto-generated method stub
-		
+	}
+
+	
+	public void afectarDisparo(Disparo d) {
+		d.golpearObstaculoDestruible(obstaculo);
 	}
 }

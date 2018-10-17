@@ -34,8 +34,8 @@ public class Enemigo extends Entidad{
 		this.vida=0;
 	}
 	public void golpearEnemigo(Entidad e) {
-	//	e.disminuirVida(damage);
 	}
+	
 	public void golpearDisparo(Entidad d) {
 		d.golpearEnemigo(this);
 	}

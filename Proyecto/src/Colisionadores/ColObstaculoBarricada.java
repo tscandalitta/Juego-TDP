@@ -13,40 +13,30 @@ public class ColObstaculoBarricada implements Colisionador {
 	public ColObstaculoBarricada(ObstaculoBarricada o) {
 		obstaculo=o;
 	}
-	@Override
+	
 	public void afectarJugador(Jugador j) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
+	
 	public void afectarEnemigo(Enemigo e) {
-		// TODO Auto-generated method stub
-		
+		e.golpearObstaculoBarricada(obstaculo);
 	}
 
-	@Override
+	
 	public void afectarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
+		p.golpearObstaculoBarricada(obstaculo);
 	}
 
-	@Override
 	public void afectarObstaculoBarricada(Obstaculo o) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
+	
 	public void afectarObstaculoDestruible(Obstaculo o) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
+	
 	public void afectarDisparo(Disparo d) {
-		// TODO Auto-generated method stub
-		
+		d.golpearObstaculoBarricada(obstaculo);
 	}
 
 }
