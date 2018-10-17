@@ -8,7 +8,6 @@ public abstract class InteligenciaDisparo extends Inteligencia {
 	public InteligenciaDisparo(Disparo d) {
 		disparo=d;
 		pos=d.getPos();
-		velocidad=15;
 	}
 	//public abstract void mover();
 

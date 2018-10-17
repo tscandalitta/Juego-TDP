@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import GUI.GUI;
 import GUI.HiloTiempo;
 import Mapas.Mapa;
+import Mapas.Mapa1;
 import Personajes.*;
 
 public class Juego {
@@ -16,28 +17,44 @@ public class Juego {
 	private int puntaje=0;
 	private int kills=0;
 	private HiloTiempo tiempo;
+<<<<<<< HEAD
 	private Memento m;
 	
 	
 	public Juego(GUI gui, Mapa mapa) {
 		jugador=mapa.crearJugador();
 		m=jugador.createMemento();
+=======
+	private Mapa mapa;
+	
+	
+	public Juego(GUI gui) {
+		jugador=new Jugador(50,300);
+>>>>>>> b93e9e96a3c1ba9cb1772fe7bbe369fd1b23c3bf
 		jugador.setJuego(this);
-		entidades=mapa.crearEntidades();
-		entidadesAEliminar= new LinkedList<Entidad>();
-		disparosPendientes= new LinkedList<Entidad>();
+		this.mapa=new Mapa1();
 		this.gui=gui;
-		iniciarGraficos();
+		iniciarEntidades();
 	}
 	
+	public void iniciarEntidades() {
+		entidades=this.mapa.crearEntidades();
+		entidadesAEliminar= new LinkedList<Entidad>();
+		disparosPendientes= new LinkedList<Entidad>();
+		iniciarGraficos();
+	}
 	public void setHilo(HiloTiempo tiempo) {
 		this.tiempo=tiempo;
 	}
 	
-	public void crearDisparo() {
+	public void crearDisparoJugador() {
 		disparosPendientes.add(new DisparoJugador(jugador.getPos().x +50 ,jugador.getPos().y + 35));
 	}
-	
+	/**
+	public void crearDisparoEnemigo() {
+		disparosPendientes.add(new DisparoEnemigo);
+	}
+	*/
 	public void agregarDisparos() {
 		for(Entidad e: disparosPendientes) {
 			entidades.add(e);
@@ -57,6 +74,7 @@ public class Juego {
 			jugador.setStateOfMemento(m);
 			/**
 			gui.remove(jugador.getGrafico());
+			gui.actualizarPuntajes();
 			tiempo.finalizar();
 			**/
 			
@@ -82,6 +100,17 @@ public class Juego {
 		}
 		entidadesAEliminar.clear();
 		gui.actualizarPuntajes();
+	}
+	
+	public void verificarMapa() {
+		if(entidades.size()==0) {
+			mapa.mapaSiguiente(this);
+			iniciarEntidades();
+		}
+	}
+	
+	public void setMapa(Mapa m) {
+		mapa=m;
 	}
 	
 	public void colisionar() {

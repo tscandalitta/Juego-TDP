@@ -15,7 +15,11 @@ public class InteligenciaObstaculo extends Inteligencia {
 		pos.setLocation(pos.x,pos.y-velocidad);
 		if(pos.y<25)
 			velocidad=-velocidad;
+<<<<<<< HEAD
 		if(pos.y>500)
+=======
+		if(pos.y>510)
+>>>>>>> b93e9e96a3c1ba9cb1772fe7bbe369fd1b23c3bf
 			velocidad=-velocidad;
 	}
 

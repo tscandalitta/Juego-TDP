@@ -22,6 +22,7 @@ public class HiloTiempo extends Thread{
 			juego.mover();
 			juego.colisionar();
 			juego.eliminarEntidades();
+			juego.verificarMapa();
 		}
 	}
 	public void finalizar() {

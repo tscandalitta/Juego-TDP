@@ -38,7 +38,6 @@ public class DisparoJugador extends Disparo{
 		this.vida=0;
 	}
 	public void golpearDisparo(Entidad e) {
-		vida=0;
 	}
 
 }

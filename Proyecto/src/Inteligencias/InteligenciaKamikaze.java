@@ -16,7 +16,7 @@ public class InteligenciaKamikaze extends Inteligencia {
 
 	public void mover() {
 		Random r= new Random();
-		int n= r.nextInt(200);
+		int n= r.nextInt(300);
 		if(n==12||enMovimiento) {
 			pos.setLocation(pos.x-velocidad, pos.y);
 			enMovimiento=true;

@@ -12,9 +12,13 @@ public class Kamikaze extends Enemigo {
 	public Kamikaze(int x, int y) {
 		super(x, y);
 		vida=100;
+<<<<<<< HEAD
 		damage=50;
+=======
+		damage=40;
+>>>>>>> b93e9e96a3c1ba9cb1772fe7bbe369fd1b23c3bf
 		width=40;
-		height=66;
+		height=44;
 		puntosDeMuerte=150;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/enemigo2.png"));
 		col= new ColEnemigo(this);

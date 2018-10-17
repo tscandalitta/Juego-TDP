@@ -11,10 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
-import Mapas.Mapa;
-import Mapas.Mapa1;
-import Mapas.Mapa2;
-import Personajes.Entidad;
 
 public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -23,7 +19,6 @@ public class GUI extends JFrame {
 	private Juego juego;
 	private HiloTiempo tiempo;
 	private JLabel puntaje, vida, kills;
-	private Mapa mapa;
 	/**
 	 * Launch the application.
 	 */
@@ -62,8 +57,7 @@ public class GUI extends JFrame {
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
 		
-		mapa= new Mapa1();
-		juego= new Juego(this, mapa);
+		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
 		juego.setHilo(tiempo);

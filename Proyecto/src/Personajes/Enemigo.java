@@ -13,7 +13,7 @@ public class Enemigo extends Entidad{
 		vida=100;
 		damage=10;
 		width=40;
-		height=66;
+		height=55;
 		puntosDeMuerte=100;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/enemigo1.gif"));
 		col= new ColEnemigo(this);
