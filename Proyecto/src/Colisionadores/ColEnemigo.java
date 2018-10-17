@@ -27,8 +27,10 @@ public class ColEnemigo implements Colisionador{
 	}
 
 	public void afectarObstaculoBarricada(Obstaculo o) {
+		enemigo.golpearObstaculoBarricada(o);
 	}
 
 	public void afectarObstaculoDestruible(Obstaculo o) {
+		enemigo.golpearObstaculoDestruible(o);
 	}
 }

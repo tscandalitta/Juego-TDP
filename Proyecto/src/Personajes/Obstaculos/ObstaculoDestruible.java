@@ -19,46 +19,27 @@ public class ObstaculoDestruible extends Obstaculo{
 		inteligencia=new InteligenciaObstaculoDestruible(this);
 	}
 
-	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
-		
+		col.afectarObstaculoDestruible(this);
 	}
-
-	@Override
+	
 	public void golpearJugador(Entidad j) {
-		// TODO Auto-generated method stub
-		
+		j.golpearObstaculoDestruible(this);
 	}
-
-	@Override
 	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
+		e.golpearObstaculoDestruible(this);
 	}
-
-	@Override
-	public void golpearPowerUp(Entidad p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearObstaculoBarricada(Entidad o) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearObstaculoDestruible(Entidad o) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void golpearDisparo(Entidad d) {
-		// TODO Auto-generated method stub
-		
+		d.golpearObstaculoDestruible(this);
+	}
+
+	public void golpearPowerUp(Entidad p) {
+	}
+
+	public void golpearObstaculoBarricada(Entidad o) {
+	}
+
+	public void golpearObstaculoDestruible(Entidad o) {
 	}
 
 }
