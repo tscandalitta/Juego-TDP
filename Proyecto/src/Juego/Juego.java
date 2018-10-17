@@ -4,9 +4,7 @@ import java.awt.Rectangle;
 import java.util.LinkedList;
 import GUI.GUI;
 import GUI.HiloTiempo;
-import Mapas.Mapa;
-import Mapas.Mapa1;
-import Mapas.Mapa3;
+import Mapas.*;
 import Personajes.*;
 
 public class Juego {
@@ -24,7 +22,7 @@ public class Juego {
 	public Juego(GUI gui) {
 		jugador=new Jugador(50,300);
 		jugador.setJuego(this);
-		this.mapa=new Mapa3();
+		this.mapa=new Mapa2();
 		this.gui=gui;
 		iniciarEntidades();
 	}
