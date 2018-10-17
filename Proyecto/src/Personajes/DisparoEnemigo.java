@@ -25,7 +25,7 @@ public class DisparoEnemigo extends Disparo{
 		e.disminuirVida(damage);
 		this.vida=0;	
 	}
-	public void golpearObstaculo(Entidad e) {
+	public void golpearObstaculoDestruible(Entidad e) {
 		e.disminuirVida(damage);
 		this.vida=0;
 	}
@@ -33,6 +33,10 @@ public class DisparoEnemigo extends Disparo{
 		e.disminuirVida(damage);
 		this.vida=0;
 	}
+	
 	public void golpearDisparo(Entidad d) {
+	}
+
+	public void golpearObstaculoBarricada(Entidad o) {
 	}
 }

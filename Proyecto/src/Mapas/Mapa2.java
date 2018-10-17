@@ -6,7 +6,7 @@ import Juego.Juego;
 import Personajes.Enemigo;
 import Personajes.Entidad;
 import Personajes.Kamikaze;
-import Personajes.Obstaculo;
+import Personajes.Obstaculos.ObstaculoDestruible;
 
 public class Mapa2 extends Mapa {
 	
@@ -26,7 +26,7 @@ public class Mapa2 extends Mapa {
 			entidades.add(new Enemigo(1100, i*720/(cantEnemigos+1)));
 		}
 		for(int i=1; i<cantObstaculos; i++) {
-			entidades.add(new Obstaculo(600+100*i,(i*720/(cantObstaculos+1)),300));
+			entidades.add(new ObstaculoDestruible(600+100*i,(i*720/(cantObstaculos+1)),300));
 		}
 		return entidades;
 	}

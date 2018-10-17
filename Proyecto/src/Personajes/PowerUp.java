@@ -19,28 +19,20 @@ public class PowerUp extends Entidad{
 		vida=0;
 	}
 
-	@Override
 	public void golpearJugador(Entidad j) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
 	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
-	public void golpearObstaculo(Entidad o) {
-		// TODO Auto-generated method stub
-		
+	public void golpearObstaculoDestruible(Entidad o) {
 	}
 
 	
 	public void golpearDisparo(Entidad d) {
-		// TODO Auto-generated method stub
-		
+	}
+
+	public void golpearObstaculoBarricada(Entidad o) {
 	}
 	
 }

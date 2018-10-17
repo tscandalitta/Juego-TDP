@@ -45,7 +45,7 @@ public class Kamikaze extends Enemigo {
 		d.golpearEnemigo(this);
 	}
 	
-	public void golpearObstaculo(Entidad e) {
+	public void golpearObstaculoDestruible(Entidad e) {
 		e.disminuirVida(damage);
 		this.vida=0;
 	}

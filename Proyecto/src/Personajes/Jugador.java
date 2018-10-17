@@ -23,14 +23,14 @@ public class Jugador extends Entidad {
 	public void serColisionado(Colisionador col) {
 		col.afectarJugador(this);
 	}
+	
 	public void golpearPowerUp(Entidad e) {
 	}
 	
-	public void golpearObstaculo(Entidad o) {
+	public void golpearObstaculoDestruible(Entidad o) {
 	}
 	
-	public void golpearEnemigo(Enemigo e) {
-		
+	public void golpearEnemigo(Entidad e) {
 	}
 
 	public void mover() {
@@ -54,9 +54,7 @@ public class Jugador extends Entidad {
 	
 	}
 
-	@Override
-	public void golpearEnemigo(Entidad e) {
-		// TODO Auto-generated method stub
-		
+
+	public void golpearObstaculoBarricada(Entidad o) {
 	}
 }

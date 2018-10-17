@@ -3,43 +3,51 @@ package Colisionadores;
 import Personajes.Disparo;
 import Personajes.Enemigo;
 import Personajes.Jugador;
-import Personajes.Obstaculo;
+import Personajes.Obstaculos.Obstaculo;
+import Personajes.Obstaculos.ObstaculoDestruible;
 import Personajes.PowerUp;
 
-public class ColObstaculo implements Colisionador {
-	protected Obstaculo obstaculo;
+public class ColObstaculoDestruible implements Colisionador {
+	protected ObstaculoDestruible obstaculo;
 	
-	public ColObstaculo(Obstaculo o) {
+	public ColObstaculoDestruible(ObstaculoDestruible o) {
 		obstaculo=o;
 	}
 
-	@Override
 	public void afectarJugador(Jugador j) {
 		obstaculo.golpearJugador(j);
 		
 	}
 
-	@Override
 	public void afectarEnemigo(Enemigo e) {
 		obstaculo.golpearEnemigo(e);
 		
 	}
 
-	@Override
 	public void afectarPowerUp(PowerUp p) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void afectarObstaculo(Obstaculo o) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void afectarDisparo(Disparo d) {
 		obstaculo.golpearDisparo(d);
+		
+	}
+
+	@Override
+	public void afectarObstaculoBarricada(Obstaculo o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afectarObstaculoDestruible(Obstaculo o) {
+		// TODO Auto-generated method stub
 		
 	}
 }

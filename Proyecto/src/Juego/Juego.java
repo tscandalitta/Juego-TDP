@@ -34,6 +34,7 @@ public class Juego {
 		disparosPendientes= new LinkedList<Entidad>();
 		iniciarGraficos();
 	}
+	
 	public void setHilo(HiloTiempo tiempo) {
 		this.tiempo=tiempo;
 	}

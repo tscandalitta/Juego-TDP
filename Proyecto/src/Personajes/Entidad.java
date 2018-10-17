@@ -72,7 +72,8 @@ public abstract class Entidad {
 	public abstract void golpearJugador(Entidad j);
 	public abstract void golpearEnemigo(Entidad e);
 	public abstract void golpearPowerUp(Entidad p);
-	public abstract void golpearObstaculo(Entidad o);
+	public abstract void golpearObstaculoBarricada(Entidad o);
+	public abstract void golpearObstaculoDestruible(Entidad o);
 	public abstract void golpearDisparo(Entidad d);
 	
 }

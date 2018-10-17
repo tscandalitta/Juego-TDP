@@ -1,6 +1,7 @@
 package Colisionadores;
 
 import Personajes.*;
+import Personajes.Obstaculos.Obstaculo;
 
 public class ColDisparoJugador implements Colisionador{
 	protected Disparo disparo;
@@ -20,12 +21,14 @@ public class ColDisparoJugador implements Colisionador{
 	public void afectarPowerUp(PowerUp p) {
 	}
 
-	public void afectarObstaculo(Obstaculo o) {
-		disparo.golpearObstaculo(o);
-	}
-
 	public void afectarDisparo(Disparo d) {
 		disparo.golpearDisparo(d);
+	}
+
+	public void afectarObstaculoBarricada(Obstaculo o) {
+	}
+
+	public void afectarObstaculoDestruible(Obstaculo o) {
 	}
 
 }
