@@ -8,14 +8,14 @@ public class InteligenciaObstaculo extends Inteligencia {
 	public InteligenciaObstaculo(Obstaculo o) {
 		obstaculo=o;
 		pos=o.getPos();
-		velocidad=3;
+		velocidad=10;
 	}
 	
 	public void mover() {
 		pos.setLocation(pos.x,pos.y-velocidad);
-		if(pos.y<50)
+		if(pos.y<25)
 			velocidad=-velocidad;
-		if(pos.y>425)
+		if(pos.y>500)
 			velocidad=-velocidad;
 	}
 

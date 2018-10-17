@@ -10,7 +10,7 @@ import Personajes.Obstaculo;
 public class Mapa1 extends Mapa {
 	
 	public Mapa1() {
-		cantEnemigos=9;
+		cantEnemigos=8;
 	}
 	
 	
@@ -25,7 +25,9 @@ public class Mapa1 extends Mapa {
 		return entidades;
 	}
 	public Jugador crearJugador() {
-		return new Jugador(20,300);
+		jugador=new Jugador(20,300);
+		return jugador;
+		
 	}
 
 }

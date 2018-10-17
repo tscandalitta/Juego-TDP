@@ -10,7 +10,7 @@ public class InteligenciaKamikaze extends Inteligencia {
 	
 	public InteligenciaKamikaze(Enemigo k) {
 		kamikaze=k;
-		velocidad=15;
+		velocidad=25;
 		pos=k.getPos();
 	}
 

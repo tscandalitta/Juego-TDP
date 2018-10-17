@@ -10,16 +10,27 @@ import Juego.Juego;
 public class Jugador extends Entidad {
 	protected InteligenciaJugador inteligencia;
 	
+	int corX;
+	int corY;
 	public Jugador(int x, int y) {
 		super(x,y);
+		corX=x;
+		corY=y;
 		vida=100;
 		width=40;
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		col=new ColJugador(this);
 		inteligencia= new InteligenciaJugador(this);
+		
 	}
-	
+	public Memento createMemento() {
+		return new Memento(vida,corX,corY);	
+	}
+	public void setStateOfMemento(Memento m) {
+		vida=m.getVida();
+		pos=m.getPos();
+	}
 	public void serColisionado(Colisionador col) {
 		col.afectarJugador(this);
 	}

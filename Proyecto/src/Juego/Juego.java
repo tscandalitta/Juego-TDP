@@ -16,10 +16,12 @@ public class Juego {
 	private int puntaje=0;
 	private int kills=0;
 	private HiloTiempo tiempo;
+	private Memento m;
 	
 	
 	public Juego(GUI gui, Mapa mapa) {
 		jugador=mapa.crearJugador();
+		m=jugador.createMemento();
 		jugador.setJuego(this);
 		entidades=mapa.crearEntidades();
 		entidadesAEliminar= new LinkedList<Entidad>();
@@ -52,8 +54,12 @@ public class Juego {
 	
 	public void eliminarEntidades() {
 		if(jugador.getVida()==0) {
+			jugador.setStateOfMemento(m);
+			/**
 			gui.remove(jugador.getGrafico());
 			tiempo.finalizar();
+			**/
+			
 		}
 		for(Entidad e: entidades) {     
 			if(e.getVida()==0) {

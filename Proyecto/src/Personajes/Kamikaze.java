@@ -12,7 +12,7 @@ public class Kamikaze extends Enemigo {
 	public Kamikaze(int x, int y) {
 		super(x, y);
 		vida=100;
-		damage=20;
+		damage=50;
 		width=40;
 		height=66;
 		puntosDeMuerte=150;
