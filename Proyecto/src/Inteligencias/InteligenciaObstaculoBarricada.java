@@ -8,6 +8,7 @@ public class InteligenciaObstaculoBarricada extends InteligenciaObstaculo{
 		super(o);
 		velocidad=3;
 	}
+	
 	public void mover() {
 	}
 

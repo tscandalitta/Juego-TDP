@@ -9,6 +9,4 @@ public abstract class InteligenciaObstaculo extends Inteligencia{
 		obstaculo=o;
 		pos=obstaculo.getPos();
 	}
-
-
 }
