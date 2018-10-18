@@ -14,7 +14,7 @@ public class Jugador extends Entidad {
 	
 	public Jugador(int x, int y) {
 		super(x,y);
-		oportunidades=3;
+		oportunidades=1;
 		vida=100;
 		width=40;
 		height=70;

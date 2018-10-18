@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
@@ -18,7 +19,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
-	private JLabel puntaje, vida, kills;
+	private JLabel puntaje, vidas, salud, kills, gameOver;
 	/**
 	 * Launch the application.
 	 */
@@ -63,35 +64,54 @@ public class GUI extends JFrame {
 		juego.setHilo(tiempo);
 	}
 	
+	public void gameOver() {
+		gameOver= new JLabel("JUEGO FINALIZADO");
+		gameOver.setForeground(Color.WHITE);
+		gameOver.setFont(new java.awt.Font("Tahoma", 1, 60));
+		gameOver.setHorizontalAlignment(JTextField.CENTER);;
+		gameOver.setBackground(Color.BLACK);
+		gameOver.setBounds(1, 330, 1200, 50);
+		contentPane.removeAll();
+		contentPane.add(gameOver);
+	}
 	public void actualizarPuntajes() {
 		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
 		kills.setText("KILLS: "+juego.getKills());
-		vida.setText("VIDA: "+juego.getJugador().getVida());
+		salud.setText("SALUD: "+juego.getJugador().getVida());
+		vidas.setText("VIDAS: "+juego.getJugador().getOportunidades());
 	}
 	private void inicializarLabels() {
 		inicializarVida();
 		inicializarPuntaje();
 		inicializarKills();
+		inicializarSalud();
 	}
 	private void inicializarVida() {
-		vida=new JLabel("VIDA: 100");
-		vida.setForeground(Color.WHITE);
-		vida.setFont(new java.awt.Font("Tahoma", 1, 16));
-		vida.setBounds(100, 5, 100, 25);
-		contentPane.add(vida);
+		salud=new JLabel("SALUD:");
+		salud.setForeground(Color.WHITE);
+		salud.setFont(new java.awt.Font("Tahoma", 1, 16));
+		salud.setBounds(100, 5, 100, 25);
+		contentPane.add(salud);
 	}
 	private void inicializarKills() {
-		kills=new JLabel("KILLS: 0");
+		kills=new JLabel("KILLS:");
 		kills.setForeground(Color.WHITE);
 		kills.setFont(new java.awt.Font("Tahoma", 1, 16));
 		kills.setBounds(425, 5, 100, 25);
 		contentPane.add(kills);
 	}
 	private void inicializarPuntaje() {
-		puntaje=new JLabel("PUNTAJE: 0");
+		puntaje=new JLabel("PUNTAJE:");
 		puntaje.setForeground(Color.WHITE);
 		puntaje.setFont(new java.awt.Font("Tahoma", 1, 16));
-		puntaje.setBounds(250, 5, 200, 25);
+		puntaje.setBounds(250, 5, 150, 25);
 		contentPane.add(puntaje);
+	}
+	private void inicializarSalud() {
+		vidas=new JLabel("VIDAS: ");
+		vidas.setForeground(Color.WHITE);
+		vidas.setFont(new java.awt.Font("Tahoma", 1, 16));
+		vidas.setBounds(600, 5,	100, 25);
+		contentPane.add(vidas);
 	}
 }

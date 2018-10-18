@@ -67,6 +67,7 @@ public class Juego {
 			if(jugador.getOportunidades()!=0)
 				jugador.reestablecer(estadoInicialJugador);
 			else {
+				gui.gameOver();
 				gui.remove(jugador.getGrafico());
 				gui.actualizarPuntajes();
 				tiempo.finalizar();
