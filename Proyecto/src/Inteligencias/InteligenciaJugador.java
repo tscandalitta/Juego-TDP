@@ -10,6 +10,7 @@ public class InteligenciaJugador extends Inteligencia {
 	protected Juego juego;
 	protected int dy;
 	protected int velocidad;
+	protected boolean disparar;
 	
 	public InteligenciaJugador(Jugador j) {
 		jugador=j;
@@ -26,13 +27,20 @@ public class InteligenciaJugador extends Inteligencia {
             pos.y = 600;
 	}
 	
+	public void disparar() {
+		if(disparar) {
+			juego.crearDisparoJugador();
+		}
+	}
 	
 	 public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         switch (key){
         
 	        case KeyEvent.VK_SPACE :
-	        	juego.crearDisparoJugador();
+	        	if(!disparar)
+	        		juego.crearDisparoJugador();
+	        	disparar=true;
 	        	break;
 			case KeyEvent.VK_UP : 
 				dy = -velocidad;
@@ -47,7 +55,9 @@ public class InteligenciaJugador extends Inteligencia {
         int key = e.getKeyCode();
 
         switch (key){
-        
+        	case KeyEvent.VK_SPACE :
+        		disparar=false;
+        		break;
 			case KeyEvent.VK_UP : 
 				dy = 0;
 				break;

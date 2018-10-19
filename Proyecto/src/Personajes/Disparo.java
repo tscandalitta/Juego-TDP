@@ -1,6 +1,5 @@
 package Personajes;
 
-import Colisionadores.Colisionador;
 import Inteligencias.InteligenciaDisparo;
 
 public abstract class Disparo extends Entidad {
@@ -10,9 +9,5 @@ public abstract class Disparo extends Entidad {
 		super(x,y);
 		vida=1;
 		puntosDeMuerte=0;
-	}
-
-	public void serColisionado(Colisionador col) {
-		col.afectarDisparo(this);
 	}
 }

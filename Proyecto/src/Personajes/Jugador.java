@@ -14,7 +14,7 @@ public class Jugador extends Entidad {
 	
 	public Jugador(int x, int y) {
 		super(x,y);
-		oportunidades=1;
+		oportunidades=3;
 		vida=100;
 		width=40;
 		height=70;
@@ -35,7 +35,10 @@ public class Jugador extends Entidad {
 	public void serColisionado(Colisionador col) {
 		col.afectarJugador(this);
 	}
- 
+	
+	public void disparar() {
+		inteligencia.disparar();
+	}
 	public void mover() {
 		inteligencia.mover();
 		actualizarGrafico();
@@ -60,15 +63,27 @@ public class Jugador extends Entidad {
 	}
 	
 	public void golpearPowerUp(Entidad e) {
+		e.golpearJugador(this);
 	}
+	
 	public void golpearObstaculoDestruible(Entidad o) {
 	}
+	
 	public void golpearEnemigo(Entidad e) {
+		e.golpearJugador(this);
 	}
+	
 	public void golpearJugador(Entidad j) {
 	}
-	public void golpearDisparo(Entidad e) {
-	}
+	
 	public void golpearObstaculoBarricada(Entidad o) {
+	}
+
+	
+	public void golpearDisparoJugador(Entidad d) {
+	}
+
+	public void golpearDisparoEnemigo(Entidad d) {
+		d.golpearJugador(this);
 	}
 }

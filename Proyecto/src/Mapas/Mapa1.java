@@ -7,6 +7,7 @@ import Personajes.Enemigo;
 import Personajes.Entidad;
 import Personajes.Kamikaze;
 import Personajes.Obstaculos.ObstaculoDestruible;
+import Personajes.PowerUps.Curacion;
 
 public class Mapa1 extends Mapa {
 	
@@ -27,6 +28,7 @@ public class Mapa1 extends Mapa {
 		for(int i=1; i<cantObstaculos+1; i++) {
 			entidades.add(new ObstaculoDestruible(600+100*i,(i*720/(cantObstaculos+1)),300));
 		}
+		entidades.add(new Curacion(1000, 200));
 		return entidades;
 	}
 

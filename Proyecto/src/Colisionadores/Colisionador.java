@@ -2,6 +2,8 @@ package Colisionadores;
 
 import Personajes.*;
 import Personajes.Obstaculos.Obstaculo;
+import Personajes.PowerUps.PowerUp;
+
 
 public interface Colisionador {
 	
@@ -10,5 +12,6 @@ public interface Colisionador {
 	public abstract void afectarPowerUp(PowerUp p);
 	public abstract void afectarObstaculoBarricada(Obstaculo o);
 	public abstract void afectarObstaculoDestruible(Obstaculo o);
-	public abstract void afectarDisparo(Disparo d);
+	public abstract void afectarDisparoJugador(Disparo d);
+	public abstract void afectarDisparoEnemigo(Disparo d);
 }

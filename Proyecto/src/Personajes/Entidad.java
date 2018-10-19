@@ -69,11 +69,18 @@ public abstract class Entidad {
 			vida=0;
 	}
 	
+	public void aumentarVida(int v) {
+		vida+=v;
+		if(vida>100)
+			vida=100;
+	}
+	
 	public abstract void golpearJugador(Entidad j);
 	public abstract void golpearEnemigo(Entidad e);
 	public abstract void golpearPowerUp(Entidad p);
 	public abstract void golpearObstaculoBarricada(Entidad o);
 	public abstract void golpearObstaculoDestruible(Entidad o);
-	public abstract void golpearDisparo(Entidad d);
+	public abstract void golpearDisparoJugador(Entidad d);
+	public abstract void golpearDisparoEnemigo(Entidad d);
 	
 }

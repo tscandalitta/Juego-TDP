@@ -19,6 +19,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
+	private Disparador disparador;
 	private JLabel puntaje, vidas, salud, kills, gameOver;
 	/**
 	 * Launch the application.
@@ -61,6 +62,8 @@ public class GUI extends JFrame {
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
+		disparador= new Disparador(juego);
+		disparador.start();
 		juego.setHilo(tiempo);
 	}
 	
@@ -70,7 +73,7 @@ public class GUI extends JFrame {
 		gameOver.setFont(new java.awt.Font("Tahoma", 1, 60));
 		gameOver.setHorizontalAlignment(JTextField.CENTER);;
 		gameOver.setBackground(Color.BLACK);
-		gameOver.setBounds(1, 330, 1200, 50);
+		gameOver.setBounds(1, 330, 1280, 50);
 		contentPane.removeAll();
 		contentPane.add(gameOver);
 	}
@@ -89,29 +92,29 @@ public class GUI extends JFrame {
 	private void inicializarVida() {
 		salud=new JLabel("SALUD:");
 		salud.setForeground(Color.WHITE);
-		salud.setFont(new java.awt.Font("Tahoma", 1, 16));
-		salud.setBounds(100, 5, 100, 25);
+		salud.setFont(new java.awt.Font("Tahoma", 1, 18));
+		salud.setBounds(10, 5, 120, 25);
 		contentPane.add(salud);
 	}
 	private void inicializarKills() {
 		kills=new JLabel("KILLS:");
 		kills.setForeground(Color.WHITE);
-		kills.setFont(new java.awt.Font("Tahoma", 1, 16));
-		kills.setBounds(425, 5, 100, 25);
+		kills.setFont(new java.awt.Font("Tahoma", 1, 18));
+		kills.setBounds(1150, 5, 120, 25);
 		contentPane.add(kills);
 	}
 	private void inicializarPuntaje() {
 		puntaje=new JLabel("PUNTAJE:");
 		puntaje.setForeground(Color.WHITE);
-		puntaje.setFont(new java.awt.Font("Tahoma", 1, 16));
-		puntaje.setBounds(250, 5, 150, 25);
+		puntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
+		puntaje.setBounds(975, 5, 150, 25);
 		contentPane.add(puntaje);
 	}
 	private void inicializarSalud() {
 		vidas=new JLabel("VIDAS: ");
 		vidas.setForeground(Color.WHITE);
-		vidas.setFont(new java.awt.Font("Tahoma", 1, 16));
-		vidas.setBounds(600, 5,	100, 25);
+		vidas.setFont(new java.awt.Font("Tahoma", 1, 18));
+		vidas.setBounds(160, 5,	120, 25);
 		contentPane.add(vidas);
 	}
 }

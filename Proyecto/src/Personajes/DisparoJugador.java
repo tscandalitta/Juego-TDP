@@ -3,6 +3,7 @@ package Personajes;
 import javax.swing.ImageIcon;
 
 import Colisionadores.ColDisparoJugador;
+import Colisionadores.Colisionador;
 import Inteligencias.InteligenciaDisparoJugador;
 
 public class DisparoJugador extends Disparo{
@@ -23,26 +24,37 @@ public class DisparoJugador extends Disparo{
 			this.vida=0;
 	}
 	
+	public void serColisionado(Colisionador col) {
+		col.afectarDisparoJugador(this);
+	}
+	
 	public void golpearJugador(Entidad e) {
 		this.vida=0;
 	}
+	
 	public void golpearEnemigo(Entidad e) {
 		e.disminuirVida(damage);	
 		this.vida=0;
 	}
+	
 	public void golpearObstaculoDestruible(Entidad o) {
 		o.disminuirVida(damage);
 		this.vida=0;
 	}
+	
 	public void golpearPowerUp(Entidad e) {
 		this.vida=0;
 	}
-	public void golpearDisparo(Entidad e) {
-	}
-
+	
 	public void golpearObstaculoBarricada(Entidad o) {
 		o.disminuirVida(damage);
 		this.vida=0;
+	}
+
+	public void golpearDisparoJugador(Entidad d) {
+	}
+
+	public void golpearDisparoEnemigo(Entidad d) {
 	}
 
 }

@@ -24,7 +24,7 @@ public class Juego {
 		jugador=new Jugador(50,300);
 		jugador.setJuego(this);
 		estadoInicialJugador= jugador.crearMemento();
-		this.mapa=new Mapa2();
+		this.mapa=new Mapa1();
 		this.gui=gui;
 		iniciarEntidades();
 	}

@@ -14,7 +14,7 @@ public class Kamikaze extends Enemigo {
 	public Kamikaze(int x, int y) {
 		super(x, y);
 		vida=100;
-		damage=100;
+		damage=50;
 		width=40;
 		height=44;
 		puntosDeMuerte=150;
@@ -39,29 +39,4 @@ public class Kamikaze extends Enemigo {
 		if(pos.x<-10)
 			reestablecer(estadoInicial);
 	}
-	
-	public void serColisionado(Colisionador col) {
-		col.afectarEnemigo(this);
-	}
-	
-	public void golpearJugador(Entidad e) {
-		e.disminuirVida(damage);
-		this.vida=0;
-	}
-	
-	public void golpearEnemigo(Entidad e) {
-	}
-	
-	public void golpearDisparo(Entidad d) {
-		d.golpearEnemigo(this);
-	}
-	
-	public void golpearObstaculoDestruible(Entidad e) {
-		e.disminuirVida(damage);
-		this.vida=0;
-	}
-	
-	public void golpearPowerUp(Entidad e) {
-	}
-	
 }

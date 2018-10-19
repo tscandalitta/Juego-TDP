@@ -29,10 +29,13 @@ public class ObstaculoBarricada extends Obstaculo{
 	public void golpearEnemigo(Entidad e) {
 		e.golpearObstaculoBarricada(this);
 	}
-	public void golpearDisparo(Entidad d) {
+	public void golpearDisparoJugador(Entidad d) {
 		d.golpearObstaculoBarricada(this);
 	}
 
+	public void golpearDisparoEnemigo(Entidad e) {
+	}
+	
 	public void golpearPowerUp(Entidad p) {
 	}
 

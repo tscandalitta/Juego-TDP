@@ -2,10 +2,10 @@ package GUI;
 
 import Juego.Juego;
 
-public class HiloTiempo extends Thread{
+public class Disparador extends Thread{
 	private Juego juego;
 	private volatile boolean hayJuego;
-	public HiloTiempo(Juego j) {
+	public Disparador(Juego j) {
 		juego=j;
 		hayJuego=true;
 	}
@@ -13,19 +13,14 @@ public class HiloTiempo extends Thread{
 	public void run() {
 		while(hayJuego){
 			try {
-				Thread.sleep(20);
+				Thread.sleep(400);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			juego.getJugador().mover();
-			//juego.getJugador().disparar();
-			juego.agregarDisparos();
-			juego.mover();
-			juego.colisionar();
-			juego.eliminarEntidades();
-			juego.verificarMapa();
+			juego.getJugador().disparar();
 		}
 	}
+	
 	public void finalizar() {
 		hayJuego=false;
 	}

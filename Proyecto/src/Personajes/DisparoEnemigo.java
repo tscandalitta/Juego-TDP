@@ -1,6 +1,7 @@
 package Personajes;
 
 import Colisionadores.ColDisparoEnemigo;
+import Colisionadores.Colisionador;
 
 public class DisparoEnemigo extends Disparo{
 	
@@ -15,6 +16,10 @@ public class DisparoEnemigo extends Disparo{
 		actualizarGrafico();
 		if(pos.x<0)
 			this.vida=0;
+	}
+	
+	public void serColisionado(Colisionador col) {
+		col.afectarDisparoEnemigo(this);
 	}
 	
 	public void golpearJugador(Entidad e) {
@@ -33,10 +38,13 @@ public class DisparoEnemigo extends Disparo{
 		e.disminuirVida(damage);
 		this.vida=0;
 	}
-	
-	public void golpearDisparo(Entidad d) {
-	}
 
 	public void golpearObstaculoBarricada(Entidad o) {
+	}
+
+	public void golpearDisparoJugador(Entidad d) {
+	}
+
+	public void golpearDisparoEnemigo(Entidad d) {
 	}
 }

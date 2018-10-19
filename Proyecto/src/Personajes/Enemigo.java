@@ -33,19 +33,25 @@ public class Enemigo extends Entidad{
 		e.disminuirVida(damage);
 		this.vida=0;
 	}
+	
 	public void golpearEnemigo(Entidad e) {
 	}
 	
-	public void golpearDisparo(Entidad d) {
-		d.golpearEnemigo(this);
-	}
 	public void golpearObstaculoDestruible(Entidad e) {
 		e.disminuirVida(damage);
 		this.vida=0;
 	}
+	
 	public void golpearPowerUp(Entidad e) {
 	}
 
 	public void golpearObstaculoBarricada(Entidad o) {
+	}
+
+	public void golpearDisparoJugador(Entidad d) {
+		d.golpearEnemigo(this);
+	}
+
+	public void golpearDisparoEnemigo(Entidad d) {
 	}
 }
