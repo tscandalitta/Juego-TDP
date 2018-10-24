@@ -6,21 +6,32 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
+import Escudos.Escudo;
+import Inteligencias.Inteligencia;
 
 public abstract class Entidad {
-	protected int vida;
+	protected int vida, damage;
 	protected Point pos;
 	protected Colisionador col;
 	protected int width, height;
 	protected int puntosDeMuerte;
 	protected JLabel grafico;
 	protected Icon imagen;
+	protected  Inteligencia inteligencia;
+	protected Escudo escudo;
 	
 	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
 		imagen= new ImageIcon();
 	}
 	
+	public void setEscudo(Escudo e) {
+		escudo=e;
+	}
+	
+	public Escudo getEscudo() {
+		return escudo;
+	}
 	public int getVida() {
 		return vida;
 	}
@@ -36,7 +47,13 @@ public abstract class Entidad {
 	public int getPuntos() {
 		return puntosDeMuerte;
 	}
-	
+	public int getDamage() {
+		return damage;
+	}
+	public void setDamage(int d) {
+		damage=d;
+	}
+		
 	protected void actualizarGrafico(){
 		if(this.grafico != null){
 			this.grafico.setIcon(this.imagen);
@@ -59,11 +76,13 @@ public abstract class Entidad {
 		e.serColisionado(col);
 	}
 	
+	public abstract Inteligencia getInteligencia();
+	
 	public abstract void serColisionado(Colisionador col);
 		
 	public abstract void mover();
 		
-	protected void disminuirVida(int damage) {
+	public void disminuirVida(int damage) {
 		vida-=damage;
 		if(vida<0)
 			vida=0;

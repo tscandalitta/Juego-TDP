@@ -19,7 +19,6 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
-	private Disparador disparador;
 	private JLabel puntaje, vidas, salud, kills, gameOver;
 	/**
 	 * Launch the application.
@@ -62,8 +61,6 @@ public class GUI extends JFrame {
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
-		disparador= new Disparador(juego);
-		disparador.start();
 		juego.setHilo(tiempo);
 	}
 	

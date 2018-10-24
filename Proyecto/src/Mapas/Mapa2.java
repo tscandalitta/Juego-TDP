@@ -2,7 +2,6 @@ package Mapas;
 
 import java.util.LinkedList;
 
-import Juego.Juego;
 import Personajes.Enemigo;
 import Personajes.Entidad;
 import Personajes.Kamikaze;
@@ -34,9 +33,8 @@ public class Mapa2 extends Mapa {
 		return entidades;
 	}
 
-	public void mapaSiguiente(Juego juego) {
-		juego.setMapa(new Mapa3());
-		
+	public Mapa mapaSiguiente() {
+		return new Mapa3();	
 	}
 
 }

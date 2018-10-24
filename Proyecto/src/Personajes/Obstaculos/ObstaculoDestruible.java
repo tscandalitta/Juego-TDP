@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColObstaculoDestruible;
 import Colisionadores.Colisionador;
+import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaObstaculoDestruible;
 import Personajes.Entidad;
 
@@ -44,6 +45,12 @@ public class ObstaculoDestruible extends Obstaculo{
 	}
 
 	public void golpearObstaculoDestruible(Entidad o) {
+	}
+
+	@Override
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

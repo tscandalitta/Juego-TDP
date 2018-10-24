@@ -3,12 +3,10 @@ package Personajes;
 import javax.swing.ImageIcon;
 
 import Colisionadores.ColEnemigo;
-import Colisionadores.Colisionador;
 import Inteligencias.InteligenciaKamikaze;
 import Memento.Memento;
 
 public class Kamikaze extends Enemigo {
-	protected InteligenciaKamikaze inteligencia;
 	private Memento estadoInicial;
 	
 	public Kamikaze(int x, int y) {
@@ -29,7 +27,6 @@ public class Kamikaze extends Enemigo {
 	}
 	
 	public void reestablecer(Memento m) {
-		vida=m.getVida();
 		pos.setLocation(m.getPos());
 	}
 	

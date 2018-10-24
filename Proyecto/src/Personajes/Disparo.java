@@ -1,12 +1,10 @@
 package Personajes;
 
-import Inteligencias.InteligenciaDisparo;
-
 public abstract class Disparo extends Entidad {
-	protected int damage;
-	protected InteligenciaDisparo inteligencia;
-	protected Disparo(int x, int y) {
+	
+	protected Disparo(int damage, int x, int y) {
 		super(x,y);
+		this.damage=damage;
 		vida=1;
 		puntosDeMuerte=0;
 	}

@@ -4,14 +4,14 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColDisparoJugador;
 import Colisionadores.Colisionador;
+import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaDisparoJugador;
 
 public class DisparoJugador extends Disparo{
-	public DisparoJugador(int x, int y) {
-		super(x, y);
+	public DisparoJugador(int damage, int x, int y) {
+		super(damage, x, y);
 		width=28;
-		height=28; 
-		damage=50; 
+		height=28;  
 		this.imagen= new ImageIcon(this.getClass().getResource("/Sprites/disparo.gif")); 
 		col= new ColDisparoJugador(this);
 		inteligencia=new InteligenciaDisparoJugador(this);
@@ -55,6 +55,12 @@ public class DisparoJugador extends Disparo{
 	}
 
 	public void golpearDisparoEnemigo(Entidad d) {
+	}
+
+	@Override
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

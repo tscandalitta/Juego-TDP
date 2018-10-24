@@ -3,11 +3,11 @@ package Personajes;
 import javax.swing.ImageIcon;
 import Colisionadores.ColEnemigo;
 import Colisionadores.Colisionador;
+import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaEnemigo;
 
 public class Enemigo extends Entidad{
-	protected int damage;
-	protected InteligenciaEnemigo inteligencia;
+
 	public Enemigo(int x, int y) {
 		super(x,y);
 		vida=100;
@@ -53,5 +53,9 @@ public class Enemigo extends Entidad{
 	}
 
 	public void golpearDisparoEnemigo(Entidad d) {
+	}
+
+	public Inteligencia getInteligencia() {
+		return null;
 	}
 }

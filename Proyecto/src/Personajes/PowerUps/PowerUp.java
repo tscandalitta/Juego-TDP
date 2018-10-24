@@ -1,6 +1,7 @@
 package Personajes.PowerUps;
 
 import Colisionadores.Colisionador;
+import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaPowerUp;
 import Personajes.Entidad;
 
@@ -43,6 +44,10 @@ public abstract class PowerUp extends Entidad{
 
 	public void serColisionado(Colisionador col) {
 		col.afectarPowerUp(this);
+	}
+	
+	public Inteligencia getInteligencia() {
+		return null;
 	}
 	
 	public abstract void realizarAccion(Entidad e);

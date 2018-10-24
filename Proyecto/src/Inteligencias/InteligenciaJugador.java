@@ -10,12 +10,15 @@ public class InteligenciaJugador extends Inteligencia {
 	protected Juego juego;
 	protected int dy;
 	protected int velocidad;
-	protected boolean disparar;
+	protected int contadorDisparar;
+	protected volatile boolean disparar;
 	
 	public InteligenciaJugador(Jugador j) {
 		jugador=j;
 		pos=j.getPos();
 		velocidad=10;
+		contadorDisparar=0;
+		disparar=false;
 	}
 	
 	public void mover() {
@@ -27,19 +30,22 @@ public class InteligenciaJugador extends Inteligencia {
             pos.y = 600;
 	}
 	
-	public void disparar() {
-		if(disparar) {
-			juego.crearDisparoJugador();
+	public void disparar(int damage) {
+		contadorDisparar++;
+		if(contadorDisparar>=12 && disparar) {
+			crearDisparo(damage);
+			contadorDisparar=0;
 		}
 	}
 	
+	private void crearDisparo(int damage) {
+		juego.crearDisparoJugador(damage, pos.x+40, pos.y+25);
+	}
 	 public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         switch (key){
         
 	        case KeyEvent.VK_SPACE :
-	        	if(!disparar)
-	        		juego.crearDisparoJugador();
 	        	disparar=true;
 	        	break;
 			case KeyEvent.VK_UP : 
@@ -65,7 +71,6 @@ public class InteligenciaJugador extends Inteligencia {
 				dy = 0;
 				break;	
         }
-
     }
     
     public void setJuego(Juego j) {

@@ -40,8 +40,8 @@ public class Juego {
 		this.tiempo=tiempo;
 	}
 	
-	public void crearDisparoJugador() {
-		disparosPendientes.add(new DisparoJugador(jugador.getPos().x +50 ,jugador.getPos().y + 35));
+	public void crearDisparoJugador(int damage, int x, int y) {
+		disparosPendientes.add(new DisparoJugador(damage,x,y));
 	}
 	/**
 	public void crearDisparoEnemigo() {
@@ -89,8 +89,6 @@ public class Juego {
 				aumentarPuntaje(e.getPuntos());
 				kills++;
 			}
-				
-				
 		}
 		entidadesAEliminar.clear();
 		gui.actualizarPuntajes();
@@ -98,13 +96,9 @@ public class Juego {
 	
 	public void verificarMapa() {
 		if(entidades.size()==0) {
-			mapa.mapaSiguiente(this);
+			mapa= mapa.mapaSiguiente();
 			iniciarEntidades();
 		}
-	}
-	
-	public void setMapa(Mapa m) {
-		mapa=m;
 	}
 	
 	public void colisionar() {

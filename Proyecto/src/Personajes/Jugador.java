@@ -4,6 +4,8 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColJugador;
 import Colisionadores.Colisionador;
+import Escudos.Escudo;
+import Escudos.SinEscudo;
 import Inteligencias.InteligenciaJugador;
 import Juego.Juego;
 import Memento.Memento;
@@ -14,13 +16,15 @@ public class Jugador extends Entidad {
 	
 	public Jugador(int x, int y) {
 		super(x,y);
-		oportunidades=3;
-		vida=100;
+		oportunidades=1;
 		width=40;
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		col=new ColJugador(this);
 		inteligencia= new InteligenciaJugador(this);
+		escudo= new SinEscudo();
+		vida=100;
+		damage=60;
 	}
 	
 	public Memento crearMemento() {
@@ -37,7 +41,7 @@ public class Jugador extends Entidad {
 	}
 	
 	public void disparar() {
-		inteligencia.disparar();
+		inteligencia.disparar(damage);
 	}
 	public void mover() {
 		inteligencia.mover();
@@ -47,7 +51,7 @@ public class Jugador extends Entidad {
 		return inteligencia;
 	}
 	
-	protected void disminuirVida(int damage) {
+	public void disminuirVida(int damage) {
 		vida-=damage;
 		if(vida<=0) {
 			vida=0;

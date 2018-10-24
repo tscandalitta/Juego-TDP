@@ -2,13 +2,13 @@ package Personajes;
 
 import Colisionadores.ColDisparoEnemigo;
 import Colisionadores.Colisionador;
+import Inteligencias.Inteligencia;
 
 public class DisparoEnemigo extends Disparo{
 	
-	public DisparoEnemigo(int x, int y) {
-		super(x, y);
+	public DisparoEnemigo(int damage, int x, int y) {
+		super(damage, x, y);
 		col= new ColDisparoEnemigo(this);
-		damage=10;
 	}
 
 	public void mover() {
@@ -46,5 +46,11 @@ public class DisparoEnemigo extends Disparo{
 	}
 
 	public void golpearDisparoEnemigo(Entidad d) {
+	}
+
+	@Override
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

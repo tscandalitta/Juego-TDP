@@ -6,7 +6,7 @@ public class InteligenciaDisparoJugador extends InteligenciaDisparo {
 	
 	public InteligenciaDisparoJugador(DisparoJugador d) {
 		super(d);
-		velocidad=15;   
+		velocidad=20;   
 	}
 	
 	public void mover() {

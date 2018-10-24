@@ -18,7 +18,7 @@ public class HiloTiempo extends Thread{
 				e.printStackTrace();
 			}
 			juego.getJugador().mover();
-			//juego.getJugador().disparar();
+			juego.getJugador().disparar();
 			juego.agregarDisparos();
 			juego.mover();
 			juego.colisionar();
@@ -26,6 +26,7 @@ public class HiloTiempo extends Thread{
 			juego.verificarMapa();
 		}
 	}
+	
 	public void finalizar() {
 		hayJuego=false;
 	}

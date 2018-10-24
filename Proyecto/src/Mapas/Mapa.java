@@ -1,7 +1,6 @@
 package Mapas;
 
 import java.util.LinkedList;
-import Juego.Juego;
 import Personajes.Entidad;
 
 public abstract class Mapa {
@@ -10,5 +9,5 @@ public abstract class Mapa {
 	
 	public abstract LinkedList<Entidad> crearEntidades();
 	
-	public abstract void mapaSiguiente(Juego juego);
+	public abstract Mapa mapaSiguiente();
 }
