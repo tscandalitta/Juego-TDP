@@ -12,8 +12,8 @@ public class SuperDisparo extends PowerUp{
 	public SuperDisparo(int x, int y) {
 		super(x,y);
 		width=30;
-		height=32;
-		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/escudo.png"));
+		height=60;
+		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/superdisparo.png"));
 		col= new ColPowerUp(this);
 		inteligencia= new InteligenciaPowerUp(this);
 	}

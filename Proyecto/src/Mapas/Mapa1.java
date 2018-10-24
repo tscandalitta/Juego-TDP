@@ -8,7 +8,6 @@ import Personajes.Kamikaze;
 import Personajes.Obstaculos.ObstaculoDestruible;
 import Personajes.PowerUps.Curacion;
 import Personajes.PowerUps.SuperDisparo;
-import Personajes.PowerUps.SuperEscudo;
 
 public class Mapa1 extends Mapa {
 	
