@@ -1,5 +1,6 @@
 package Inteligencias;
 
+import Juego.Juego;
 import Personajes.PowerUps.PowerUp;
 
 public class InteligenciaPowerUp extends Inteligencia {
@@ -21,5 +22,4 @@ public class InteligenciaPowerUp extends Inteligencia {
 		if(pos.y>limiteInf)
 			dir=-1;
 	}
-
 }

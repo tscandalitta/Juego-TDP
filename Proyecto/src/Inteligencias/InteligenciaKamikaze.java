@@ -2,6 +2,7 @@ package Inteligencias;
 
 import java.util.Random;
 
+import Juego.Juego;
 import Personajes.Enemigo;
 
 public class InteligenciaKamikaze extends Inteligencia {
@@ -12,6 +13,8 @@ public class InteligenciaKamikaze extends Inteligencia {
 		kamikaze=k;
 		velocidad=15;
 		pos=k.getPos();
+	}
+	public void setJuego(Juego j) {
 	}
 
 	public void mover() {

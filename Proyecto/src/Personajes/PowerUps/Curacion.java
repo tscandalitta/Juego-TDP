@@ -19,7 +19,5 @@ public class Curacion extends PowerUp {
 
 	public void realizarAccion(Entidad e) {
 		e.aumentarVida(100);
-
-		System.out.println(e.getDamage());
 	}
 }

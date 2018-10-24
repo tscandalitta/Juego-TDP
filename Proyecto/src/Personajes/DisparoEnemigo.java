@@ -1,14 +1,20 @@
 package Personajes;
 
+import javax.swing.ImageIcon;
+
 import Colisionadores.ColDisparoEnemigo;
 import Colisionadores.Colisionador;
-import Inteligencias.Inteligencia;
+import Inteligencias.InteligenciaDisparoEnemigo;
 
 public class DisparoEnemigo extends Disparo{
 	
 	public DisparoEnemigo(int damage, int x, int y) {
 		super(damage, x, y);
+		width=40;
+		height=40;  
+		this.imagen= new ImageIcon(this.getClass().getResource("/Sprites/disparoenemigo.gif")); 
 		col= new ColDisparoEnemigo(this);
+		inteligencia= new InteligenciaDisparoEnemigo(this);
 	}
 
 	public void mover() {
@@ -48,9 +54,5 @@ public class DisparoEnemigo extends Disparo{
 	public void golpearDisparoEnemigo(Entidad d) {
 	}
 
-	@Override
-	public Inteligencia getInteligencia() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

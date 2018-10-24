@@ -12,7 +12,7 @@ public class Juego {
 	private Jugador jugador;
 	private LinkedList<Entidad> entidades;
 	private LinkedList<Entidad> entidadesAEliminar;
-	private LinkedList<Entidad> disparosPendientes;
+	private LinkedList<Entidad> entidadesPendientes;
 	private GUI gui;
 	private int puntaje=0;
 	private int kills=0;
@@ -24,41 +24,47 @@ public class Juego {
 		jugador=new Jugador(50,300);
 		jugador.setJuego(this);
 		estadoInicialJugador= jugador.crearMemento();
-		this.mapa=new Mapa1();
+		this.mapa=new Mapa1(this);
 		this.gui=gui;
 		iniciarEntidades();
 	}
 	
 	public void iniciarEntidades() {
-		entidades=this.mapa.crearEntidades();
+		entidades= this.mapa.crearEntidades();
 		entidadesAEliminar= new LinkedList<Entidad>();
-		disparosPendientes= new LinkedList<Entidad>();
-		iniciarGraficos();
+		entidadesPendientes= new LinkedList<Entidad>();
+		gui.add(jugador.getGrafico());
+		for(Entidad e: entidades) {
+			gui.add(e.getGrafico());
+			e.setJuego(this);
+		}
 	}
 	
 	public void setHilo(HiloTiempo tiempo) {
 		this.tiempo=tiempo;
 	}
 	
-	public void crearDisparoJugador(int damage, int x, int y) {
-		disparosPendientes.add(new DisparoJugador(damage,x,y));
+	public void agregarEntidad(Entidad e) {
+		synchronized(entidadesPendientes) {
+			entidadesPendientes.add(e);
+		}
 	}
-	/**
-	public void crearDisparoEnemigo() {
-		disparosPendientes.add(new DisparoEnemigo);
-	}
-	*/
-	public void agregarDisparos() {
-		for(Entidad e: disparosPendientes) {
-			entidades.add(e);
-			gui.add(e.getGrafico());   
-			disparosPendientes.remove(e);
+	
+	public void agregarEntidades() {
+		synchronized(entidadesPendientes) {
+			for(Entidad e: entidadesPendientes) {
+				entidades.add(e);
+				gui.add(e.getGrafico());
+				entidadesPendientes.remove(e);
+			}
 		}
 	}
 	
 	public void mover() {
-		for(Entidad e: entidades) {
-			e.mover();
+		synchronized (entidades) {
+			for(Entidad e: entidades) {
+				e.mover();
+			}
 		}
 	}
 	
@@ -139,9 +145,5 @@ public class Juego {
 		return entidadesAEliminar;
 	}
 	
-	private void iniciarGraficos() {
-		gui.add(jugador.getGrafico());
-		for(Entidad e: entidades)
-			gui.add(e.getGrafico());
-	}
+	
 }

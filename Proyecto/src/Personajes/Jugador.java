@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColJugador;
 import Colisionadores.Colisionador;
-import Escudos.Escudo;
 import Escudos.SinEscudo;
 import Inteligencias.InteligenciaJugador;
 import Juego.Juego;
@@ -16,7 +15,7 @@ public class Jugador extends Entidad {
 	
 	public Jugador(int x, int y) {
 		super(x,y);
-		oportunidades=1;
+		oportunidades=3;
 		width=40;
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
@@ -38,6 +37,10 @@ public class Jugador extends Entidad {
 	
 	public void serColisionado(Colisionador col) {
 		col.afectarJugador(this);
+	}
+	
+	public void setJuego(Juego j) {
+		inteligencia.setJuego(j);
 	}
 	
 	public void disparar() {
@@ -62,9 +65,7 @@ public class Jugador extends Entidad {
 	public int getOportunidades() {
 		return oportunidades;
 	}
-	public void setJuego(Juego j) {
-		inteligencia.setJuego(j);
-	}
+	
 	
 	public void golpearPowerUp(Entidad e) {
 		e.golpearJugador(this);

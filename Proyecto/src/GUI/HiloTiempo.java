@@ -19,7 +19,7 @@ public class HiloTiempo extends Thread{
 			}
 			juego.getJugador().mover();
 			juego.getJugador().disparar();
-			juego.agregarDisparos();
+			juego.agregarEntidades();
 			juego.mover();
 			juego.colisionar();
 			juego.eliminarEntidades();

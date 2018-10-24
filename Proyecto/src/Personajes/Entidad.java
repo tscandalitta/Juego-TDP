@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import Colisionadores.Colisionador;
 import Escudos.Escudo;
 import Inteligencias.Inteligencia;
+import Juego.Juego;
 
 public abstract class Entidad {
 	protected int vida, damage;
@@ -19,10 +20,15 @@ public abstract class Entidad {
 	protected Icon imagen;
 	protected  Inteligencia inteligencia;
 	protected Escudo escudo;
+	protected Juego juego;
 	
 	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
 		imagen= new ImageIcon();
+	}
+	public void setJuego(Juego j) {
+		juego=j;
+		inteligencia.setJuego(j);
 	}
 	
 	public void setEscudo(Escudo e) {
@@ -76,7 +82,13 @@ public abstract class Entidad {
 		e.serColisionado(col);
 	}
 	
-	public abstract Inteligencia getInteligencia();
+	public Inteligencia getInteligencia() {
+		return inteligencia;
+	}
+	
+	public void setInteligencia(Inteligencia i) {
+		inteligencia=i;
+	}
 	
 	public abstract void serColisionado(Colisionador col);
 		
@@ -102,4 +114,6 @@ public abstract class Entidad {
 	public abstract void golpearDisparoJugador(Entidad d);
 	public abstract void golpearDisparoEnemigo(Entidad d);
 	
+	public void setInteligenciaDummy(Inteligencia i) {
+	}
 }

@@ -1,5 +1,6 @@
 package Inteligencias;
 
+import Juego.Juego;
 import Personajes.Obstaculos.ObstaculoBarricada;
 
 public class InteligenciaObstaculoBarricada extends InteligenciaObstaculo{

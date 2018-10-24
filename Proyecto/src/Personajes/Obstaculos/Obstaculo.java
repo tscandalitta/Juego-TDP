@@ -1,10 +1,9 @@
 package Personajes.Obstaculos;
 
-import Inteligencias.InteligenciaObstaculo;
+import Inteligencias.Inteligencia;
 import Personajes.Entidad;
 
 public abstract class Obstaculo extends Entidad{
-	protected InteligenciaObstaculo inteligencia;
 	
 	protected Obstaculo(int x, int y, int vida) {
 		super(x,y);
@@ -14,5 +13,9 @@ public abstract class Obstaculo extends Entidad{
 	public void mover() {
 		inteligencia.mover();
 		actualizarGrafico();
+	}
+	
+	public void setInteligenciaDummy(Inteligencia i) {
+		inteligencia=i;
 	}
 }

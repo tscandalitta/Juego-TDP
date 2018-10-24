@@ -3,11 +3,12 @@ package Inteligencias;
 import java.awt.event.KeyEvent;
 
 import Juego.Juego;
+import Personajes.DisparoJugador;
 import Personajes.Jugador;
 
 public class InteligenciaJugador extends Inteligencia {
 	protected Jugador jugador;
-	protected Juego juego;
+	//protected Juego juego;
 	protected int dy;
 	protected int velocidad;
 	protected int contadorDisparar;
@@ -39,7 +40,8 @@ public class InteligenciaJugador extends Inteligencia {
 	}
 	
 	private void crearDisparo(int damage) {
-		juego.crearDisparoJugador(damage, pos.x+40, pos.y+25);
+		DisparoJugador disparo= new DisparoJugador(damage, pos.x+40, pos.y+25);
+		juego.agregarEntidad(disparo);
 	}
 	 public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
@@ -71,10 +73,6 @@ public class InteligenciaJugador extends Inteligencia {
 				dy = 0;
 				break;	
         }
-    }
-    
-    public void setJuego(Juego j) {
-    	juego=j;
     }
 	 
 }

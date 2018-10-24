@@ -6,7 +6,7 @@ import Inteligencias.InteligenciaPowerUp;
 import Personajes.Entidad;
 
 public abstract class PowerUp extends Entidad{
-	protected InteligenciaPowerUp inteligencia;
+	protected Entidad jugador;
 	
 	protected PowerUp(int x, int y) {
 		super(x,y);
@@ -44,10 +44,6 @@ public abstract class PowerUp extends Entidad{
 
 	public void serColisionado(Colisionador col) {
 		col.afectarPowerUp(this);
-	}
-	
-	public Inteligencia getInteligencia() {
-		return null;
 	}
 	
 	public abstract void realizarAccion(Entidad e);

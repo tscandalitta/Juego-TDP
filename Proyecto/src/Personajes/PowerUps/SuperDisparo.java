@@ -3,12 +3,12 @@ package Personajes.PowerUps;
 import javax.swing.ImageIcon;
 
 import Colisionadores.ColPowerUp;
-import GUI.HiloSuperDisparo;
 import Inteligencias.InteligenciaPowerUp;
 import Personajes.Entidad;
 
-public class SuperDisparo extends PowerUp{
-
+public class SuperDisparo extends PowerUp implements Runnable{
+	
+	
 	public SuperDisparo(int x, int y) {
 		super(x,y);
 		width=30;
@@ -19,7 +19,17 @@ public class SuperDisparo extends PowerUp{
 	}
 
 	public void realizarAccion(Entidad e) {
-		HiloSuperDisparo hilo= new HiloSuperDisparo(e);
-		hilo.start();
+		jugador=e;
+		(new Thread(this)).start();
+	}
+
+	public void run() {
+		try {
+			jugador.setDamage(jugador.getDamage()*2);
+			Thread.sleep(5000);
+			jugador.setDamage(jugador.getDamage()/2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

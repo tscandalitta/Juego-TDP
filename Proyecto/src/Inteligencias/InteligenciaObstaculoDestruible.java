@@ -1,5 +1,6 @@
 package Inteligencias;
 
+import Juego.Juego;
 import Personajes.Obstaculos.ObstaculoDestruible;
 
 public class InteligenciaObstaculoDestruible extends InteligenciaObstaculo {
@@ -16,5 +17,4 @@ public class InteligenciaObstaculoDestruible extends InteligenciaObstaculo {
 		if(pos.y>510)
 			velocidad=-velocidad;
 	}
-
 }

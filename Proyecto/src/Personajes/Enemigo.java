@@ -1,11 +1,13 @@
 package Personajes;
 
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 import Colisionadores.ColEnemigo;
 import Colisionadores.Colisionador;
 import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaEnemigo;
-
+import Personajes.PowerUps.*;
 public class Enemigo extends Entidad{
 
 	public Enemigo(int x, int y) {
@@ -25,6 +27,35 @@ public class Enemigo extends Entidad{
 		actualizarGrafico();
 	}
 
+	public void disminuirVida(int damage) {
+		vida-=damage;
+		if(vida<0) {
+			vida=0;
+			lanzarPowerUp();
+		}
+	}
+	
+	private void lanzarPowerUp() {
+		Random r= new Random();
+		int n= r.nextInt(10);
+		PowerUp powerup=null;
+		switch(n) {
+		case 1: 
+			powerup= new Congelar(pos.x,pos.y);
+			break;
+		case 2:
+			powerup= new Curacion(pos.x,pos.y);
+			break;
+		case 3:
+			powerup= new SuperDisparo(pos.x,pos.y);
+			break;
+		}
+		if(powerup!=null) {
+			powerup.setJuego(juego);
+			juego.agregarEntidad(powerup);
+		}
+	}
+	
 	public void serColisionado(Colisionador col) {
 		col.afectarEnemigo(this);
 	}
@@ -55,7 +86,7 @@ public class Enemigo extends Entidad{
 	public void golpearDisparoEnemigo(Entidad d) {
 	}
 
-	public Inteligencia getInteligencia() {
-		return null;
+	public void setInteligenciaDummy(Inteligencia i) {
+		inteligencia=i;
 	}
 }

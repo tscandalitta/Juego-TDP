@@ -46,9 +46,4 @@ public class ObstaculoBarricada extends Obstaculo{
 	public void golpearObstaculoDestruible(Entidad o) {
 	}
 
-	@Override
-	public Inteligencia getInteligencia() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

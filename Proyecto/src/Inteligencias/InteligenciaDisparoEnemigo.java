@@ -1,5 +1,6 @@
 package Inteligencias;
 
+import Juego.Juego;
 import Personajes.DisparoEnemigo;
 
 public class InteligenciaDisparoEnemigo extends InteligenciaDisparo {
@@ -12,4 +13,6 @@ public class InteligenciaDisparoEnemigo extends InteligenciaDisparo {
 	public void mover() {
 		pos.setLocation(pos.x - velocidad, pos.y);
 	}
+	
+	
 }

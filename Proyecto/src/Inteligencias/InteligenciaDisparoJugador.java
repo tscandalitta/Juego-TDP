@@ -1,5 +1,6 @@
 package Inteligencias;
 
+import Juego.Juego;
 import Personajes.DisparoJugador;
 
 public class InteligenciaDisparoJugador extends InteligenciaDisparo {

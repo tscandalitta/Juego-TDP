@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColDisparoJugador;
 import Colisionadores.Colisionador;
-import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaDisparoJugador;
 
 public class DisparoJugador extends Disparo{
@@ -55,12 +54,6 @@ public class DisparoJugador extends Disparo{
 	}
 
 	public void golpearDisparoEnemigo(Entidad d) {
-	}
-
-	@Override
-	public Inteligencia getInteligencia() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
