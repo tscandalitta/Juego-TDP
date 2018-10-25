@@ -49,6 +49,9 @@ public class Enemigo extends Entidad{
 		case 3:
 			powerup= new SuperDisparo(pos.x,pos.y);
 			break;
+		case 4:
+			powerup= new SuperEscudo(pos.x,pos.y);
+			break;
 		}
 		if(powerup!=null) {
 			powerup.setJuego(juego);

@@ -11,7 +11,7 @@ public class InteligenciaPowerUp extends Inteligencia {
 	public InteligenciaPowerUp(PowerUp p) {
 		power=p;
 		pos=p.getPos();
-		velocidad=4;
+		velocidad=8;
 		limiteSup=pos.y-30;
 		limiteInf=pos.y+30;
 	}

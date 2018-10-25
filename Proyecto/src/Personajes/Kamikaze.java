@@ -36,4 +36,12 @@ public class Kamikaze extends Enemigo {
 		if(pos.x<-10)
 			reestablecer(estadoInicial);
 	}
+	
+	public void golpearJugador(Entidad e) {
+		if(e.tengoEscudo())
+			e.setEscudo(false);
+		else
+			e.disminuirVida(damage);
+		this.vida=0;
+	}
 }

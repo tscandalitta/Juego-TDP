@@ -30,18 +30,20 @@ public class Congelar extends PowerUp implements Runnable{
 
 	public void run() {
 		Map<Entidad,Inteligencia> mapeoInteligencias= new HashMap<Entidad,Inteligencia>();
-		for(Entidad e: juego.getEntidades()) {
-			mapeoInteligencias.put(e, e.getInteligencia());
-			e.setInteligenciaDummy(new InteligenciaDummy());
-		}
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e1) {
-			e1.printStackTrace();
-		}
-		for(Entidad e: juego.getEntidades()) {
-			if(mapeoInteligencias.containsKey(e))
-				e.setInteligencia(mapeoInteligencias.get(e));
+		synchronized(juego.getEntidades()) {
+			for(Entidad e: juego.getEntidades()) { 
+				mapeoInteligencias.put(e, e.getInteligencia());
+				e.setInteligenciaDummy(new InteligenciaDummy());
+			}
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			for(Entidad e: juego.getEntidades()) {
+				if(mapeoInteligencias.containsKey(e))
+					e.setInteligencia(mapeoInteligencias.get(e));
+			}
 		}
 		mapeoInteligencias.clear();
 	}

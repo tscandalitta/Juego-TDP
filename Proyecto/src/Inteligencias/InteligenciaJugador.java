@@ -8,11 +8,12 @@ import Personajes.Jugador;
 
 public class InteligenciaJugador extends Inteligencia {
 	protected Jugador jugador;
-	//protected Juego juego;
 	protected int dy;
 	protected int velocidad;
 	protected int contadorDisparar;
 	protected volatile boolean disparar;
+/////////TEMPORAL//////////SACAR BOOLEANO
+	protected boolean tengoEscudo=false;
 	
 	public InteligenciaJugador(Jugador j) {
 		jugador=j;
@@ -33,10 +34,18 @@ public class InteligenciaJugador extends Inteligencia {
 	
 	public void disparar(int damage) {
 		contadorDisparar++;
-		if(contadorDisparar>=12 && disparar) {
+		if(contadorDisparar>=15 && disparar) {
 			crearDisparo(damage);
 			contadorDisparar=0;
 		}
+	}
+	
+	public boolean tieneEscudo() {
+		return tengoEscudo;
+	}
+	
+	public void activarEscudo() {
+		tengoEscudo=true;
 	}
 	
 	private void crearDisparo(int damage) {

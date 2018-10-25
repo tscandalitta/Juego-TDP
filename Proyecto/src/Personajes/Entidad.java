@@ -21,6 +21,8 @@ public abstract class Entidad {
 	protected  Inteligencia inteligencia;
 	protected Escudo escudo;
 	protected Juego juego;
+	//temporal 
+	protected boolean tengoEscudo=false;
 	
 	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
@@ -31,8 +33,8 @@ public abstract class Entidad {
 		inteligencia.setJuego(j);
 	}
 	
-	public void setEscudo(Escudo e) {
-		escudo=e;
+	public void setEscudo(boolean e) {
+		tengoEscudo=e;
 	}
 	
 	public Escudo getEscudo() {
@@ -104,6 +106,10 @@ public abstract class Entidad {
 		vida+=v;
 		if(vida>100)
 			vida=100;
+	}
+	
+	public boolean tengoEscudo() {
+		return tengoEscudo;
 	}
 	
 	public abstract void golpearJugador(Entidad j);
