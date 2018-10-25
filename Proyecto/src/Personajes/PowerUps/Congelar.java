@@ -30,11 +30,9 @@ public class Congelar extends PowerUp implements Runnable{
 
 	public void run() {
 		Map<Entidad,Inteligencia> mapeoInteligencias= new HashMap<Entidad,Inteligencia>();
-		if(juego==null)
-			System.out.println("holaaaa");
 		for(Entidad e: juego.getEntidades()) {
-			e.setInteligenciaDummy(new InteligenciaDummy());
 			mapeoInteligencias.put(e, e.getInteligencia());
+			e.setInteligenciaDummy(new InteligenciaDummy());
 		}
 		try {
 			Thread.sleep(5000);

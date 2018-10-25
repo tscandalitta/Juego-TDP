@@ -51,12 +51,10 @@ public class Juego {
 	}
 	
 	public void agregarEntidades() {
-		synchronized(entidadesPendientes) {
-			for(Entidad e: entidadesPendientes) {
-				entidades.add(e);
-				gui.add(e.getGrafico());
-				entidadesPendientes.remove(e);
-			}
+		for(Entidad e: entidadesPendientes) {
+			entidades.add(e);
+			gui.add(e.getGrafico());
+			entidadesPendientes.remove(e);
 		}
 	}
 	
