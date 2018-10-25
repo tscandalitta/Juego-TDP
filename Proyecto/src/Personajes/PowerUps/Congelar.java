@@ -15,9 +15,9 @@ public class Congelar extends PowerUp implements Runnable{
 
 	public Congelar(int x, int y) {
 		super(x,y);
-		width=30;
-		height=49;
-		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/focusyn.png"));
+		width=28;
+		height=35;
+		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/congelar.png"));
 		col= new ColPowerUp(this);
 		inteligencia= new InteligenciaPowerUp(this);
 	}
