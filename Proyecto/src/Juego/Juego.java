@@ -24,7 +24,7 @@ public class Juego {
 		jugador=new Jugador(50,300);
 		jugador.setJuego(this);
 		estadoInicialJugador= jugador.crearMemento();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa2(this);
 		this.gui=gui;
 		iniciarEntidades();
 	}
@@ -34,10 +34,17 @@ public class Juego {
 		entidadesAEliminar= new LinkedList<Entidad>();
 		entidadesPendientes= new LinkedList<Entidad>();
 		gui.add(jugador.getGrafico());
-		for(Entidad e: entidades) {
-			gui.add(e.getGrafico());
-			e.setJuego(this);
+		if(entidades.size()==0) {
+			jugador.disminuirVida(100);
+			gui.remove(jugador.getGrafico());
+			gui.ganar();
+			tiempo.finalizar();
 		}
+		else
+			for(Entidad e: entidades) {
+				gui.add(e.getGrafico());
+				e.setJuego(this);
+			}
 	}
 	
 	public void setHilo(HiloTiempo tiempo) {
@@ -45,24 +52,22 @@ public class Juego {
 	}
 	
 	public void agregarEntidad(Entidad e) {
-		synchronized(entidadesPendientes) {
-			entidadesPendientes.add(e);
-		}
+		entidadesPendientes.add(e);
 	}
 	
 	public void agregarEntidades() {
-		for(Entidad e: entidadesPendientes) {
-			entidades.add(e);
-			gui.add(e.getGrafico());
-			entidadesPendientes.remove(e);
+		synchronized(entidadesPendientes) {
+			for(Entidad e: entidadesPendientes) {
+				entidades.add(e);
+				gui.add(e.getGrafico());
+				entidadesPendientes.remove(e);
+			}
 		}
 	}
 	
 	public void mover() {
-		synchronized (entidades) {
-			for(Entidad e: entidades) {
-				e.mover();
-			}
+		for(Entidad e: entidades) {
+			e.mover();
 		}
 	}
 	
@@ -73,7 +78,6 @@ public class Juego {
 			else {
 				gui.gameOver();
 				gui.remove(jugador.getGrafico());
-				gui.actualizarPuntajes();
 				tiempo.finalizar();
 			}
 		}

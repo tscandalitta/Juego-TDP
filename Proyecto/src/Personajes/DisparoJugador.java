@@ -54,6 +54,8 @@ public class DisparoJugador extends Disparo{
 	}
 
 	public void golpearDisparoEnemigo(Entidad d) {
+		d.disminuirVida(damage);
+		this.vida=0;
 	}
 
 }

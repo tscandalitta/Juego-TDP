@@ -35,7 +35,7 @@ public class Enemigo extends Entidad{
 		}
 	}
 	
-	private void lanzarPowerUp() {
+	protected void lanzarPowerUp() {
 		Random r= new Random();
 		int n= r.nextInt(10);
 		PowerUp powerup=null;

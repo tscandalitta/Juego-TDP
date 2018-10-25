@@ -15,4 +15,7 @@ public class Boss extends Enemigo {
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/boss2.png"));
 		inteligencia=new InteligenciaDummy();
 	}
+	
+	protected void lanzarPower() {
+	}
 }

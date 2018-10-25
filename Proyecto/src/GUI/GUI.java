@@ -19,7 +19,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
-	private JLabel puntaje, vidas, salud, kills, gameOver;
+	private JLabel puntaje, vidas, salud, kills, gameOver, ganar;
 	/**
 	 * Launch the application.
 	 */
@@ -65,14 +65,27 @@ public class GUI extends JFrame {
 	}
 	
 	public void gameOver() {
-		gameOver= new JLabel("JUEGO FINALIZADO");
-		gameOver.setForeground(Color.WHITE);
-		gameOver.setFont(new java.awt.Font("Tahoma", 1, 60));
-		gameOver.setHorizontalAlignment(JTextField.CENTER);;
-		gameOver.setBackground(Color.BLACK);
-		gameOver.setBounds(1, 330, 1280, 50);
+		gameOver= new JLabel("HAS PERDIDO");
+		gameOver.setForeground(Color.RED);
+		this.actualizarPuntajes();
+		terminarJuego(gameOver);
+	}
+	
+	public void ganar() {
+		ganar= new JLabel("HAS GANADO");
+		ganar.setForeground(Color.GREEN);
+		this.actualizarPuntajes();
+		terminarJuego(ganar);
+	}
+	
+	private void terminarJuego(JLabel label) {
+		label.setFont(new java.awt.Font("Tahoma", 1, 60));
+		label.setHorizontalAlignment(JTextField.CENTER);;
+		label.setBackground(Color.BLACK);
+		label.setBounds(1, 330, 1280, 50);
 		contentPane.removeAll();
-		contentPane.add(gameOver);
+		contentPane.add(label);		
+		this.repaint();
 	}
 	public void actualizarPuntajes() {
 		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
