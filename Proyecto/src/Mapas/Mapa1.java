@@ -7,9 +7,6 @@ import Personajes.Enemigo;
 import Personajes.Entidad;
 import Personajes.Kamikaze;
 import Personajes.Obstaculos.ObstaculoDestruible;
-import Personajes.PowerUps.Congelar;
-import Personajes.PowerUps.Curacion;
-import Personajes.PowerUps.SuperDisparo;
 
 public class Mapa1 extends Mapa {
 	

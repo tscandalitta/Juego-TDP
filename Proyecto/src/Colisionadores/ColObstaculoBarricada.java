@@ -2,7 +2,6 @@ package Colisionadores;
 
 import Personajes.*;
 import Personajes.Obstaculos.*;
-import Personajes.PowerUps.*;
 
 public class ColObstaculoBarricada implements Colisionador {
 	protected ObstaculoBarricada obstaculo;

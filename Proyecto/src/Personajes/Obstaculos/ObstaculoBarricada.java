@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColObstaculoBarricada;
 import Colisionadores.Colisionador;
-import Inteligencias.Inteligencia;
 import Inteligencias.InteligenciaObstaculoBarricada;
 import Personajes.Entidad;
 

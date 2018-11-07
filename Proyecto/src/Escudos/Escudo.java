@@ -1,7 +1,6 @@
 package Escudos;
 
 import Personajes.Entidad;
-import Personajes.Jugador;
 
 public abstract class Escudo {
 	protected Entidad jugador;

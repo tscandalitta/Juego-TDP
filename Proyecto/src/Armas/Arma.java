@@ -5,7 +5,6 @@ import java.awt.Point;
 import Juego.Juego;
 import Personajes.DisparoJugador;
 import Personajes.Entidad;
-import Personajes.Jugador;
 
 public abstract class Arma {
 	protected Juego juego;

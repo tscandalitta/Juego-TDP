@@ -23,29 +23,31 @@ public class Congelar extends PowerUp implements Runnable{
 		inteligencia= new InteligenciaPowerUp(this);
 	}
 
-	public void realizarAccion(Entidad e) {
-		jugador=e;
+	public void realizarAccion(Entidad jugador) {
+		this.jugador=jugador;
 		(new Thread(this)).start();
 		
 	}
 
 	public void run() {
 		Map<Entidad,Inteligencia> mapeoInteligencias= new HashMap<Entidad,Inteligencia>(); 
-		LinkedList<Entidad> lista=(LinkedList<Entidad>) juego.getEntidades().clone();
-			for(Entidad e: lista) { 
-				mapeoInteligencias.put(e, e.getInteligencia());
-				e.setInteligenciaDummy(new InteligenciaDummy());
-			}
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e1) {
-				e1.printStackTrace();
-			}
-			for(Entidad e: juego.getEntidades()) {
-				if(mapeoInteligencias.containsKey(e))
-					e.setInteligencia(mapeoInteligencias.get(e));
-			}
-			mapeoInteligencias.clear();
+		@SuppressWarnings("unchecked")
+		LinkedList<Entidad> lista= (LinkedList<Entidad>) juego.getEntidades().clone();
+		for(Entidad e: lista) { 
+			mapeoInteligencias.put(e, e.getInteligencia());
+			e.setInteligenciaDummy(new InteligenciaDummy());
+		}
+		try {
+			Thread.sleep(5000);
+		} 
+		catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		for(Entidad e: juego.getEntidades()) {
+			if(mapeoInteligencias.containsKey(e))
+				e.setInteligencia(mapeoInteligencias.get(e));
+		}
+		mapeoInteligencias.clear();
 	}
 	
 }

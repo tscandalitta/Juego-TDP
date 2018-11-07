@@ -4,10 +4,8 @@ import javax.swing.ImageIcon;
 
 import Armas.Arma;
 import Armas.ArmaNormal;
-import Armas.ArmaPotente;
 import Colisionadores.ColJugador;
 import Colisionadores.Colisionador;
-import Escudos.EscudoSimple;
 import Escudos.SinEscudo;
 import Inteligencias.InteligenciaJugador;
 import Juego.Juego;

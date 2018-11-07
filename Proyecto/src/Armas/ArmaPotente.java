@@ -2,7 +2,6 @@ package Armas;
 
 import Personajes.DisparoJugador;
 import Personajes.Entidad;
-import Personajes.Jugador;
 
 public class ArmaPotente extends Arma {
 

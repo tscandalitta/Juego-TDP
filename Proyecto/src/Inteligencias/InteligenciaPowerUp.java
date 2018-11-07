@@ -1,6 +1,5 @@
 package Inteligencias;
 
-import Juego.Juego;
 import Personajes.PowerUps.PowerUp;
 
 public class InteligenciaPowerUp extends Inteligencia {

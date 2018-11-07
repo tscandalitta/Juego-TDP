@@ -17,7 +17,7 @@ public class Curacion extends PowerUp {
 		inteligencia= new InteligenciaPowerUp(this);
 	}
 
-	public void realizarAccion(Entidad e) {
-		e.aumentarVida(100);
+	public void realizarAccion(Entidad jugador) {
+		jugador.aumentarVida(100);
 	}
 }

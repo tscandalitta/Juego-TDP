@@ -1,8 +1,6 @@
 package Colisionadores;
 
 import Personajes.*;
-import Personajes.Obstaculos.Obstaculo;
-import Personajes.PowerUps.PowerUp;
 
 public class ColJugador implements Colisionador{
 	protected Jugador jugador;

@@ -18,7 +18,7 @@ public class SuperEscudo extends PowerUp {
 		inteligencia= new InteligenciaPowerUp(this);
 	}
 
-	public void realizarAccion(Entidad j) {
-		j.setEscudo(new EscudoSimple(j));
+	public void realizarAccion(Entidad jugador) {
+		jugador.setEscudo(new EscudoSimple(jugador));
 	}
 }

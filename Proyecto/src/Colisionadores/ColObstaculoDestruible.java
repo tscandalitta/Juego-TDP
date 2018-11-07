@@ -1,12 +1,7 @@
 package Colisionadores;
 
-import Personajes.Disparo;
-import Personajes.Enemigo;
 import Personajes.Entidad;
-import Personajes.Jugador;
-import Personajes.Obstaculos.Obstaculo;
 import Personajes.Obstaculos.ObstaculoDestruible;
-import Personajes.PowerUps.*;
 
 
 public class ColObstaculoDestruible implements Colisionador {

@@ -2,14 +2,12 @@ package Personajes.PowerUps;
 
 import javax.swing.ImageIcon;
 
-import Armas.Arma;
-import Armas.ArmaNormal;
 import Armas.ArmaRapida;
 import Colisionadores.ColPowerUp;
 import Inteligencias.InteligenciaPowerUp;
 import Personajes.Entidad;
 
-public class DisparoRapido extends PowerUp implements Runnable{
+public class DisparoRapido extends PowerUp{
 
 	public DisparoRapido(int x, int y) {
 		super(x,y);
@@ -19,24 +17,9 @@ public class DisparoRapido extends PowerUp implements Runnable{
 		col= new ColPowerUp(this);
 		inteligencia= new InteligenciaPowerUp(this);
 	}
-
-	public void realizarAccion(Entidad e) { 
-		jugador=e;
-		(new Thread(this)).start();
+	
+	public void realizarAccion(Entidad jugador) {
+		HiloArmas hilo= new HiloArmas(juego, new ArmaRapida(jugador), 6000);
+		hilo.start();
 	}
-
-	public void run() {
-		try {
-			Arma a= new ArmaRapida(jugador);
-			a.setJuego(juego);
-			Arma armaOriginal= new ArmaNormal(jugador);
-			armaOriginal.setJuego(juego);
-			jugador.setArma(a);
-			Thread.sleep(8000);
-			jugador.setArma(armaOriginal);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
 }

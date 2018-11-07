@@ -3,8 +3,6 @@ package Inteligencias;
 import java.awt.event.KeyEvent;
 
 import Armas.Arma;
-import Juego.Juego;
-import Personajes.DisparoJugador;
 import Personajes.Jugador;
 
 public class InteligenciaJugador extends Inteligencia {
@@ -14,8 +12,6 @@ public class InteligenciaJugador extends Inteligencia {
 	protected int contadorDisparar;
 	protected volatile boolean disparar;
 	protected Arma arma;
-/////////TEMPORAL//////////SACAR BOOLEANO
-	protected boolean tengoEscudo=false;
 	
 	public InteligenciaJugador(Jugador j, Arma a) {
 		jugador=j;
@@ -40,13 +36,6 @@ public class InteligenciaJugador extends Inteligencia {
 	}
 	public void setArma(Arma a) {
 		arma=a;
-	}
-	public boolean tieneEscudo() {
-		return tengoEscudo;
-	}
-	
-	public void activarEscudo() {
-		tengoEscudo=true;
 	}
 	
 	 public void keyPressed(KeyEvent e) {

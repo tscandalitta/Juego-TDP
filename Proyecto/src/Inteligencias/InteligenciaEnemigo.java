@@ -2,7 +2,6 @@ package Inteligencias;
 
 import java.util.Random;
 
-import Juego.Juego;
 import Personajes.DisparoEnemigo;
 import Personajes.Enemigo;
 
