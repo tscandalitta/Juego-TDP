@@ -12,29 +12,19 @@ public class ColObstaculoBarricada implements Colisionador {
 	
 	public void afectarJugador(Entidad j) {
 	}
-
-	
 	public void afectarEnemigo(Entidad e) {
 		e.golpearObstaculoBarricada(obstaculo);
 	}
-
-	
 	public void afectarPowerUp(Entidad p) {
 	}
-
 	public void afectarObstaculoBarricada(Entidad o) {
 	}
-
-	
 	public void afectarObstaculoDestruible(Entidad o) {
 	}
-
-	
 	public void afectarDisparoJugador(Entidad d) {	
 		d.golpearObstaculoBarricada(obstaculo);
 	}
 	public void afectarDisparoEnemigo(Entidad d) {
 		d.golpearObstaculoBarricada(obstaculo);
 	}
-
 }

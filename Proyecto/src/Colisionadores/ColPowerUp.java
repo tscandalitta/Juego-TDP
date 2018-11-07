@@ -13,24 +13,17 @@ public class ColPowerUp implements Colisionador{
 	public void afectarJugador(Entidad j) {
 		power.golpearJugador(j);
 	}
-
 	public void afectarEnemigo(Entidad e) {
 	}
-
 	public void afectarPowerUp(Entidad p) {
 	}
-	
 	public void afectarDisparoJugador(Entidad d) {
 		power.golpearDisparoJugador(d);
 	}
-	
 	public void afectarDisparoEnemigo(Entidad d) {
 	}
-	
 	public void afectarObstaculoBarricada(Entidad o) {
 	}
-
 	public void afectarObstaculoDestruible(Entidad o) {
 	}
-	
 }

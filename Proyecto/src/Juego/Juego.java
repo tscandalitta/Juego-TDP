@@ -24,7 +24,7 @@ public class Juego {
 		jugador=new Jugador(50,300);
 		jugador.setJuego(this);
 		estadoInicialJugador= jugador.crearMemento();
-		this.mapa=new Mapa2(this);
+		this.mapa=new Mapa1(this);
 		this.gui=gui;
 		iniciarEntidades();
 	}
@@ -144,6 +144,4 @@ public class Juego {
 	public LinkedList<Entidad> getEntidadesAEliminar(){
 		return entidadesAEliminar;
 	}
-	
-	
 }

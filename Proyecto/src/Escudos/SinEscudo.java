@@ -5,11 +5,10 @@ import Personajes.Entidad;
 public class SinEscudo extends Escudo{
 
 	public SinEscudo(Entidad j) {
-		super(j);
+		jugador=j;
 	}
 
-	public void golpearEnemigo(Entidad e) {
-		e.golpearJugador(jugador);
+	public void golpearEnemigo(Entidad enemigo) {
+		enemigo.golpearJugador(jugador);
 	}
-	
 }

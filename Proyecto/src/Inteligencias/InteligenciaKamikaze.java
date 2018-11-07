@@ -7,25 +7,25 @@ import Personajes.Enemigo;
 public class InteligenciaKamikaze extends Inteligencia {
 	protected Enemigo kamikaze;
 	protected boolean enMovimiento=false;
-	protected int random;
+	protected int randomCambioInteligencia;
 	
 	public InteligenciaKamikaze(Enemigo k) {
 		kamikaze=k;
 		velocidad=10;
 		pos=k.getPos();
-		Random r= new Random();
-		random =r.nextInt(6);
+		Random r1= new Random();
+		randomCambioInteligencia =r1.nextInt(6);
 	}
 	
 	public void mover() {
-		Random r= new Random();
-		int n= r.nextInt(300);
+		Random r2= new Random();
+		int n= r2.nextInt(300);
 		if(n==12||enMovimiento) {
 			moverAux();
 			enMovimiento=true;
 		}
 		if(kamikaze.getVida()<=50) {
-			if(random==3) {
+			if(randomCambioInteligencia==3) {
 				Inteligencia inteligencia= new InteligenciaKamikazeRandom(kamikaze);
 				inteligencia.setJuego(juego);
 				kamikaze.setInteligencia(inteligencia);
@@ -34,12 +34,12 @@ public class InteligenciaKamikaze extends Inteligencia {
 	}
 
 	protected void moverAux() {
-		int y= juego.getJugador().getPos().y;
-		if(pos.y-y>0)
+		int posYjugador= juego.getJugador().getPos().y;
+		if(pos.y-posYjugador>0)
 			pos.setLocation(pos.x-velocidad, pos.y-velocidad/2);
-		if(pos.y-y<0)
+		if(pos.y-posYjugador<0)
 			pos.setLocation(pos.x-velocidad, pos.y+velocidad/2);
-		if(pos.y-y==0)
+		if(pos.y-posYjugador==0)
 			pos.setLocation(pos.x-velocidad, pos.y);
 	}
 }

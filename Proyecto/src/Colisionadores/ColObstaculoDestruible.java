@@ -13,20 +13,15 @@ public class ColObstaculoDestruible implements Colisionador {
 
 	public void afectarJugador(Entidad j) {
 	}
-
 	public void afectarEnemigo(Entidad e) {
 		e.golpearObstaculoDestruible(obstaculo);
 	}
-
 	public void afectarPowerUp(Entidad p) {
 	}
-
 	public void afectarObstaculoBarricada(Entidad o) {
 	}
-
 	public void afectarObstaculoDestruible(Entidad o) {
 	}
-
 	public void afectarDisparoJugador(Entidad d) {	
 		d.golpearObstaculoDestruible(obstaculo);
 	}

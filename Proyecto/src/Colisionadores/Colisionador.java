@@ -2,7 +2,6 @@ package Colisionadores;
 
 import Personajes.*;
 
-
 public interface Colisionador {
 	
 	public abstract void afectarJugador(Entidad j);

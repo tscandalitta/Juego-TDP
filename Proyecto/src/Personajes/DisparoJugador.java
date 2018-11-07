@@ -30,32 +30,25 @@ public class DisparoJugador extends Disparo{
 	public void golpearJugador(Entidad e) {
 		this.vida=0;
 	}
-	
 	public void golpearEnemigo(Entidad e) {
 		e.disminuirVida(damage);	
 		this.vida=0;
 	}
-	
 	public void golpearObstaculoDestruible(Entidad o) {
 		o.disminuirVida(damage);
 		this.vida=0;
 	}
-	
 	public void golpearPowerUp(Entidad e) {
 		this.vida=0;
 	}
-	
 	public void golpearObstaculoBarricada(Entidad o) {
 		o.disminuirVida(damage);
 		this.vida=0;
 	}
-
 	public void golpearDisparoJugador(Entidad d) {
 	}
-
 	public void golpearDisparoEnemigo(Entidad d) {
 		d.disminuirVida(damage);
 		this.vida=0;
 	}
-
 }

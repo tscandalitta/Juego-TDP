@@ -49,7 +49,7 @@ public class Jugador extends Entidad {
 		inteligencia.setJuego(j);
 		arma.setJuego(j);
 	}
-	
+
 	public void disparar() {
 		inteligencia.disparar();
 	}
@@ -57,44 +57,34 @@ public class Jugador extends Entidad {
 		inteligencia.mover();
 		actualizarGrafico();
 	}
+	
+	public void disminuirVida(int damage) {
+		super.disminuirVida(damage);
+		if(vida==0)
+			oportunidades--;
+	}
+	
 	public InteligenciaJugador getInteligencia() {
 		return inteligencia;
 	}
-	
-	public void disminuirVida(int damage) {
-		vida-=damage;
-		if(vida<=0) {
-			vida=0;
-			oportunidades--;
-		}
-	}
-	
 	public int getOportunidades() {
 		return oportunidades;
 	}
 	
-	
 	public void golpearPowerUp(Entidad e) {
 		e.golpearJugador(this);
 	}
-	
 	public void golpearObstaculoDestruible(Entidad o) {
 	}
-	
 	public void golpearEnemigo(Entidad e) {
 		escudo.golpearEnemigo(e);
 	}
-	
 	public void golpearJugador(Entidad j) {
 	}
-	
 	public void golpearObstaculoBarricada(Entidad o) {
 	}
-
-	
 	public void golpearDisparoJugador(Entidad d) {
 	}
-
 	public void golpearDisparoEnemigo(Entidad d) {
 		d.golpearJugador(this);
 	}

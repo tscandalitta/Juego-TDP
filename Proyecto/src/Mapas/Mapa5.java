@@ -18,5 +18,4 @@ public class Mapa5 extends Mapa {
 	public Mapa mapaSiguiente() {
 		return new Mapa5(juego);
 	}
-
 }

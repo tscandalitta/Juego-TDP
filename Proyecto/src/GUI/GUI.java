@@ -63,21 +63,18 @@ public class GUI extends JFrame {
 		tiempo.start();
 		juego.setHilo(tiempo);
 	}
-	
 	public void gameOver() {
 		gameOver= new JLabel("HAS PERDIDO");
 		gameOver.setForeground(Color.RED);
 		this.actualizarPuntajes();
 		terminarJuego(gameOver);
 	}
-	
 	public void ganar() {
 		ganar= new JLabel("HAS GANADO");
 		ganar.setForeground(Color.GREEN);
 		this.actualizarPuntajes();
 		terminarJuego(ganar);
 	}
-	
 	private void terminarJuego(JLabel label) {
 		label.setFont(new java.awt.Font("Tahoma", 1, 60));
 		label.setHorizontalAlignment(JTextField.CENTER);;

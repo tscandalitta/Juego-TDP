@@ -28,23 +28,31 @@ public abstract class Entidad {
 		this.pos= new Point(x, y);
 		imagen= new ImageIcon();
 	}
-	public void setJuego(Juego j) {
-		juego=j;
-		inteligencia.setJuego(j);
+	
+	public void colisionar(Entidad e) {
+		e.serColisionado(col);
 	}
 	
-	public void setEscudo(Escudo e) {
-		escudo=e;
+	protected void actualizarGrafico(){
+		if(this.grafico != null){
+			this.grafico.setIcon(this.imagen);
+			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+		}
 	}
 	
-	public void setArma(Arma a) {
-		arma=a;
+	public JLabel getGrafico(){
+		if(this.grafico == null){
+			this.grafico = new JLabel(imagen);
+			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+		}
+		return this.grafico;
 	}
-	
+	public Inteligencia getInteligencia() {
+		return inteligencia;
+	}
 	public Arma getArma() {
 		return arma;
 	}
-	
 	public Escudo getEscudo() {
 		return escudo;
 	}
@@ -63,41 +71,23 @@ public abstract class Entidad {
 	public int getPuntos() {
 		return puntosDeMuerte;
 	}
-		
-	protected void actualizarGrafico(){
-		if(this.grafico != null){
-			this.grafico.setIcon(this.imagen);
-			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
-		}
-	}
 	
-	public JLabel getGrafico(){
-		if(this.grafico == null){
-			this.grafico = new JLabel(imagen);
-			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
-		}
-		return this.grafico;
+	public void setJuego(Juego j) {
+		juego=j;
+		inteligencia.setJuego(j);
 	}
-	
-	public void setCol(Colisionador col) {
-		this.col=col;
+	public void setEscudo(Escudo e) {
+		escudo=e;
 	}
-	public void colisionar(Entidad e) {
-		e.serColisionado(col);
+	public void setArma(Arma a) {
+		arma=a;
 	}
-	
-	public Inteligencia getInteligencia() {
-		return inteligencia;
-	}
-	
 	public void setInteligencia(Inteligencia i) {
 		inteligencia=i;
 	}
-	
-	public abstract void serColisionado(Colisionador col);
-		
-	public abstract void mover();
-		
+	public void setCol(Colisionador col) {
+		this.col=col;
+	}
 	public void setVida(int v) {
 		vida=0;
 		if(vida<0)
@@ -108,13 +98,16 @@ public abstract class Entidad {
 		if(vida<0)
 			vida=0;
 	}
-	
 	public void aumentarVida(int v) {
 		vida+=v;
 		if(vida>100)
 			vida=100;
 	}
+	public void setInteligenciaDummy(Inteligencia i) {
+	}
 	
+	public abstract void serColisionado(Colisionador col);
+	public abstract void mover();
 	public abstract void golpearJugador(Entidad j);
 	public abstract void golpearEnemigo(Entidad e);
 	public abstract void golpearPowerUp(Entidad p);
@@ -122,7 +115,4 @@ public abstract class Entidad {
 	public abstract void golpearObstaculoDestruible(Entidad o);
 	public abstract void golpearDisparoJugador(Entidad d);
 	public abstract void golpearDisparoEnemigo(Entidad d);
-	
-	public void setInteligenciaDummy(Inteligencia i) {
-	}
 }

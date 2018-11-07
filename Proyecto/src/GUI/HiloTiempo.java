@@ -5,6 +5,7 @@ import Juego.Juego;
 public class HiloTiempo extends Thread{
 	private Juego juego;
 	private volatile boolean hayJuego;
+	
 	public HiloTiempo(Juego j) {
 		juego=j;
 		hayJuego=true;
@@ -26,7 +27,6 @@ public class HiloTiempo extends Thread{
 			juego.verificarMapa();
 		}
 	}
-	
 	public void finalizar() {
 		hayJuego=false;
 	}

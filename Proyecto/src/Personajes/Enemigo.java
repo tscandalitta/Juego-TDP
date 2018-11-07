@@ -30,16 +30,14 @@ public class Enemigo extends Entidad{
 	}
 
 	public void disminuirVida(int damage) {
-		vida-=damage;
-		if(vida<0) {
-			vida=0;
+		super.disminuirVida(damage);
+		if(vida==0)
 			lanzarPowerUp();
-		}
 	}
 	
 	protected void lanzarPowerUp() {
 		Random r= new Random();
-		int n= r.nextInt(15);
+		int n= r.nextInt(30);
 		PowerUp powerup=null;
 		switch(n) {
 		case 1: 

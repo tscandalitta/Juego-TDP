@@ -8,14 +8,14 @@ import Personajes.Entidad;
 
 public abstract class Arma {
 	protected Juego juego;
-	protected int contador, contadorDisparar, damage;
+	protected int contador, limiteDisparo, damage;
 	protected Point pos;
 	
-	protected Arma(Entidad j, int cont, int dam) {
+	protected Arma(Entidad jugador, int limite, int dam) {
 		contador=0;
-		contadorDisparar=cont;
+		limiteDisparo=limite;
 		damage=dam;
-		pos=j.getPos();
+		pos=jugador.getPos();
 	}
 	public void setJuego(Juego j) {
 		juego=j;
@@ -23,7 +23,7 @@ public abstract class Arma {
 	
 	public void disparar(boolean disparar) {
 		contador++;
-		if(contador>=contadorDisparar && disparar) {
+		if(contador>=limiteDisparo && disparar) {
 			crearDisparo(damage);
 			contador=0;
 		}

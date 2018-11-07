@@ -18,7 +18,6 @@ public class Mapa2 extends Mapa {
 		cantObstaculos=1;
 	}
 	
-	
 	public LinkedList<Entidad> crearEntidades() {
 		entidades= new LinkedList<Entidad>();
 		for(int i=1; i<cantKamikazes+1; i++) {
@@ -34,9 +33,7 @@ public class Mapa2 extends Mapa {
 		entidades.add(new ObstaculoBarricada(750,400,300));
 		return entidades;
 	}
-
 	public Mapa mapaSiguiente() {
 		return new Mapa3(juego);	
 	}
-
 }
