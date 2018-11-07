@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="Personajes.PowerUps.HiloArmas" x="888" y="624">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Personajes.Entidad"
+            endpointName="jugador" kind="Simple"/>
+        <Association destinationClassName="Armas.Arma"
+            endpointName="arma" kind="Simple"/>
+        <Association destinationClassName="Juego.Juego"
+            endpointName="juego" kind="Simple"/>
+        <Communication destinationClassName="Armas.Arma"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.DisparoJugador" x="2116" y="544">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Disparo"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.PowerUps.DisparoRapido" x="1596" y="1366">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
+    </Class>
+    <Class name="Personajes.PowerUps.Congelar" x="2128" y="1248">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Armas.Arma" x="418" y="1040">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Juego.Juego"
+            endpointName="juego" kind="Simple"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Mapas.Mapa5" x="-1386" y="838">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Mapas.Mapa"/>
+    </Class>
+    <Class name="Armas.ArmaRapida" x="716" y="1172">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Armas.Arma"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Disparo"/>
+    </Class>
+    <Class name="Mapas.Mapa" x="-835" y="457">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Juego.Juego"
+            endpointName="juego" kind="Simple"/>
+    </Class>
+    <Class name="Personajes.PowerUps.Curacion" x="1944" y="1356">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.PowerUps.SuperEscudo" x="926" y="1346">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.Enemigo" x="2540" y="-24">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Entidad"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Memento.Memento" x="1250" y="-66">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Personajes.Jugador" x="890" y="126">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Entidad"/>
+        <Communication destinationClassName="Memento.Memento"/>
+        <Communication destinationClassName="Armas.Arma"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Mapas.Mapa3" x="-357" y="854">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Mapas.Mapa"/>
+    </Class>
+    <Class name="Mapas.Mapa4" x="-16" y="863">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Mapas.Mapa"/>
+    </Class>
+    <Class name="Mapas.Mapa1" x="-1033" y="847">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Mapas.Mapa"/>
+    </Class>
+    <Class name="Mapas.Mapa2" x="-703" y="857">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Mapas.Mapa"/>
+    </Class>
+    <Class name="Personajes.PowerUps.PowerUp" x="1390" y="958">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Entidad"/>
+        <Association destinationClassName="Personajes.Entidad"
+            endpointName="jugador" kind="Simple"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Armas.ArmaHiperPotente" x="184" y="1176">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Armas.Arma"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Disparo"/>
+    </Class>
+    <Class name="Personajes.Disparo" x="2054" y="434">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.DisparoEnemigo" x="1750" y="548">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Disparo"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.Obstaculos.ObstaculoBarricada" x="2774" y="750">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Obstaculos.Obstaculo"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.PowerUps.HiperDisparo" x="968" y="1122">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
+    </Class>
+    <Class name="Personajes.Obstaculos.Obstaculo" x="2576" y="540">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Entidad"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.PowerUps.SuperDisparo" x="1218" y="1334">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
+    </Class>
+    <Class name="Personajes.Obstaculos.ObstaculoDestruible" x="2330" y="774">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Obstaculos.Obstaculo"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Armas.ArmaNormal" x="380" y="1248">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Armas.Arma"/>
+    </Class>
+    <Class name="Juego.Juego" x="423" y="-89">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Mapas.Mapa"
+            endpointName="mapa" kind="Simple"/>
+        <Association destinationClassName="Personajes.Jugador"
+            endpointName="jugador" kind="Simple"/>
+        <Association destinationClassName="Memento.Memento"
+            endpointName="estadoInicialJugador" kind="Simple"/>
+        <Communication destinationClassName="Personajes.Jugador"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+        <Communication destinationClassName="Mapas.Mapa"/>
+    </Class>
+    <Class name="Armas.ArmaPotente" x="576" y="1248">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Armas.Arma"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Disparo"/>
+    </Class>
+    <Class name="Personajes.Entidad" x="1666" y="-124">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Armas.Arma"
+            endpointName="arma" kind="Simple"/>
+        <Association destinationClassName="Juego.Juego"
+            endpointName="juego" kind="Simple"/>
+    </Class>
+    <Class name="Personajes.Boss" x="2280" y="240">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Enemigo"/>
+        <Communication destinationClassName="Juego.Juego"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+    <Class name="Personajes.Kamikaze" x="2652" y="256">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Personajes.Enemigo"/>
+        <Association destinationClassName="Memento.Memento"
+            endpointName="estadoInicial" kind="Simple"/>
+        <Communication destinationClassName="Personajes.Entidad"/>
+    </Class>
+</ClassDiagram>
