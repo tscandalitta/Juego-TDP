@@ -25,6 +25,8 @@ public class Enemigo extends Entidad{
 	public void mover() {
 		inteligencia.mover();
 		actualizarGrafico();
+		if(pos.x<-10)
+			this.vida=0;
 	}
 
 	public void disminuirVida(int damage) {
@@ -51,6 +53,9 @@ public class Enemigo extends Entidad{
 			break;
 		case 4:
 			powerup= new SuperEscudo(pos.x,pos.y);
+			break;
+		case 5:
+			powerup= new DisparoRapido(pos.x,pos.y);
 			break;
 		}
 		if(powerup!=null) {

@@ -11,27 +11,27 @@ public class ColJugador implements Colisionador{
 		jugador=j;
 	}
 
-	public void afectarJugador(Jugador j) {
+	public void afectarJugador(Entidad j) {
 	}
 
-	public void afectarEnemigo(Enemigo e) {
-		e.golpearJugador(jugador);
+	public void afectarEnemigo(Entidad e) {
+		jugador.golpearEnemigo(e);
 	}
 
-	public void afectarPowerUp(PowerUp p) {
+	public void afectarPowerUp(Entidad p) {
 	}
 	
-	public void afectarDisparoJugador(Disparo d) {	
+	public void afectarDisparoJugador(Entidad d) {	
 		jugador.golpearDisparoJugador(d);
 	}
-	public void afectarDisparoEnemigo(Disparo d) {
+	public void afectarDisparoEnemigo(Entidad d) {
 		jugador.golpearDisparoEnemigo(d);
 	}
 
-	public void afectarObstaculoBarricada(Obstaculo o) {
+	public void afectarObstaculoBarricada(Entidad o) {
 	}
 
-	public void afectarObstaculoDestruible(Obstaculo o) {
+	public void afectarObstaculoDestruible(Entidad o) {
 	}
 
 }

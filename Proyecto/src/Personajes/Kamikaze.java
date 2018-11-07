@@ -1,9 +1,12 @@
 package Personajes;
 
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 
 import Colisionadores.ColEnemigo;
 import Inteligencias.InteligenciaKamikaze;
+import Inteligencias.InteligenciaKamikazeRandom;
 import Memento.Memento;
 
 public class Kamikaze extends Enemigo {
@@ -18,7 +21,13 @@ public class Kamikaze extends Enemigo {
 		puntosDeMuerte=150;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/enemigo2.png"));
 		col= new ColEnemigo(this);
-		inteligencia= new InteligenciaKamikaze(this);
+		
+		Random r= new Random();
+		int n= r.nextInt(2);
+		if(n==0)
+			inteligencia= new InteligenciaKamikaze(this);
+		if(n==1)
+			inteligencia= new InteligenciaKamikazeRandom(this);
 		crearMemento();
 	}
 
@@ -35,13 +44,5 @@ public class Kamikaze extends Enemigo {
 		actualizarGrafico();
 		if(pos.x<-10)
 			reestablecer(estadoInicial);
-	}
-	
-	public void golpearJugador(Entidad e) {
-		if(e.tengoEscudo())
-			e.setEscudo(false);
-		else
-			e.disminuirVida(damage);
-		this.vida=0;
 	}
 }

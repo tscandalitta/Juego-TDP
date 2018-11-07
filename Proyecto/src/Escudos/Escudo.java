@@ -1,16 +1,14 @@
 package Escudos;
 
+import Personajes.Entidad;
+import Personajes.Jugador;
+
 public abstract class Escudo {
-	protected int vida;
+	protected Entidad jugador;
 	
-	
-	public Escudo(int vida) {
-		this.vida=vida;
+	protected Escudo(Entidad j) {
+		jugador=j;
 	}
 	
-	public abstract void disminuirVida(int damage);
-	
-	public int getVida() {
-		return vida;
-	}
+	public abstract void golpearEnemigo(Entidad e);
 }

@@ -11,28 +11,28 @@ public class ColDisparoEnemigo implements Colisionador{
 	public ColDisparoEnemigo(Disparo d) {
 		disparo=d;
 	}
-	public void afectarJugador(Jugador j) {
+	public void afectarJugador(Entidad j) {
 		disparo.golpearJugador(j);
 	}
 	
-	public void afectarEnemigo(Enemigo e) {
+	public void afectarEnemigo(Entidad e) {
 	}
 	
-	public void afectarPowerUp(PowerUp p) {	
+	public void afectarPowerUp(Entidad p) {	
 		disparo.golpearPowerUp(p);
 	}
 	
-	public void afectarDisparoJugador(Disparo d) {
+	public void afectarDisparoJugador(Entidad d) {
 		disparo.golpearDisparoJugador(d);
 	}
 	
-	public void afectarDisparoEnemigo(Disparo d) {
+	public void afectarDisparoEnemigo(Entidad d) {
 	}
 
-	public void afectarObstaculoBarricada(Obstaculo o) {
+	public void afectarObstaculoBarricada(Entidad o) {
 	}
 
-	public void afectarObstaculoDestruible(Obstaculo o) {
+	public void afectarObstaculoDestruible(Entidad o) {
 		disparo.golpearObstaculoDestruible(o);
 	}
 

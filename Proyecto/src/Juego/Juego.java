@@ -52,17 +52,15 @@ public class Juego {
 	}
 	
 	public void agregarEntidad(Entidad e) {
-		entidadesPendientes.add(e);
+			entidadesPendientes.add(e);
 	}
 	
 	public void agregarEntidades() {
-		synchronized(entidadesPendientes) {
 			for(Entidad e: entidadesPendientes) {
 				entidades.add(e);
 				gui.add(e.getGrafico());
-				entidadesPendientes.remove(e);
 			}
-		}
+			entidadesPendientes.clear();
 	}
 	
 	public void mover() {

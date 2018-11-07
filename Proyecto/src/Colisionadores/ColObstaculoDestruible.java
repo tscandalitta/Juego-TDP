@@ -2,6 +2,7 @@ package Colisionadores;
 
 import Personajes.Disparo;
 import Personajes.Enemigo;
+import Personajes.Entidad;
 import Personajes.Jugador;
 import Personajes.Obstaculos.Obstaculo;
 import Personajes.Obstaculos.ObstaculoDestruible;
@@ -15,26 +16,26 @@ public class ColObstaculoDestruible implements Colisionador {
 		obstaculo=o;
 	}
 
-	public void afectarJugador(Jugador j) {
+	public void afectarJugador(Entidad j) {
 	}
 
-	public void afectarEnemigo(Enemigo e) {
+	public void afectarEnemigo(Entidad e) {
 		e.golpearObstaculoDestruible(obstaculo);
 	}
 
-	public void afectarPowerUp(PowerUp p) {
+	public void afectarPowerUp(Entidad p) {
 	}
 
-	public void afectarObstaculoBarricada(Obstaculo o) {
+	public void afectarObstaculoBarricada(Entidad o) {
 	}
 
-	public void afectarObstaculoDestruible(Obstaculo o) {
+	public void afectarObstaculoDestruible(Entidad o) {
 	}
 
-	public void afectarDisparoJugador(Disparo d) {	
+	public void afectarDisparoJugador(Entidad d) {	
 		d.golpearObstaculoDestruible(obstaculo);
 	}
-	public void afectarDisparoEnemigo(Disparo d) {
+	public void afectarDisparoEnemigo(Entidad d) {
 		d.golpearObstaculoDestruible(obstaculo);
 	}
 }

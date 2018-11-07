@@ -2,8 +2,12 @@ package Personajes;
 
 import javax.swing.ImageIcon;
 
+import Armas.Arma;
+import Armas.ArmaNormal;
+import Armas.ArmaPotente;
 import Colisionadores.ColJugador;
 import Colisionadores.Colisionador;
+import Escudos.EscudoSimple;
 import Escudos.SinEscudo;
 import Inteligencias.InteligenciaJugador;
 import Juego.Juego;
@@ -20,10 +24,10 @@ public class Jugador extends Entidad {
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		col=new ColJugador(this);
-		inteligencia= new InteligenciaJugador(this);
-		escudo= new SinEscudo();
+		arma= new ArmaNormal(this);
+		inteligencia= new InteligenciaJugador(this, arma);
+		escudo= new SinEscudo(this);
 		vida=100;
-		damage=60;
 	}
 	
 	public Memento crearMemento() {
@@ -39,12 +43,17 @@ public class Jugador extends Entidad {
 		col.afectarJugador(this);
 	}
 	
+	public void setArma(Arma a) {
+		arma=a;
+		inteligencia.setArma(a);
+	}
 	public void setJuego(Juego j) {
 		inteligencia.setJuego(j);
+		arma.setJuego(j);
 	}
 	
 	public void disparar() {
-		inteligencia.disparar(damage);
+		inteligencia.disparar();
 	}
 	public void mover() {
 		inteligencia.mover();
@@ -75,7 +84,7 @@ public class Jugador extends Entidad {
 	}
 	
 	public void golpearEnemigo(Entidad e) {
-		e.golpearJugador(this);
+		escudo.golpearEnemigo(e);
 	}
 	
 	public void golpearJugador(Entidad j) {

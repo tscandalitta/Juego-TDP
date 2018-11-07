@@ -19,6 +19,6 @@ public class SuperEscudo extends PowerUp {
 	}
 
 	public void realizarAccion(Entidad j) {
-		j.setEscudo(true);
+		j.setEscudo(new EscudoSimple(j));
 	}
 }

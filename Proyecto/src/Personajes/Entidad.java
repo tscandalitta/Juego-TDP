@@ -5,6 +5,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import Armas.Arma;
 import Colisionadores.Colisionador;
 import Escudos.Escudo;
 import Inteligencias.Inteligencia;
@@ -21,8 +22,7 @@ public abstract class Entidad {
 	protected  Inteligencia inteligencia;
 	protected Escudo escudo;
 	protected Juego juego;
-	//temporal 
-	protected boolean tengoEscudo=false;
+	protected Arma arma;
 	
 	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
@@ -33,8 +33,16 @@ public abstract class Entidad {
 		inteligencia.setJuego(j);
 	}
 	
-	public void setEscudo(boolean e) {
-		tengoEscudo=e;
+	public void setEscudo(Escudo e) {
+		escudo=e;
+	}
+	
+	public void setArma(Arma a) {
+		arma=a;
+	}
+	
+	public Arma getArma() {
+		return arma;
 	}
 	
 	public Escudo getEscudo() {
@@ -54,12 +62,6 @@ public abstract class Entidad {
 	}
 	public int getPuntos() {
 		return puntosDeMuerte;
-	}
-	public int getDamage() {
-		return damage;
-	}
-	public void setDamage(int d) {
-		damage=d;
 	}
 		
 	protected void actualizarGrafico(){
@@ -96,6 +98,11 @@ public abstract class Entidad {
 		
 	public abstract void mover();
 		
+	public void setVida(int v) {
+		vida=0;
+		if(vida<0)
+			vida=0;
+	}
 	public void disminuirVida(int damage) {
 		vida-=damage;
 		if(vida<0)
@@ -106,10 +113,6 @@ public abstract class Entidad {
 		vida+=v;
 		if(vida>100)
 			vida=100;
-	}
-	
-	public boolean tengoEscudo() {
-		return tengoEscudo;
 	}
 	
 	public abstract void golpearJugador(Entidad j);

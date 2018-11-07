@@ -2,6 +2,7 @@ package Inteligencias;
 
 import java.awt.event.KeyEvent;
 
+import Armas.Arma;
 import Juego.Juego;
 import Personajes.DisparoJugador;
 import Personajes.Jugador;
@@ -12,15 +13,17 @@ public class InteligenciaJugador extends Inteligencia {
 	protected int velocidad;
 	protected int contadorDisparar;
 	protected volatile boolean disparar;
+	protected Arma arma;
 /////////TEMPORAL//////////SACAR BOOLEANO
 	protected boolean tengoEscudo=false;
 	
-	public InteligenciaJugador(Jugador j) {
+	public InteligenciaJugador(Jugador j, Arma a) {
 		jugador=j;
 		pos=j.getPos();
 		velocidad=10;
 		contadorDisparar=0;
 		disparar=false;
+		arma=a;
 	}
 	
 	public void mover() {
@@ -32,14 +35,12 @@ public class InteligenciaJugador extends Inteligencia {
             pos.y = 600;
 	}
 	
-	public void disparar(int damage) {
-		contadorDisparar++;
-		if(contadorDisparar>=15 && disparar) {
-			crearDisparo(damage);
-			contadorDisparar=0;
-		}
+	public void disparar() {
+		arma.disparar(disparar);
 	}
-	
+	public void setArma(Arma a) {
+		arma=a;
+	}
 	public boolean tieneEscudo() {
 		return tengoEscudo;
 	}
@@ -48,10 +49,6 @@ public class InteligenciaJugador extends Inteligencia {
 		tengoEscudo=true;
 	}
 	
-	private void crearDisparo(int damage) {
-		DisparoJugador disparo= new DisparoJugador(damage, pos.x+40, pos.y+25);
-		juego.agregarEntidad(disparo);
-	}
 	 public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         switch (key){

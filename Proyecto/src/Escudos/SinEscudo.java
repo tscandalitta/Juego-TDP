@@ -1,12 +1,15 @@
 package Escudos;
 
+import Personajes.Entidad;
+
 public class SinEscudo extends Escudo{
 
-	public SinEscudo() {
-		super(100);
+	public SinEscudo(Entidad j) {
+		super(j);
+	}
+
+	public void golpearEnemigo(Entidad e) {
+		e.golpearJugador(jugador);
 	}
 	
-	public void disminuirVida(int damage) {
-		vida-=damage;
-	}
 }

@@ -1,6 +1,7 @@
 package Personajes.PowerUps;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
@@ -29,9 +30,9 @@ public class Congelar extends PowerUp implements Runnable{
 	}
 
 	public void run() {
-		Map<Entidad,Inteligencia> mapeoInteligencias= new HashMap<Entidad,Inteligencia>();
-		synchronized(juego.getEntidades()) {
-			for(Entidad e: juego.getEntidades()) { 
+		Map<Entidad,Inteligencia> mapeoInteligencias= new HashMap<Entidad,Inteligencia>(); 
+		LinkedList<Entidad> lista=(LinkedList<Entidad>) juego.getEntidades().clone();
+			for(Entidad e: lista) { 
 				mapeoInteligencias.put(e, e.getInteligencia());
 				e.setInteligenciaDummy(new InteligenciaDummy());
 			}
@@ -44,8 +45,7 @@ public class Congelar extends PowerUp implements Runnable{
 				if(mapeoInteligencias.containsKey(e))
 					e.setInteligencia(mapeoInteligencias.get(e));
 			}
-		}
-		mapeoInteligencias.clear();
+			mapeoInteligencias.clear();
 	}
 	
 }
