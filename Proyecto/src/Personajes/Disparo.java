@@ -22,4 +22,10 @@ public abstract class Disparo extends Entidad {
 		height=12;
 		width=20;
 	}
+	
+	public void setSpriteHiperPoderoso() {
+		this.imagen= new ImageIcon(this.getClass().getResource("/Sprites/hiperDisparo.png"));
+		height=50;
+		width=140;
+	}
 }

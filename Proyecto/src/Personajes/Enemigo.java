@@ -39,7 +39,7 @@ public class Enemigo extends Entidad{
 	
 	protected void lanzarPowerUp() {
 		Random r= new Random();
-		int n= r.nextInt(10);
+		int n= r.nextInt(15);
 		PowerUp powerup=null;
 		switch(n) {
 		case 1: 
@@ -57,6 +57,9 @@ public class Enemigo extends Entidad{
 		case 5:
 			powerup= new DisparoRapido(pos.x,pos.y);
 			break;
+		case 6:
+			powerup= new HiperDisparo(pos.x,pos.y);
+			break;	
 		}
 		if(powerup!=null) {
 			powerup.setJuego(juego);
