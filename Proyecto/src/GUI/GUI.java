@@ -2,10 +2,13 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,6 +40,7 @@ public class GUI extends JFrame {
 		});
 	}
 	public GUI() {
+		iniciarKeyListener();/**
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -46,7 +50,7 @@ public class GUI extends JFrame {
         	public void keyReleased(KeyEvent arg0) {
             	juego.getJugador().getInteligencia().keyReleased(arg0);
 			 }
-		});
+		});*/
 		
 		getContentPane().setLayout(null);
 		
@@ -64,22 +68,57 @@ public class GUI extends JFrame {
 		tiempo.start();
 		juego.setHilo(tiempo);
 	}
+	
+	private void iniciarKeyListener() {
+		addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				juego.getJugador().getInteligencia().keyPressed(arg0);
+			}
+			@Override
+        	public void keyReleased(KeyEvent arg0) {
+            	juego.getJugador().getInteligencia().keyReleased(arg0);
+			 }
+		});
+	}
 	public void gameOver() {
 		gameOver= new JLabel();
 		gameOver.setBounds(0,0,1280,720);
 		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/perder2.png")));
-		contentPane.removeAll();
-		contentPane.add(gameOver);		
-		this.repaint();
+		terminarJuego(gameOver);
 	}
 	public void ganar() {
 		ganar= new JLabel();
 		ganar.setBounds(0,0,1280,720);
 		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
+		terminarJuego(ganar);
+		
+	}
+	private void terminarJuego(JLabel label) {
 		contentPane.removeAll();
-		contentPane.add(ganar);		
+		contentPane.add(label);		
+		JButton volverAJugar= new JButton();
+		volverAJugar.setBounds(50, 20, 230, 36);
+		volverAJugar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/volverAJugar.png")));
+		volverAJugar.setOpaque(false);
+		volverAJugar.setBackground(new Color(0,0,0));
+		volverAJugar.setBorderPainted(false);
+		volverAJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				contentPane.removeAll();
+				repaint();
+				//iniciarKeyListener();
+				juego.reiniciarJuego();
+				tiempo=new HiloTiempo(juego);
+				tiempo.start();
+				inicializarLabels();
+			}
+		});
+		contentPane.add(volverAJugar);
 		this.repaint();
 	}
+	
+	
 	public void actualizarPuntajes() {
 		puntaje.setText("PUNTAJE: "+juego.getPuntaje());
 		kills.setText("KILLS: "+juego.getKills());

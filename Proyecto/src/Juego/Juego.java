@@ -21,19 +21,24 @@ public class Juego {
 	private Memento estadoInicialJugador;
 	
 	public Juego(GUI gui) {
-		jugador=new Jugador(50,300);
-		jugador.setJuego(this);
-		estadoInicialJugador= jugador.crearMemento();
-		this.mapa=new Mapa1(this);
+		
+		this.mapa=new Mapa4(this);
 		this.gui=gui;
+		iniciarJugador();
 		iniciarEntidades();
 	}
 	
+	public void iniciarJugador() {
+		jugador=new Jugador(50,300);
+		jugador.setJuego(this);
+		estadoInicialJugador= jugador.crearMemento();
+		gui.add(jugador.getGrafico());
+	}
 	public void iniciarEntidades() {
 		entidades= this.mapa.crearEntidades();
 		entidadesAEliminar= new LinkedList<Entidad>();
 		entidadesPendientes= new LinkedList<Entidad>();
-		gui.add(jugador.getGrafico());
+		
 		if(entidades.size()==0) {
 			jugador.disminuirVida(100);
 			gui.remove(jugador.getGrafico());
@@ -118,6 +123,7 @@ public class Juego {
 		}
 	}
 	private void verificarColision(Entidad e1, Entidad e2) {
+		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
 		Rectangle r1= new Rectangle(e1.getPos().x+2, e1.getPos().y+2, e1.getWidth()-2, e1.getHeight()-2);
 		Rectangle r2= new Rectangle(e2.getPos().x+2, e2.getPos().y+2, e2.getWidth()-2, e2.getHeight()-2);
 		if(r1.intersects(r2)) {
@@ -143,5 +149,12 @@ public class Juego {
 	}
 	public LinkedList<Entidad> getEntidadesAEliminar(){
 		return entidadesAEliminar;
+	}
+	public void reiniciarJuego() {
+		mapa=new Mapa1(this);
+		iniciarJugador();
+		iniciarEntidades();
+		puntaje=0;
+		kills=0;
 	}
 }
