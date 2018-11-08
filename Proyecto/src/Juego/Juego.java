@@ -22,7 +22,7 @@ public class Juego {
 	
 	public Juego(GUI gui) {
 		
-		this.mapa=new Mapa4(this);
+		this.mapa=new Mapa1(this);
 		this.gui=gui;
 		iniciarJugador();
 		iniciarEntidades();
