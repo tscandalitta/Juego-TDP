@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -64,24 +65,19 @@ public class GUI extends JFrame {
 		juego.setHilo(tiempo);
 	}
 	public void gameOver() {
-		gameOver= new JLabel("HAS PERDIDO");
-		gameOver.setForeground(Color.RED);
-		this.actualizarPuntajes();
-		terminarJuego(gameOver);
+		gameOver= new JLabel();
+		gameOver.setBounds(0,0,1280,720);
+		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/perder2.png")));
+		contentPane.removeAll();
+		contentPane.add(gameOver);		
+		this.repaint();
 	}
 	public void ganar() {
-		ganar= new JLabel("HAS GANADO");
-		ganar.setForeground(Color.GREEN);
-		this.actualizarPuntajes();
-		terminarJuego(ganar);
-	}
-	private void terminarJuego(JLabel label) {
-		label.setFont(new java.awt.Font("Tahoma", 1, 60));
-		label.setHorizontalAlignment(JTextField.CENTER);;
-		label.setBackground(Color.BLACK);
-		label.setBounds(1, 330, 1280, 50);
+		ganar= new JLabel();
+		ganar.setBounds(0,0,1280,720);
+		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
 		contentPane.removeAll();
-		contentPane.add(label);		
+		contentPane.add(ganar);		
 		this.repaint();
 	}
 	public void actualizarPuntajes() {
