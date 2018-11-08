@@ -12,7 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import Juego.Juego;
@@ -40,20 +39,10 @@ public class GUI extends JFrame {
 		});
 	}
 	public GUI() {
-		iniciarKeyListener();/**
-		addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent arg0) {
-				juego.getJugador().getInteligencia().keyPressed(arg0);
-			}
-			@Override
-        	public void keyReleased(KeyEvent arg0) {
-            	juego.getJugador().getInteligencia().keyReleased(arg0);
-			 }
-		});*/
+		iniciarKeyListener();
 		
 		getContentPane().setLayout(null);
-		
+	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 200, 1280, 720);
 		contentPane = new JPanelConFondo();

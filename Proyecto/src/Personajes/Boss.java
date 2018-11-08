@@ -8,10 +8,8 @@ import Inteligencias.InteligenciaBoss;
 import Personajes.PowerUps.Congelar;
 import Personajes.PowerUps.Curacion;
 import Personajes.PowerUps.DisparoRapido;
-import Personajes.PowerUps.HiperDisparo;
 import Personajes.PowerUps.PowerUp;
 import Personajes.PowerUps.SuperDisparo;
-import Personajes.PowerUps.SuperEscudo;
 
 public class Boss extends Enemigo {
 

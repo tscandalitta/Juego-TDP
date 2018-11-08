@@ -1,10 +1,6 @@
 package Personajes.PowerUps;
 
 import javax.swing.ImageIcon;
-
-import Armas.Arma;
-import Armas.ArmaHiperPotente;
-import Armas.ArmaNormal;
 import Armas.ArmaPotente;
 import Colisionadores.ColPowerUp;
 import Inteligencias.InteligenciaPowerUp;

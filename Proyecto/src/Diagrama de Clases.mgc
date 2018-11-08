@@ -18,7 +18,7 @@
         <Communication destinationClassName="Juego.Juego"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Armas.Arma" x="944" y="-726">
+    <Class name="Armas.Arma" x="954" y="-736">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -53,7 +53,7 @@
         <Communication destinationClassName="Juego.Juego"/>
         <Communication destinationClassName="Personajes.Disparo"/>
     </Class>
-    <Class name="Colisionadores.Colisionador" x="2662" y="1484">
+    <Class name="Colisionadores.Colisionador" x="2658" y="1426">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -62,7 +62,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="Mapas.Mapa" x="-599" y="-551">
+    <Class name="Mapas.Mapa" x="-583" y="-551">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -84,7 +84,7 @@
         <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaEnemigo" x="776" y="1028">
+    <Class name="Inteligencias.InteligenciaEnemigo" x="764" y="1032">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -110,7 +110,7 @@
         <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Escudos.Escudo" x="2504" y="-742">
+    <Class name="Escudos.Escudo" x="2502" y="-734">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -121,7 +121,7 @@
         <Association destinationClassName="Personajes.Entidad"
             endpointName="jugador" kind="Simple"/>
     </Class>
-    <Class name="Personajes.Enemigo" x="1198" y="-280">
+    <Class name="Personajes.Enemigo" x="1196" y="-274">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -144,7 +144,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="Personajes.Jugador" x="2624" y="-154">
+    <Class name="Personajes.Jugador" x="2632" y="-158">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -184,7 +184,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Extension destinationClassName="Mapas.Mapa"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaDummy" x="-342" y="1068">
+    <Class name="Inteligencias.InteligenciaDummy" x="-322" y="1068">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -239,7 +239,7 @@
         <Communication destinationClassName="Personajes.Entidad"/>
         <Communication destinationClassName="Colisionadores.Colisionador"/>
     </Class>
-    <Class name="Personajes.Obstaculos.Obstaculo" x="2162" y="-254">
+    <Class name="Personajes.Obstaculos.Obstaculo" x="2160" y="-246">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -335,7 +335,7 @@
             endpointName="disparo" kind="Simple"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaBoss" x="610" y="992">
+    <Class name="Inteligencias.InteligenciaBoss" x="606" y="1008">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -383,7 +383,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Extension destinationClassName="Personajes.PowerUps.PowerUp"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaKamikaze" x="954" y="1022">
+    <Class name="Inteligencias.InteligenciaKamikaze" x="966" y="1028">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -409,7 +409,7 @@
         <Communication destinationClassName="Juego.Juego"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaObstaculo" x="-6" y="1072">
+    <Class name="Inteligencias.InteligenciaObstaculo" x="8" y="1062">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -456,7 +456,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Extension destinationClassName="Inteligencias.InteligenciaDisparo"/>
     </Class>
-    <Class name="Personajes.PowerUps.PowerUp" x="3348" y="-196">
+    <Class name="Personajes.PowerUps.PowerUp" x="3356" y="-194">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -493,7 +493,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Extension destinationClassName="Inteligencias.InteligenciaObstaculo"/>
     </Class>
-    <Class name="Personajes.Disparo" x="1788" y="-232">
+    <Class name="Personajes.Disparo" x="1792" y="-230">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -517,7 +517,7 @@
         <Communication destinationClassName="Personajes.Enemigo"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaObstaculoDestruible" x="-26" y="800">
+    <Class name="Inteligencias.InteligenciaObstaculoDestruible" x="-14" y="806">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -527,7 +527,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Extension destinationClassName="Inteligencias.InteligenciaObstaculo"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaJugador" x="1208" y="1024">
+    <Class name="Inteligencias.InteligenciaJugador" x="1206" y="1020">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -601,7 +601,7 @@
             endpointName="obstaculo" kind="Simple"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Juego.Juego" x="203" y="-217">
+    <Class name="Juego.Juego" x="190" y="-270">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -630,7 +630,7 @@
         <Extension destinationClassName="Escudos.Escudo"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Inteligencias.InteligenciaDisparo" x="326" y="1072">
+    <Class name="Inteligencias.InteligenciaDisparo" x="342" y="1062">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -643,7 +643,7 @@
             endpointName="disparo" kind="Simple"/>
         <Communication destinationClassName="Personajes.Entidad"/>
     </Class>
-    <Class name="Personajes.Entidad" x="1806" y="-748">
+    <Class name="Personajes.Entidad" x="1814" y="-752">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
