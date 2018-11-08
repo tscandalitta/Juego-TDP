@@ -81,11 +81,8 @@ public class GUI extends JFrame {
 		ganar.setBounds(0,0,1280,720);
 		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
 		terminarJuego(ganar);
-		
 	}
 	private void terminarJuego(JLabel label) {
-		contentPane.removeAll();
-		contentPane.add(label);		
 		JButton volverAJugar= new JButton();
 		volverAJugar.setBounds(50, 20, 230, 36);
 		volverAJugar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/volverAJugar.png")));
@@ -96,17 +93,32 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				contentPane.removeAll();
 				repaint();
-				//iniciarKeyListener();
 				juego.reiniciarJuego();
 				tiempo=new HiloTiempo(juego);
 				tiempo.start();
 				inicializarLabels();
+				requestFocus();
 			}
 		});
+		
+		JButton salir= new JButton();
+		salir.setBounds(50, 70, 61, 29);
+		salir.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/salir.png")));
+		salir.setOpaque(false);
+		salir.setBackground(new Color(0,0,0));
+		salir.setBorderPainted(false);
+		salir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();				
+			}
+		});
+		
+		contentPane.removeAll();
+		contentPane.add(label);
 		contentPane.add(volverAJugar);
+		contentPane.add(salir);
 		this.repaint();
 	}
-	
 	
 	public void actualizarPuntajes() {
 		puntaje.setText("PUNTAJE: "+juego.getPuntaje());

@@ -15,7 +15,7 @@ public class Boss extends Enemigo {
 
 	public Boss(int x, int y) {
 		super(x,y);
-		vida=30;
+		vida=3000;
 		damage=20;
 		width=200;
 		height=267;

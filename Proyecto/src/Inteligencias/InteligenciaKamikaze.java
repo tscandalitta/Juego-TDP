@@ -11,7 +11,7 @@ public class InteligenciaKamikaze extends Inteligencia {
 	
 	public InteligenciaKamikaze(Enemigo k) {
 		kamikaze=k;
-		velocidad=10;
+		velocidad=8;
 		pos=k.getPos();
 		Random r1= new Random();
 		randomCambioInteligencia =r1.nextInt(6);

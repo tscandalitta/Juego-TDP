@@ -92,7 +92,9 @@ public class Juego {
 		eliminarAux();
 	}
 	private void eliminarAux() {
-		for(Entidad e: entidadesAEliminar) {
+		LinkedList<Entidad> lista= entidadesAEliminar;
+		entidadesAEliminar= new LinkedList<Entidad>();
+		for(Entidad e: lista) {
 			gui.remove(e.getGrafico());
 			gui.repaint();
 			entidades.remove(e);
