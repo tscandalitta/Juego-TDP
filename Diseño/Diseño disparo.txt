@@ -1,3 +1,0 @@
-El disparo sera representado mediante "chops" de cerveza, tal cual son los que aparecen en Los Simpsons, la clase disparo heredará
-de Entidad, tendran un tamaño de 15x10 unidades y se moveran en linea recta progresivamente, su velocidad y daño estará afectado por
-el arma con el que son disparados y no tendran una distancia maxima, es decir, recorreran todo el mapa de no impactar con ningun enemigo.
