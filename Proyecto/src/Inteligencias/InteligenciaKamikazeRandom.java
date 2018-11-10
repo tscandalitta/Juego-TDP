@@ -12,18 +12,21 @@ public class InteligenciaKamikazeRandom extends InteligenciaKamikaze{
 		//formula para generar un numero aleatorio dentro de un intervalo
 		limiteSuperior = (int) Math.floor(Math.random()*(200-0+1)+0);
 		limiteInferior = (int) Math.floor(Math.random()*(650-500+1)+500);
-	//	x=-t;
-		//y=(int) Math.sin(-t);
+		x=1280;
 	}
 	
 	protected void moverAux() {
-		//t=(int) System.currentTimeMillis()/1000;
-		//pos.setLocation(x, y);
+	/**	x-=0.1;
+		y=(int) (150*Math.sin(-x/20))+360;
+		pos.setLocation(x, y);
+		System.out.println(x+","+y);
+		*/
 		pos.setLocation(pos.x -velocidad, pos.y - direccionY*velocidad);
 		if(pos.y<limiteSuperior)
 			direccionY=-direccionY;
 		if(pos.y>limiteInferior)
 			direccionY=-direccionY;
+		
 	}
 
 }
