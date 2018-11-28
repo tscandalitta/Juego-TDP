@@ -15,15 +15,13 @@ public class HiloArmas extends Thread{
 		juego=j;
 		jugador=juego.getJugador();
 		arma=a;
-		arma.setJuego(juego);
 		this.duracion=duracion;
 	}
 	
 
 	public void run() {
 		try {
-			Arma armaOriginal= new ArmaNormal(jugador);
-			armaOriginal.setJuego(juego);
+			Arma armaOriginal= new ArmaNormal();
 			jugador.setArma(arma);
 			Thread.sleep(duracion);
 			jugador.setArma(armaOriginal);

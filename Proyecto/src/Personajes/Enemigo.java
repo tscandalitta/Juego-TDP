@@ -41,7 +41,7 @@ public class Enemigo extends Entidad{
 		PowerUp powerup=null;
 		switch(n) {
 		case 1: 
-			powerup= new Congelar(pos.x,pos.y);
+			powerup= Congelar.getInstancia(pos.x, pos.y);
 			break;
 		case 2:
 			powerup= new Curacion(pos.x,pos.y);

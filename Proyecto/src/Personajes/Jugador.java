@@ -22,7 +22,7 @@ public class Jugador extends Entidad {
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		col=new ColJugador(this);
-		arma= new ArmaNormal(this);
+		arma= new ArmaNormal();
 		inteligencia= new InteligenciaJugador(this, arma);
 		escudo= new SinEscudo(this);
 		vida=100;
@@ -47,7 +47,6 @@ public class Jugador extends Entidad {
 	}
 	public void setJuego(Juego j) {
 		inteligencia.setJuego(j);
-		arma.setJuego(j);
 	}
 
 	public void disparar() {

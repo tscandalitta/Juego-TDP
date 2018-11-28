@@ -13,8 +13,9 @@ import Inteligencias.InteligenciaPowerUp;
 import Personajes.Entidad;
 
 public class Congelar extends PowerUp implements Runnable{
-
-	public Congelar(int x, int y) {
+	private static Congelar instancia;
+	
+	private Congelar(int x, int y) {
 		super(x,y);
 		width=28;
 		height=35;
@@ -22,11 +23,23 @@ public class Congelar extends PowerUp implements Runnable{
 		col= new ColPowerUp(this);
 		inteligencia= new InteligenciaPowerUp(this);
 	}
-
+	
+	public static Congelar getInstancia(int x, int y) {
+		if(instancia==null) {
+			instancia= new Congelar(x,y);
+		}
+		return instancia;
+	}
+	
+	public void mover() {
+		super.mover();
+		if(pos.x<-10)
+			instancia=null;
+	}
+	
 	public void realizarAccion(Entidad jugador) {
 		this.jugador=jugador;
 		(new Thread(this)).start();
-		
 	}
 
 	public void run() {
@@ -48,6 +61,7 @@ public class Congelar extends PowerUp implements Runnable{
 				e.setInteligencia(mapeoInteligencias.get(e));
 		}
 		mapeoInteligencias.clear();
+		instancia=null;
 	}
 	
 }

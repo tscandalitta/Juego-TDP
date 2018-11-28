@@ -31,8 +31,9 @@ public class Mapa1 extends Mapa {
 		return entidades;
 	}
 
-	public Mapa mapaSiguiente() {
-		return new Mapa2(juego);
+	public void mapaSiguiente() {
+		juego.setMapa(new Mapa2(juego));
+		super.mapaSiguiente();
 	}
 
 }
