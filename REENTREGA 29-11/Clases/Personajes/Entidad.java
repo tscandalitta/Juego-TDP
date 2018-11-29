@@ -4,8 +4,6 @@ import java.awt.Point;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
-import Armas.Arma;
 import Colisionadores.Colisionador;
 import Escudos.Escudo;
 import Inteligencias.Inteligencia;

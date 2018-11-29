@@ -37,10 +37,6 @@ public class InteligenciaKamikaze extends Inteligencia {
 		}
 	}
 	
-	public void setInteligenciaDummy(Inteligencia i) {
-		kamikaze.setInteligencia(i);
-	}
-	
 	protected void moverAux() {
 		int posYjugador= juego.getJugador().getPos().y;
 		if(pos.y-posYjugador>0)

@@ -35,7 +35,4 @@ public class InteligenciaBoss extends Inteligencia {
 			juego.agregarEntidad(disparo3);
 		}
 	}
-	public void setInteligenciaDummy(Inteligencia i) {
-		boss.setInteligencia(i);
-	}
 }

@@ -69,7 +69,7 @@ public class Juego {
 	
 	public void eliminarEntidades() {
 		if(jugador.getVida()<=0) {
-			if(jugador.getOportunidades()!=0)
+			if(jugador.getOportunidades()>0)
 				jugador.reestablecer(estadoInicialJugador);
 			else {
 				gui.gameOver();

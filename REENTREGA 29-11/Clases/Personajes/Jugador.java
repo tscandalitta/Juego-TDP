@@ -18,7 +18,7 @@ public class Jugador extends Entidad {
 	
 	public Jugador(int x, int y) {
 		super(x,y);
-		oportunidades=1;
+		oportunidades=3;
 		width=40;
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
@@ -75,7 +75,6 @@ public class Jugador extends Entidad {
 	}
 	
 	public void golpearPowerUp(Entidad e) {
-		e.golpearJugador(this);
 	}
 	public void golpearObstaculoDestruible(Entidad o) {
 	}
@@ -89,6 +88,5 @@ public class Jugador extends Entidad {
 	public void golpearDisparoJugador(Entidad d) {
 	}
 	public void golpearDisparoEnemigo(Entidad d) {
-		d.golpearJugador(this);
 	}
 }
