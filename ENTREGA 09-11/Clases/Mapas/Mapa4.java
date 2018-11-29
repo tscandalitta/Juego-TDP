@@ -17,7 +17,7 @@ public class Mapa4 extends Mapa {
 		entidades.add(new Boss(900,200));
 		return entidades;
 	}
-	public Mapa mapaSiguiente() {
-		return new Mapa5(juego);
+	public void mapaSiguiente() {
+		juego.finalizar();
 	}
 }

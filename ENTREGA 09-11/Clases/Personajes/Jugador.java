@@ -14,15 +14,16 @@ import Memento.Memento;
 public class Jugador extends Entidad {
 	protected InteligenciaJugador inteligencia;
 	private int oportunidades;
+	protected Arma arma;
 	
 	public Jugador(int x, int y) {
 		super(x,y);
-		oportunidades=3;
+		oportunidades=1;
 		width=40;
 		height=70;
 		this.imagen = new ImageIcon(this.getClass().getResource("/Sprites/homer.png"));
 		col=new ColJugador(this);
-		arma= new ArmaNormal(this);
+		arma= new ArmaNormal();
 		inteligencia= new InteligenciaJugador(this, arma);
 		escudo= new SinEscudo(this);
 		vida=100;
@@ -47,7 +48,6 @@ public class Jugador extends Entidad {
 	}
 	public void setJuego(Juego j) {
 		inteligencia.setJuego(j);
-		arma.setJuego(j);
 	}
 
 	public void disparar() {
@@ -64,6 +64,9 @@ public class Jugador extends Entidad {
 			oportunidades--;
 	}
 	
+	public Arma getArma() {
+		return arma;
+	}
 	public InteligenciaJugador getInteligencia() {
 		return inteligencia;
 	}

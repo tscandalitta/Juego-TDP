@@ -11,6 +11,11 @@ public abstract class Inteligencia {
 	
 	public abstract void mover();
 	
+	
+	
+	public void verificarInteligencia() {
+	}
+	
 	public void setJuego(Juego j) {
 		juego=j;
 	}

@@ -20,7 +20,7 @@ public class HiperDisparo extends PowerUp{
 
 	public void realizarAccion(Entidad jugador) {
 		int duracion=6000;
-		HiloArmas hilo= new HiloArmas(juego, new ArmaHiperPotente(jugador), duracion);
+		HiloArmas hilo= new HiloArmas(juego, new ArmaHiperPotente(), duracion);
 		hilo.start();
 	}
 

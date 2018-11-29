@@ -2,6 +2,7 @@ package Colisionadores;
 
 import Personajes.*;
 import Personajes.Obstaculos.*;
+import Personajes.PowerUps.PowerUp;
 
 public class ColObstaculoBarricada implements Colisionador {
 	protected ObstaculoBarricada obstaculo;
@@ -10,21 +11,18 @@ public class ColObstaculoBarricada implements Colisionador {
 		obstaculo=o;
 	}
 	
-	public void afectarJugador(Entidad j) {
+	public void afectarJugador(Jugador j) {
 	}
-	public void afectarEnemigo(Entidad e) {
-		e.golpearObstaculoBarricada(obstaculo);
+	public void afectarEnemigo(Enemigo e) {
 	}
-	public void afectarPowerUp(Entidad p) {
+	public void afectarPowerUp(PowerUp p) {
 	}
-	public void afectarObstaculoBarricada(Entidad o) {
+	public void afectarObstaculoBarricada(ObstaculoBarricada o) {
 	}
-	public void afectarObstaculoDestruible(Entidad o) {
+	public void afectarObstaculoDestruible(ObstaculoDestruible o) {
 	}
-	public void afectarDisparoJugador(Entidad d) {	
-		d.golpearObstaculoBarricada(obstaculo);
+	public void afectarDisparoJugador(DisparoJugador d) {	
 	}
-	public void afectarDisparoEnemigo(Entidad d) {
-		d.golpearObstaculoBarricada(obstaculo);
+	public void afectarDisparoEnemigo(DisparoEnemigo d) {
 	}
 }

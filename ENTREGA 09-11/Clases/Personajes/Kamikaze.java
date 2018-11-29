@@ -23,10 +23,10 @@ public class Kamikaze extends Enemigo {
 		col= new ColEnemigo(this);
 		
 		Random r= new Random();
-		int n= r.nextInt(2);
-		if(n==0)
+		int n= r.nextInt(3);
+		if(n==0||n==1)
 			inteligencia= new InteligenciaKamikaze(this);
-		if(n==1)
+		if(n==2)
 			inteligencia= new InteligenciaKamikazeRandom(this);
 		crearMemento();
 	}

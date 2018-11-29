@@ -1,11 +1,20 @@
 package Armas;
 
-import Personajes.Entidad;
+import java.awt.Point;
+
+import Personajes.DisparoJugador;
 
 public class ArmaNormal extends Arma {
 	
-	public ArmaNormal(Entidad j) {
-		super(j,15,40);
+	public ArmaNormal() {
 	}
 	
+	public DisparoJugador crearDisparo(Point pos ) {
+		DisparoJugador disparo= new DisparoJugador(40, pos.x+40, pos.y+25);
+		return disparo;
+	}
+	
+	public int getCadencia() {
+		return 15;
+	}
 }

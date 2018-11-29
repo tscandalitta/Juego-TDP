@@ -8,8 +8,10 @@ import Inteligencias.InteligenciaBoss;
 import Personajes.PowerUps.Congelar;
 import Personajes.PowerUps.Curacion;
 import Personajes.PowerUps.DisparoRapido;
+import Personajes.PowerUps.HiperDisparo;
 import Personajes.PowerUps.PowerUp;
 import Personajes.PowerUps.SuperDisparo;
+import Personajes.PowerUps.SuperEscudo;
 
 public class Boss extends Enemigo {
 
@@ -35,7 +37,7 @@ public class Boss extends Enemigo {
 		PowerUp powerup=null;
 		switch(n) {
 		case 1: 
-			powerup= new Congelar(pos.x,pos.y);
+			powerup= Congelar.getInstancia(pos.x, pos.y);
 			break;
 		case 2:
 			powerup= new Curacion(pos.x,pos.y);
@@ -46,6 +48,9 @@ public class Boss extends Enemigo {
 		case 4:
 			powerup= new DisparoRapido(pos.x,pos.y);
 			break;
+		case 5:
+			powerup= new HiperDisparo(pos.x,pos.y);
+			break;	
 		}
 		if(powerup!=null) {
 			powerup.setJuego(juego);

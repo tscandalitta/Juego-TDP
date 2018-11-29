@@ -51,7 +51,7 @@ public class GUI extends JFrame {
 		inicializarLabels();		
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
-		
+		this.setResizable(false);
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
@@ -93,8 +93,9 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				contentPane.removeAll();
 				repaint();
-				juego.reiniciarJuego();
+				juego= new Juego(GUI.this);
 				tiempo=new HiloTiempo(juego);
+				juego.setHilo(tiempo);
 				tiempo.start();
 				inicializarLabels();
 				requestFocus();

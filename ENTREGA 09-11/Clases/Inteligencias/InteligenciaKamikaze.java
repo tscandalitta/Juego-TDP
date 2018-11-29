@@ -14,7 +14,7 @@ public class InteligenciaKamikaze extends Inteligencia {
 		velocidad=8;
 		pos=k.getPos();
 		Random r1= new Random();
-		randomCambioInteligencia =r1.nextInt(6);
+		randomCambioInteligencia =r1.nextInt(4);
 	}
 	
 	public void mover() {
@@ -24,6 +24,10 @@ public class InteligenciaKamikaze extends Inteligencia {
 			moverAux();
 			enMovimiento=true;
 		}
+		
+	}
+
+	public void verificarInteligencia() {
 		if(kamikaze.getVida()<=50) {
 			if(randomCambioInteligencia==3) {
 				Inteligencia inteligencia= new InteligenciaKamikazeRandom(kamikaze);
@@ -32,7 +36,11 @@ public class InteligenciaKamikaze extends Inteligencia {
 			}
 		}
 	}
-
+	
+	public void setInteligenciaDummy(Inteligencia i) {
+		kamikaze.setInteligencia(i);
+	}
+	
 	protected void moverAux() {
 		int posYjugador= juego.getJugador().getPos().y;
 		if(pos.y-posYjugador>0)

@@ -2,12 +2,14 @@ package Inteligencias;
 
 import java.awt.event.KeyEvent;
 import Armas.Arma;
+import Personajes.DisparoJugador;
 import Personajes.Jugador;
 
 public class InteligenciaJugador extends Inteligencia {
 	protected Jugador jugador;
 	protected int desplazamientoY;
 	protected int velocidad;
+	protected int contador;
 	protected volatile boolean disparar;
 	protected Arma arma;
 	
@@ -17,6 +19,7 @@ public class InteligenciaJugador extends Inteligencia {
 		velocidad=10;
 		disparar=false;
 		arma=a;
+		contador=0;
 	}
 	
 	public void mover() {
@@ -29,7 +32,12 @@ public class InteligenciaJugador extends Inteligencia {
 	}
 	
 	public void disparar() {
-		arma.disparar(disparar);
+		contador++;
+		if(contador>=arma.getCadencia() && disparar) {
+			DisparoJugador disparo= arma.crearDisparo(jugador.getPos());
+			juego.agregarEntidad(disparo);
+			contador=0;
+		}
 	}
 	public void setArma(Arma a) {
 		arma=a;

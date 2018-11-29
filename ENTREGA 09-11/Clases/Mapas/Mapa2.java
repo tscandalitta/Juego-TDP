@@ -33,7 +33,8 @@ public class Mapa2 extends Mapa {
 		entidades.add(new ObstaculoBarricada(750,400,300));
 		return entidades;
 	}
-	public Mapa mapaSiguiente() {
-		return new Mapa3(juego);	
+	public void mapaSiguiente() {
+		juego.setMapa(new Mapa3(juego));	
+		super.mapaSiguiente();
 	}
 }

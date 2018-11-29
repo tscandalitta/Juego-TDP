@@ -3,11 +3,11 @@ package Personajes.PowerUps;
 import Armas.Arma;
 import Armas.ArmaNormal;
 import Juego.Juego;
-import Personajes.Entidad;
+import Personajes.Jugador;
 
 public class HiloArmas extends Thread{
 	private Juego juego;
-	private Entidad jugador;
+	private Jugador jugador;
 	private Arma arma;
 	private int duracion;
 	
@@ -15,15 +15,13 @@ public class HiloArmas extends Thread{
 		juego=j;
 		jugador=juego.getJugador();
 		arma=a;
-		arma.setJuego(juego);
 		this.duracion=duracion;
 	}
 	
 
 	public void run() {
 		try {
-			Arma armaOriginal= new ArmaNormal(jugador);
-			armaOriginal.setJuego(juego);
+			Arma armaOriginal= new ArmaNormal();
 			jugador.setArma(arma);
 			Thread.sleep(duracion);
 			jugador.setArma(armaOriginal);

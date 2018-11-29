@@ -14,7 +14,7 @@ public class InteligenciaEnemigo extends Inteligencia {
 		velocidad=3;
 		direccionX=1;
 		Random r= new Random();
-		cambioInteligencia =r.nextInt(5);
+		cambioInteligencia =r.nextInt(3);
 	}
 	
 	/**
@@ -29,8 +29,12 @@ public class InteligenciaEnemigo extends Inteligencia {
 		if(pos.x>1100)
 			direccionX=1;
 		disparar();
+		
+	}
+	
+	public void verificarInteligencia() {
 		if(enemigo.getVida()<=25) {
-			if(cambioInteligencia==3) {
+			if(cambioInteligencia==2) {
 				Inteligencia inteligencia= new InteligenciaKamikazeEnemigoComun(enemigo);
 				inteligencia.setJuego(juego);
 				enemigo.setInteligencia(inteligencia);

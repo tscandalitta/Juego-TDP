@@ -34,7 +34,8 @@ public class Mapa3 extends Mapa {
 		entidades.add(new ObstaculoDestruible(550,300,500));
 		return entidades;
 	}
-	public Mapa mapaSiguiente() {
-		return new Mapa4(juego);	
+	public void mapaSiguiente() {
+		juego.setMapa(new Mapa4(juego));	
+		super.mapaSiguiente();
 	}
 }

@@ -19,7 +19,7 @@ public class DisparoRapido extends PowerUp{
 	}
 	
 	public void realizarAccion(Entidad jugador) {
-		HiloArmas hilo= new HiloArmas(juego, new ArmaRapida(jugador), 6000);
+		HiloArmas hilo= new HiloArmas(juego, new ArmaRapida(), 6000);
 		hilo.start();
 	}
 }

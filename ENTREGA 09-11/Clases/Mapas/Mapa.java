@@ -16,5 +16,7 @@ public abstract class Mapa {
 	
 	public abstract LinkedList<Entidad> crearEntidades();
 	
-	public abstract Mapa mapaSiguiente();
+	public void mapaSiguiente() {
+		juego.iniciarEntidades();
+	}
 }

@@ -31,17 +31,18 @@ public class Enemigo extends Entidad{
 
 	public void disminuirVida(int damage) {
 		super.disminuirVida(damage);
+		inteligencia.verificarInteligencia();
 		if(vida==0)
 			lanzarPowerUp();
 	}
 	
 	protected void lanzarPowerUp() {
 		Random r= new Random();
-		int n= r.nextInt(30);
+		int n= r.nextInt(25);
 		PowerUp powerup=null;
 		switch(n) {
 		case 1: 
-			powerup= new Congelar(pos.x,pos.y);
+			powerup= Congelar.getInstancia(pos.x, pos.y);
 			break;
 		case 2:
 			powerup= new Curacion(pos.x,pos.y);

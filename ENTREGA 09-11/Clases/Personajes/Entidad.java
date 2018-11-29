@@ -22,7 +22,6 @@ public abstract class Entidad {
 	protected  Inteligencia inteligencia;
 	protected Escudo escudo;
 	protected Juego juego;
-	protected Arma arma;
 	
 	protected Entidad(int x, int y) {
 		this.pos= new Point(x, y);
@@ -50,9 +49,7 @@ public abstract class Entidad {
 	public Inteligencia getInteligencia() {
 		return inteligencia;
 	}
-	public Arma getArma() {
-		return arma;
-	}
+	
 	public Escudo getEscudo() {
 		return escudo;
 	}
@@ -79,9 +76,7 @@ public abstract class Entidad {
 	public void setEscudo(Escudo e) {
 		escudo=e;
 	}
-	public void setArma(Arma a) {
-		arma=a;
-	}
+	
 	public void setInteligencia(Inteligencia i) {
 		inteligencia=i;
 	}
@@ -104,6 +99,7 @@ public abstract class Entidad {
 			vida=100;
 	}
 	public void setInteligenciaDummy(Inteligencia i) {
+		
 	}
 	
 	public abstract void serColisionado(Colisionador col);
