@@ -3,11 +3,11 @@ package Personajes.PowerUps;
 import Armas.Arma;
 import Armas.ArmaNormal;
 import Juego.Juego;
-import Personajes.Entidad;
+import Personajes.Jugador;
 
 public class HiloArmas extends Thread{
 	private Juego juego;
-	private Entidad jugador;
+	private Jugador jugador;
 	private Arma arma;
 	private int duracion;
 	

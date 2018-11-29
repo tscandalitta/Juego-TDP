@@ -14,6 +14,7 @@ import Memento.Memento;
 public class Jugador extends Entidad {
 	protected InteligenciaJugador inteligencia;
 	private int oportunidades;
+	protected Arma arma;
 	
 	public Jugador(int x, int y) {
 		super(x,y);
@@ -63,6 +64,9 @@ public class Jugador extends Entidad {
 			oportunidades--;
 	}
 	
+	public Arma getArma() {
+		return arma;
+	}
 	public InteligenciaJugador getInteligencia() {
 		return inteligencia;
 	}

@@ -51,7 +51,7 @@ public class GUI extends JFrame {
 		inicializarLabels();		
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
-		
+		this.setResizable(false);
 		juego= new Juego(this);
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
