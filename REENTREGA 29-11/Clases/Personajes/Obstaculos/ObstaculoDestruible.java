@@ -24,25 +24,17 @@ public class ObstaculoDestruible extends Obstaculo{
 	}
 	
 	public void golpearJugador(Entidad j) {
-		j.golpearObstaculoDestruible(this);
 	}
 	public void golpearEnemigo(Entidad e) {
-		e.golpearObstaculoDestruible(this);
 	}
 	public void golpearDisparoJugador(Entidad d) {
-		d.golpearObstaculoDestruible(this);
 	}
-	
 	public void golpearDisparoEnemigo(Entidad e) {
-		e.golpearObstaculoDestruible(this);
 	}
-
 	public void golpearPowerUp(Entidad p) {
 	}
-
 	public void golpearObstaculoBarricada(Entidad o) {
 	}
-
 	public void golpearObstaculoDestruible(Entidad o) {
 	}
 

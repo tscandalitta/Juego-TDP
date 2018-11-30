@@ -20,7 +20,6 @@ public class ColDisparoEnemigo implements Colisionador{
 		disparo.golpearPowerUp(p);
 	}
 	public void afectarDisparoJugador(DisparoJugador d) {
-		disparo.golpearDisparoJugador(d);
 	}
 	public void afectarDisparoEnemigo(DisparoEnemigo d) {
 	}

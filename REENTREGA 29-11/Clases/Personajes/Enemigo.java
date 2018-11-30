@@ -90,7 +90,6 @@ public class Enemigo extends Entidad{
 	}
 
 	public void golpearDisparoJugador(Entidad d) {
-		d.golpearEnemigo(this);
 	}
 
 	public void golpearDisparoEnemigo(Entidad d) {

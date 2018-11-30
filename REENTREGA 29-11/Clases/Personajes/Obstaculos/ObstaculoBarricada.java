@@ -24,24 +24,17 @@ public class ObstaculoBarricada extends Obstaculo{
 	}
 	
 	public void golpearJugador(Entidad j) {
-		j.golpearObstaculoBarricada(this);
 	}
 	public void golpearEnemigo(Entidad e) {
-		e.golpearObstaculoBarricada(this);
 	}
 	public void golpearDisparoJugador(Entidad d) {
-		d.golpearObstaculoBarricada(this);
 	}
-
 	public void golpearDisparoEnemigo(Entidad e) {
 	}
-	
 	public void golpearPowerUp(Entidad p) {
 	}
-
 	public void golpearObstaculoBarricada(Entidad o) {
 	}
-
 	public void golpearObstaculoDestruible(Entidad o) {
 	}
 
